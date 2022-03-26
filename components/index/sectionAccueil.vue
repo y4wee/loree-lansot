@@ -25,7 +25,7 @@ export default {
         }
     },
     mounted() {
-        gsap.to(".accueilOverlay", {opacity: 0.3, duration: 0.8, delay: 1})
+        gsap.to(".accueilOverlay", {opacity: 0.4, duration: 0.8, delay: 1})
     },
     methods: {
     },
@@ -42,7 +42,6 @@ export default {
     position: relative;
     height: 100vh;
     width: 100vw;
-    // background-color: gray;
     background: url("~/assets/accueil31.png");
     background-position: center;
     background-size: cover;
@@ -61,7 +60,6 @@ export default {
         background: rgba(41, 19, 21, 1);
         opacity: 1;
         z-index: 1;
-        // animation: 0.4s 1.35s ease-in both opacityOverlay;
     }
 }
 
