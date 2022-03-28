@@ -69,6 +69,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$colorBrown: #291315;
+$colorGreen: #8FBF21; //good
+$colorWhite: #f7f6f8; //good
+$colorBlue: #0d1317;
+$colorGray: #d1cfcf;
+$colorBeige: #c0b193;
+$colorOrange: #e25827;
+$colorYellow: #c9853c;
 .accueil {
     display: flex;
     align-items: center;
@@ -112,6 +120,7 @@ export default {
         // background: rgba(41, 19, 21, 1);
         // background: #232832;
         // background: #0d1317;
+        background: #0d1317;
         opacity: 0.3;
         z-index: 1;
     }
