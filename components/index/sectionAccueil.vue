@@ -1,6 +1,6 @@
 <template>
     <div class="accueil">
-        <img src="~/assets/accueil14.jpg" alt="image accueil" class="accueilImg">
+        <img src="~/assets/accueil141.png" alt="image accueil" class="accueilImg">
         <Logo 
         class="accueilLogo"
         :animation = logoAnimation
