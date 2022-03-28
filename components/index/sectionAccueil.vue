@@ -33,7 +33,6 @@ export default {
         gsap.fromTo(".accueilOverlay", 
             {opacity: 1},
             {opacity: 0.3, duration: 0.8, delay: 1, onComplete: this.parallaxScroll})
-        // this.parallaxScroll()
     },
     methods: {
         parallaxScroll: function() {
