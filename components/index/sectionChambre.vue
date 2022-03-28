@@ -19,6 +19,10 @@ export default {
 
 <style scoped lang="scss">
 
-
+.chambre {
+  height: 100vh;
+  // width: 100vw;
+  background: #c9853c;
+}
 
 </style>

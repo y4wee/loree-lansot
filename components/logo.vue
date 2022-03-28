@@ -83,7 +83,7 @@ export default {
                     {fillOpacity: 1, ease: "power2.inOut", duration: 0.3, delay: 0.7})
                 gsap.fromTo(`.${data} .feuille`,
                     {fillOpacity: 0},
-                    {fillOpacity: 1, ease: "power2.inOut", duration: 0.2, delay: 0.8})
+                    {fillOpacity: 1, ease: "power2.inOut", duration: 0.4, delay: 0.8})
             })
         },
     },
