@@ -1,6 +1,7 @@
 <template>
     <div class="accueil">
         <img src="~/assets/accueil141.png" alt="image accueil" class="accueilImg">
+        <div class="accueilOverlay"></div>
         <Logo 
         class="accueilLogo"
         :animation = logoAnimation
@@ -9,8 +10,6 @@
         :logoStroke = logoStroke
         />
         <Leaf class="accueilLeaf" />
-
-        <div class="accueilOverlay"></div>
     </div>
 </template>
 
@@ -95,6 +94,7 @@ $colorYellow: #c9853c;
     }
 
     &Logo {
+        z-index: 10;
         position: absolute;
         width: 85%;
         max-height: 30vh;

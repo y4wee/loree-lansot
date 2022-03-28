@@ -27,7 +27,6 @@ export default {
           ease: "none",
           scrollTrigger: {
             trigger: ".accueil",
-            markers: true,
             start: "top top",
             end: "bottom top",
             scrub: 1
