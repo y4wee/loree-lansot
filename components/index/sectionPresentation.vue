@@ -14,8 +14,33 @@
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
         <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="200" cy="200" r="200"/>
+          <mask id="maskCircle">
+            <rect x="0" y="0" width="600" height="600" fill="white" />
+            <circle cx="200" cy="200" r="200" fill="black"/>
+          </mask>
+          <g>
+            <g>
+              <path mask="url(#maskCircle)" class="presentationSelfPhotoLeaf" d="M367.972 336.151C404.126 346.223 424.045 355.15 421.654 359.767C420.75 361.705 415.533 361.076 410.262 358.253C397.002 351.751 332.457 332.789 329.12 334.716C327.754 335.504 331.533 344.851 337.663 355.47C348.961 375.038 355.58 397.712 350.083 397.65C348.432 397.592 344.228 390.311 341.039 381.635C325.825 341.27 315.902 332.841 309.501 354.335C300.443 383.836 308.683 404.765 338.796 429.246C363.959 449.709 362.57 450.106 368.933 420.139L373.996 395.979L384.88 400.819C397.703 406.563 410.715 406.331 443.514 399.732C456.777 397.131 470.67 394.571 474.341 394.272C490.475 392.441 441.029 329.568 414.865 318.583C398.518 311.638 375.037 312.655 353.326 320.943L336.756 327.274L367.972 336.151Z" fill="#8FBF21"/>
+            </g>
+            <path class="presentationSelfPhotoCircle" d="M400 200C400 310.457 310.457 400 200 400C89.5431 400 0 310.457 0 200C0 89.5431 89.5431 0 200 0C310.457 0 400 89.5431 400 200Z"/>
+          </g>
+          <defs>
+            <filter id="filter0_i_47_6" x="306.022" y="313.981" width="171.486" height="133.765" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dy="4"/>
+              <feGaussianBlur stdDeviation="2"/>
+              <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+              <feBlend mode="normal" in2="shape" result="effect1_innerShadow_47_6"/>
+            </filter>
+            <clipPath id="clip0_47_6">
+              <rect width="400" height="400" fill="white"/>
+            </clipPath>
+          </defs>
         </svg>
+
       </div>
       <div class="presentationSelfText">
         Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère, <br/>
@@ -45,6 +70,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "SectionPresentation",
+    data() {
+      return {
+        images: [
+          
+        ],
+      }
+    },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         this.headTranslate();
@@ -130,10 +162,12 @@ $colorYellow: #c9853c;
       & svg {
         position: absolute;
         width: 200px;
-        fill: none;
+        overflow: visible;
+      }
+      &Circle {
         stroke: $colorWhite;
         stroke-width: 3px;
-        overflow: visible;
+        fill: none;
       }
     }
 
