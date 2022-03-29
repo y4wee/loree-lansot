@@ -21,19 +21,19 @@
         Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère, <br/>
         que nous rénovons dans un style alliant modernité & ancient.<br/><br/>
 
-        Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés, <br/>
+        Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
         dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à <br/>
         cet endroit ce cadre si particulier !<br/><br/>
 
-        Venez vous ressourceer tout au long de l'année, dans notre ancienne ferme<br/>
+        Venez vous ressourceer tout au long de l'année, dans notre ancienne ferme
         du XVII° siècle.<br/>
-        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons<br/>
+        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
         à votre disposition trois chambres d'hôtes spacieuses.
       </div>
     </section>
 
     <section class="presentationHouse">
-      <div class="presentationHousePhoto"></div>
+      <Parallax />
     </section>
 
   </div>
@@ -46,24 +46,23 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
     name: "SectionPresentation",
     mounted() {
-      gsap.registerPlugin(ScrollTrigger);
-      this.headTranslate();
+        gsap.registerPlugin(ScrollTrigger);
+        this.headTranslate();
     },
     methods: {
-      headTranslate: function() {
-        // let length = document.querySelector(".presentationSelfHeadText").offsetWidth
-        gsap.to(".presentationSelfHeadContainer", {
-          xPercent: -25,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".accueil",
-            // markers: true,
-            start: "top top",
-            end: "120% top",
-            scrub: 0.5
-          },
-        })
-      }
+        headTranslate: function () {
+            gsap.to(".presentationSelfHeadContainer", {
+                xPercent: -25,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".accueil",
+                    // markers: true,
+                    start: "top top",
+                    end: "120% top",
+                    scrub: 0.5
+                },
+            });
+        }
     },
 }
 
@@ -139,8 +138,11 @@ $colorYellow: #c9853c;
     }
 
     &Text {
+      padding: 5px;
       background: $colorWhite;
-      max-width: 100%;
+      font-size: 3vh;
+      text-align: center;
+      max-width: 700px;
     }
   }
 
