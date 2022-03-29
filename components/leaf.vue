@@ -52,9 +52,9 @@ $colorOrange: #e25827;
 $colorYellow: #c9853c;
     .leaf {
         display: flex;
-        z-index: 10;
         &Svg {
             overflow: visible;
+            z-index: 10;
         }
         &SvgLine {
             stroke: #f7f6f8;

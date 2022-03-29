@@ -95,10 +95,10 @@ export default {
 
 .logo {
     display: flex;
-    z-index: 10;
 }
 svg {
     overflow: visible;
+    z-index: 10;
 }
 .feuille1 {
     transform-origin: 58% 16%;

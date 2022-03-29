@@ -103,6 +103,7 @@ $colorYellow: #c9853c;
     }
 
     &Leaf {
+        z-index: 10;
         position: absolute;
         width: 40%;
         max-height: 50vh;
