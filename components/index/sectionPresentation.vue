@@ -51,17 +51,16 @@ export default {
     },
     methods: {
       headTranslate: function() {
-        let length = document.querySelector(".presentationSelfHeadText").offsetWidth
-        console.log(innerWidth)
+        // let length = document.querySelector(".presentationSelfHeadText").offsetWidth
         gsap.to(".presentationSelfHeadContainer", {
-          translateX: `-${length * 2}px`,
-          ease: "power1.inOut",
+          xPercent: -25,
+          ease: "none",
           scrollTrigger: {
             trigger: ".accueil",
-            markers: true,
+            // markers: true,
             start: "top top",
             end: "120% top",
-            scrub: 1
+            scrub: 0.5
           },
         })
       }
@@ -102,6 +101,7 @@ $colorYellow: #c9853c;
         display: flex;
         flex-wrap: nowrap;
         white-space: nowrap;
+        will-change: transform;
       }
       &Text {
         width: 100%;
