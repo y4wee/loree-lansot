@@ -95,22 +95,24 @@ $colorYellow: #c9853c;
     }
 
     &Logo {
+        & svg {
+            width: 85vw;
+            max-height: 30vh;
+        }
         z-index: 10;
         position: absolute;
-        width: 300px;
-        max-height: 300px;
-        // width: 85vw;
-        // max-height: 30vh;
+        // width: 300px;
+        // max-height: 300px;
         transform: translateY(-100%);
     }
 
     &Leaf {
+        & svg {
+            width: 40vw;
+            max-height: 50vh;
+        }
         z-index: 10;
         position: absolute;
-        width: 300px;
-        max-height: 300px;
-        // width: 40vw;
-        // max-height: 50vh;
         transform: translateY(10%);
     }
 
