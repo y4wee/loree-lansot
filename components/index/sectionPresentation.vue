@@ -1,12 +1,19 @@
 <template>
   <div class="presentation">
-    <div class="presentationSkew"></div>
-    <div class="presentationMain">
+    <section class="presentationSelf">
       <h1>Qui Sommes nous...</h1>
-      <div class="presentationMainPhoto"></div>
-      <div class="presentationMainText"></div>
-    </div>
-    <!-- <div class="presentationSkew"></div> -->
+      <div class="presentationSelfPhoto">
+        <img src="~/assets/profile.png" alt="photo hôtes jambert">
+        <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="200"/>
+        </svg>
+
+      </div>
+      <div class="presentationSelfText"></div>
+    </section>
+    <section class="presentationHouse">
+      <div class="presentationHousePhoto"></div>
+    </section>
   </div>
 </template>
 
@@ -18,21 +25,8 @@ export default {
     name: "SectionPresentation",
     mounted() {
       gsap.registerPlugin(ScrollTrigger);
-      // this.skewScrolling();
     },
     methods: {
-      skewScrolling: function() {
-        gsap.to(".presentationSkew", {
-          skewY: -10,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".accueil",
-            start: "top top",
-            end: "bottom top",
-            scrub: 1
-          }
-        })
-      }
     },
 }
 
@@ -48,32 +42,54 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c9853c;
 .presentation {
-  z-index: 1;
   position: relative;
   display: flex;
+  flex-direction: column;
   height: 100vh;
-  // background: #f7f6f8;
+  width: 100%;
+  background: #0d1317;
+  border-top: solid 10px $colorWhite;
 
-  &Skew {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50%;
+  &Self {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    transform-origin: top left;
-    background: #0d1317;
-    border-top: solid 10px #f7f6f8;
+    & h1 {
+      font-size: 5vh;
+      text-align: center;
+      color: $colorWhite;
+    }
+    &Photo {
+      height: 250px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+      & img {
+        position: absolute;
+        width: 100%;
+        max-width: 400px;
+        mask-image: url("~/assets/maskimage.svg");
+        mask-size: 200px;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+      & svg {
+        position: absolute;
+        width: 200px;
+        fill: none;
+        stroke: $colorWhite;
+        stroke-width: 3px;
+        overflow: visible;
+      }
+    }
   }
 
-  &Main {
-    margin-top: 10px;
-    z-index: 5;
-    height: 100%;
+  &House {
     width: 100%;
-    background: #0d1317;
   }
 }
 
