@@ -83,7 +83,7 @@ $colorYellow: #c9853c;
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background-size: cover;
+    background: #0d1317;
 
     &Img {
         z-index: 1;
@@ -97,16 +97,20 @@ $colorYellow: #c9853c;
     &Logo {
         z-index: 10;
         position: absolute;
-        width: 85vw;
-        max-height: 30vh;
+        width: 300px;
+        max-height: 300px;
+        // width: 85vw;
+        // max-height: 30vh;
         transform: translateY(-100%);
     }
 
     &Leaf {
         z-index: 10;
         position: absolute;
-        width: 40vw;
-        max-height: 50vh;
+        width: 300px;
+        max-height: 300px;
+        // width: 40vw;
+        // max-height: 50vh;
         transform: translateY(10%);
     }
 
