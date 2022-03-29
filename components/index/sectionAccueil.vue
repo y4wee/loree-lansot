@@ -97,7 +97,7 @@ $colorYellow: #c9853c;
     &Logo {
         z-index: 10;
         position: absolute;
-        width: 85%;
+        width: 85vw;
         max-height: 30vh;
         transform: translateY(-100%);
     }
@@ -105,7 +105,7 @@ $colorYellow: #c9853c;
     &Leaf {
         z-index: 10;
         position: absolute;
-        width: 40%;
+        width: 40vw;
         max-height: 50vh;
         transform: translateY(10%);
     }
