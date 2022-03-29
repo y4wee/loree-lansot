@@ -1,7 +1,7 @@
 <template>
     <div class="accueil">
-        <img src="~/assets/accueil141.png" alt="image accueil" class="accueilImg">
-        <div class="accueilOverlay"></div>
+        <!-- <img src="~/assets/accueil141.png" alt="image accueil" class="accueilImg"> -->
+        <!-- <div class="accueilOverlay"></div> -->
         <Logo 
         class="accueilLogo"
         :animation = logoAnimation
