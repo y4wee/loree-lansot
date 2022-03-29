@@ -8,6 +8,7 @@
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
+          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
         </div>
       </div>
       <div class="presentationSelfPhoto">
@@ -50,17 +51,17 @@ export default {
     },
     methods: {
       headTranslate: function() {
-        let length = document.querySelector(".presentationSelfHeadContainer").offsetWidth
+        let length = document.querySelector(".presentationSelfHeadText").offsetWidth
         console.log(innerWidth)
         gsap.to(".presentationSelfHeadContainer", {
-          translateX: `-${length - innerWidth}px`,
-          ease: "none",
+          translateX: `-${length * 2}px`,
+          ease: "power1.inOut",
           scrollTrigger: {
             trigger: ".accueil",
             markers: true,
             start: "top top",
             end: "120% top",
-            scrub: 0.7
+            scrub: 1
           },
         })
       }
@@ -101,17 +102,17 @@ $colorYellow: #c9853c;
         display: flex;
         flex-wrap: nowrap;
         white-space: nowrap;
-        will-change: transform;
       }
       &Text {
         width: 100%;
         text-align: center;
         font-size: 7vh;
         color: $colorWhite;
+        user-select: none;
       }
     }
     &Photo {
-      height: 250px;
+      height: 350px;
       width: 100%;
       position: relative;
       display: flex;
