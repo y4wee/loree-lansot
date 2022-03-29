@@ -18,7 +18,7 @@ export default {
     name: "SectionPresentation",
     mounted() {
       gsap.registerPlugin(ScrollTrigger);
-      this.skewScrolling();
+      // this.skewScrolling();
     },
     methods: {
       skewScrolling: function() {

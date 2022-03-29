@@ -86,6 +86,7 @@ $colorYellow: #c9853c;
     background-size: cover;
 
     &Img {
+        z-index: 1;
         position: absolute;
         object-position: 50% 30%;
         object-fit: cover;
