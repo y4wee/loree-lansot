@@ -29,9 +29,11 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
+        // this.disableScrolling();
         gsap.fromTo(".accueilOverlay", 
             {opacity: 1},
-            {opacity: 0.3, duration: 0.8, delay: 1, onComplete: this.parallaxScroll})
+            {opacity: 0.3, duration: 0.8, delay: 1, })
+        this.parallaxScroll();    
     },
     methods: {
         parallaxScroll: function() {
@@ -48,17 +50,26 @@ export default {
                 },
             })
             // opacity overlay on scroll
-            gsap.to(".accueilOverlay", {
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: ".accueil",
-                    // markers: true,
-                    start: "50% top",
-                    end: "70% top",
-                    scrub: 1
-                },
-            })
-        }
+            // gsap.to(".accueilOverlay", {
+            //     opacity: 1,
+            //     scrollTrigger: {
+            //         trigger: ".accueil",
+            //         // markers: true,
+            //         start: "50% top",
+            //         end: "70% top",
+            //         scrub: 1
+            //     },
+            // })
+        },
+        noScrolling: function() {
+            window.scrollTo(0, 0);
+        },
+        disableScrolling: function() {
+            window.addEventListener("scroll", this.noScrolling)
+        },
+        enableScrolling: function() {
+            window.removeEventListener("scroll", this.noScrolling)
+        },
     },
 }
 
@@ -88,6 +99,7 @@ $colorYellow: #c9853c;
         object-fit: cover;
         width: 100%;
         height: 100%;
+        will-change: transform;
     }
 
     &Logo {

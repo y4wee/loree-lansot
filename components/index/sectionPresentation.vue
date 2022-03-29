@@ -1,19 +1,40 @@
 <template>
   <div class="presentation">
     <section class="presentationSelf">
-      <h1>Qui Sommes nous...</h1>
+      <div class="presentationSelfHead">
+        <div class="presentationSelfHeadContainer">
+          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
+          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
+          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
+          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
+          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
+        </div>
+      </div>
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
         <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
           <circle cx="200" cy="200" r="200"/>
         </svg>
-
       </div>
-      <div class="presentationSelfText"></div>
+      <div class="presentationSelfText">
+        Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère, <br/>
+        que nous rénovons dans un style alliant modernité & ancient.<br/><br/>
+
+        Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés, <br/>
+        dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à <br/>
+        cet endroit ce cadre si particulier !<br/><br/>
+
+        Venez vous ressourceer tout au long de l'année, dans notre ancienne ferme<br/>
+        du XVII° siècle.<br/>
+        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons<br/>
+        à votre disposition trois chambres d'hôtes spacieuses.
+      </div>
     </section>
+
     <section class="presentationHouse">
       <div class="presentationHousePhoto"></div>
     </section>
+
   </div>
 </template>
 
@@ -25,8 +46,24 @@ export default {
     name: "SectionPresentation",
     mounted() {
       gsap.registerPlugin(ScrollTrigger);
+      this.headTranslate();
     },
     methods: {
+      headTranslate: function() {
+        let length = document.querySelector(".presentationSelfHeadContainer").offsetWidth
+        console.log(innerWidth)
+        gsap.to(".presentationSelfHeadContainer", {
+          translateX: `-${length - innerWidth}px`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".accueil",
+            markers: true,
+            start: "top top",
+            end: "120% top",
+            scrub: 0.7
+          },
+        })
+      }
     },
 }
 
@@ -45,20 +82,33 @@ $colorYellow: #c9853c;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background: #0d1317;
-  border-top: solid 10px $colorWhite;
 
   &Self {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    & h1 {
-      font-size: 5vh;
-      text-align: center;
-      color: $colorWhite;
+    overflow-x: hidden;
+    &Head {
+      display: flex;
+      width: 100%;
+      border-top: solid 10px $colorWhite;
+      border-bottom: solid 10px $colorWhite;
+      &Container {
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        will-change: transform;
+      }
+      &Text {
+        width: 100%;
+        text-align: center;
+        font-size: 7vh;
+        color: $colorWhite;
+      }
     }
     &Photo {
       height: 250px;
@@ -85,6 +135,11 @@ $colorYellow: #c9853c;
         stroke-width: 3px;
         overflow: visible;
       }
+    }
+
+    &Text {
+      background: $colorWhite;
+      max-width: 100%;
     }
   }
 
