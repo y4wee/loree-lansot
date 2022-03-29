@@ -95,15 +95,15 @@ $colorYellow: #c9853c;
     }
 
     &Logo {
-        & svg {
-            width: 85vw;
-            max-height: 30vh;
-        }
+        width: 85vw;
+        max-height: 30vh;
         z-index: 10;
         position: absolute;
+        top: 10%;
+        // width: 35%;
         // width: 300px;
         // max-height: 300px;
-        transform: translateY(-100%);
+        // transform: translateY(-100%);
     }
 
     &Leaf {
@@ -113,7 +113,8 @@ $colorYellow: #c9853c;
         }
         z-index: 10;
         position: absolute;
-        transform: translateY(10%);
+        top: 35%;
+        // transform: translateY(10%);
     }
 
     &Overlay {

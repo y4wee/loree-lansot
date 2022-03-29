@@ -1,12 +1,12 @@
 <template>
   <div class="header">
-    <Logo 
+    <!-- <Logo 
     class="headerLogo"
     :animation = logoAnimation
     :className = logoClass
     :logoFill = logoFill
     :logoStroke = logoStroke
-    />
+    /> -->
     <ButtonNav />
   </div>
 </template>

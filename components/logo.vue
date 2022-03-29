@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <svg :class="'logoSvg ' + className" height="100%" width="100%" viewBox="0 0 446 302" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <svg :class="'logoSvg ' + className" height="auto" width="auto" viewBox="0 0 446 302" fill="none" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <g>
             <path class="feuille feuille1" d="M260.85 5.9C250.55 17.25 248.35 26.65 253.6 36.6C258.3 45.6 258.7 45.35 259.25 33.35C259.5 27.35 260.25 21.35 260.85 20C261.7 18.1 261.8 20.9 261.35 31.75C260.65 47.95 260.45 47.65 267.95 41.15C274.25 35.65 281.05 32.55 275.45 37.7C273.8 39.25 270.45 42.1 268.05 44.05C261.4 49.45 265.75 51.95 276.25 48.8C281.3 47.3 289.9 35.1 290 29.25C290 29.1 286.75 29 282.75 29H275.5V23.75C275.5 19.5 274.6 16.7 270.9 9.2L266.25 -0.0999977L260.85 5.9Z" fill="#8FBF21"/>
         </g>
@@ -99,6 +99,8 @@ export default {
 svg {
     overflow: visible;
     z-index: 10;
+    width: 85vw;
+    max-height: 30vh;
 }
 .feuille1 {
     transform-origin: 58% 16%;
