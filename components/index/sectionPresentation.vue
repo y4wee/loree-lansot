@@ -58,7 +58,9 @@
     </section>
 
     <section class="presentationHouse">
-      <Parallax />
+      <Parallax 
+      :images = images
+      />
     </section>
 
   </div>
@@ -73,7 +75,10 @@ export default {
     data() {
       return {
         images: [
-          
+          {url: require("~/assets/house1.png")},
+          {url: require("~/assets/house2.png")},
+          {url: require("~/assets/house3.png")},
+          {url: require("~/assets/house4.png")},
         ],
       }
     },
