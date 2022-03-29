@@ -100,7 +100,6 @@ svg {
     overflow: visible;
     z-index: 10;
     max-width: 85vw;
-    // height: 35vh;
 }
 .feuille1 {
     transform-origin: 58% 16%;

@@ -55,8 +55,6 @@ $colorYellow: #c9853c;
         &Svg {
             overflow: visible;
             z-index: 10;
-            // width: 40vw;
-            // height: 50vh;
         }
         &SvgLine {
             stroke: #f7f6f8;

@@ -1,7 +1,7 @@
 <template>
     <div class="accueil">
-        <!-- <img src="~/assets/accueil141.png" alt="image accueil" class="accueilImg"> -->
-        <!-- <div class="accueilOverlay"></div> -->
+        <img src="~/assets/accueil141.png" alt="image accueil" class="accueilImg">
+        <div class="accueilOverlay"></div>
         <Logo 
         class="accueilLogo"
         :animation = logoAnimation
@@ -40,7 +40,6 @@ export default {
                 yPercent: 30,
                 ease: "none",
                 scrollTrigger: {
-                    // scroller: ".main",
                     trigger: ".accueilImg",
                     // markers: true,
                     start: "top top",
@@ -52,7 +51,6 @@ export default {
             gsap.to(".accueilOverlay", {
                 opacity: 1,
                 scrollTrigger: {
-                    // scroller: ".main",
                     trigger: ".accueil",
                     // markers: true,
                     start: "50% top",
@@ -78,12 +76,10 @@ $colorYellow: #c9853c;
 .accueil {
     display: flex;
     align-items: center;
-    // justify-content: center;
     flex-direction: column;
     position: relative;
     height: 100vh;
     overflow: hidden;
-    background: #0d1317;
 
     &Img {
         z-index: 1;
@@ -97,19 +93,10 @@ $colorYellow: #c9853c;
     &Logo {
         margin-top: 3%;
         z-index: 10;
-        // position: absolute;
-        // top: 10%;
-        // width: 35%;
-        // width: 300px;
-        // max-height: 300px;
-        // transform: translateY(-100%);
     }
 
     &Leaf {
         z-index: 10;
-        // position: absolute;
-        // top: 35%;
-        // transform: translateY(10%);
     }
 
     &Overlay {
