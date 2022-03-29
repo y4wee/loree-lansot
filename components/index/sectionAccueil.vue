@@ -78,8 +78,8 @@ $colorYellow: #c9853c;
 .accueil {
     display: flex;
     align-items: center;
-    justify-content: center;
-    // flex-direction: column;
+    // justify-content: center;
+    flex-direction: column;
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -95,11 +95,10 @@ $colorYellow: #c9853c;
     }
 
     &Logo {
-        width: 85vw;
-        max-height: 30vh;
+        margin-top: 3%;
         z-index: 10;
-        position: absolute;
-        top: 10%;
+        // position: absolute;
+        // top: 10%;
         // width: 35%;
         // width: 300px;
         // max-height: 300px;
@@ -108,8 +107,8 @@ $colorYellow: #c9853c;
 
     &Leaf {
         z-index: 10;
-        position: absolute;
-        top: 35%;
+        // position: absolute;
+        // top: 35%;
         // transform: translateY(10%);
     }
 
