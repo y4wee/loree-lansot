@@ -107,10 +107,6 @@ $colorYellow: #c9853c;
     }
 
     &Leaf {
-        & svg {
-            width: 40vw;
-            max-height: 50vh;
-        }
         z-index: 10;
         position: absolute;
         top: 35%;
