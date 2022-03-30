@@ -28,7 +28,7 @@ export default {
                     ease: "none",
                     scrollTrigger: {
                         trigger: image,
-                        markers: true,
+                        // markers: true,
                         start: "top top",
                         end: "bottom top",
                         scrub: true
@@ -54,6 +54,7 @@ $colorYellow: #c9853c;
     .parallax {
         width: 100%;
         &Container {
+            z-index: 1;
             height: 100vh;
             width: 100%;
             &Image {

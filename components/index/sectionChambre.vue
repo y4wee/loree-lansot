@@ -20,6 +20,7 @@ export default {
 <style scoped lang="scss">
 
 .chambre {
+  z-index: 1;
   height: 100vh;
   // width: 100vw;
   background: #c9853c;

@@ -9,7 +9,7 @@
         :logoFill = logoFill
         :logoStroke = logoStroke
         />
-        <Leaf class="accueilLeaf" />
+        <!-- <Leaf class="accueilLeaf" /> -->
     </div>
 </template>
 
@@ -103,7 +103,8 @@ $colorYellow: #c9853c;
     }
 
     &Logo {
-        margin-top: 3%;
+        position: relative;
+        top: 20%;
         z-index: 10;
     }
 

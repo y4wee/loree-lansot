@@ -43,15 +43,16 @@
 
       </div>
       <div class="presentationSelfText">
-        Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère, <br/>
+        <div class="presentationSelfTextBorder"></div>
+        Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère,
         que nous rénovons dans un style alliant modernité & ancient.<br/><br/>
 
         Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
-        dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à <br/>
+        dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
         cet endroit ce cadre si particulier !<br/><br/>
 
         Venez vous ressourceer tout au long de l'année, dans notre ancienne ferme
-        du XVII° siècle.<br/>
+        du XVII° siècle.
         Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
         à votre disposition trois chambres d'hôtes spacieuses.
       </div>
@@ -106,6 +107,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$colorBack: #0d1317;
+$colorText: #f7f6f8;
+$colorBorder: #f7f6f8;
+
 $colorBrown: #291315;
 $colorGreen: #8FBF21; //good
 $colorWhite: #f7f6f8; //good
@@ -120,8 +125,8 @@ $colorYellow: #c9853c;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background: #0d1317;
-
+  background: $colorBack;
+// section presentation
   &Self {
     display: flex;
     flex-direction: column;
@@ -129,11 +134,12 @@ $colorYellow: #c9853c;
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    // headline en translate
     &Head {
       display: flex;
       width: 100%;
-      border-top: solid 10px $colorWhite;
-      border-bottom: solid 10px $colorWhite;
+      border-top: solid 8px $colorBorder;
+      border-bottom: solid 8px $colorBorder;
       &Container {
         display: flex;
         flex-wrap: nowrap;
@@ -143,11 +149,13 @@ $colorYellow: #c9853c;
       &Text {
         width: 100%;
         text-align: center;
-        font-size: 7vh;
-        color: $colorWhite;
+        font-size: 5.5vh;
+        color: $colorText;
         user-select: none;
+        font-family: 'Bevan', cursive;
       }
     }
+    // partie photo mask svg presentation
     &Photo {
       height: 350px;
       width: 100%;
@@ -171,22 +179,32 @@ $colorYellow: #c9853c;
         overflow: visible;
       }
       &Circle {
-        stroke: $colorWhite;
-        stroke-width: 3px;
+        stroke: $colorText;
+        stroke-width: 5px;
         fill: none;
       }
     }
-
+// partie text presentation
     &Text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 5px;
-      background: $colorWhite;
       font-size: 3vh;
+      color: $colorText;
       text-align: center;
       max-width: 700px;
+      font-family: 'Ultra', serif;
+      &Border {
+        width: 100%;
+        border-top: solid 8px $colorBorder;
+        margin-bottom: 25px;
+        transform: scaleX(0);
+      }
     }
   }
-
   &House {
+    margin-top: 50px;
     width: 100%;
   }
 }
