@@ -76,6 +76,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$colorMain: #131b1e;
+$colorTwo: #f7f6f8;
+$colorThree: #8FBF21;
+
 $colorBrown: #291315;
 $colorGreen: #8FBF21; //good
 $colorWhite: #f7f6f8; //good
@@ -123,7 +127,7 @@ $colorYellow: #c9853c;
         // background: rgba(41, 19, 21, 1);
         // background: #232832;
         // background: #0d1317;
-        background: #0d1317;
+        background: $colorMain;
         opacity: 0.3;
         z-index: 1;
     }

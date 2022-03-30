@@ -107,9 +107,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$colorBack: #0d1317;
-$colorText: #f7f6f8;
-$colorBorder: #f7f6f8;
+$colorMain: #131b1e;
+$colorTwo: #f7f6f8;
+$colorThree: #8FBF21;
 
 $colorBrown: #291315;
 $colorGreen: #8FBF21; //good
@@ -125,7 +125,7 @@ $colorYellow: #c9853c;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background: $colorBack;
+  background: $colorMain;
 // section presentation
   &Self {
     display: flex;
@@ -138,8 +138,8 @@ $colorYellow: #c9853c;
     &Head {
       display: flex;
       width: 100%;
-      border-top: solid 8px $colorBorder;
-      border-bottom: solid 8px $colorBorder;
+      border-top: solid 8px $colorTwo;
+      border-bottom: solid 8px $colorTwo;
       &Container {
         display: flex;
         flex-wrap: nowrap;
@@ -150,7 +150,7 @@ $colorYellow: #c9853c;
         width: 100%;
         text-align: center;
         font-size: 5.5vh;
-        color: $colorText;
+        color: $colorTwo;
         user-select: none;
         font-family: 'Bevan', cursive;
       }
@@ -179,7 +179,7 @@ $colorYellow: #c9853c;
         overflow: visible;
       }
       &Circle {
-        stroke: $colorText;
+        stroke: $colorTwo;
         stroke-width: 5px;
         fill: none;
       }
@@ -191,13 +191,13 @@ $colorYellow: #c9853c;
       align-items: center;
       padding: 5px;
       font-size: 3vh;
-      color: $colorText;
+      color: $colorTwo;
       text-align: center;
       max-width: 700px;
       font-family: 'Ultra', serif;
       &Border {
         width: 100%;
-        border-top: solid 8px $colorBorder;
+        border-top: solid 8px $colorTwo;
         margin-bottom: 25px;
         transform: scaleX(0);
       }
