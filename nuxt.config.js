@@ -29,7 +29,17 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-fonts'
   ],
+  googleFonts: {
+    families: {
+      Roboto: true,
+      'Josefin+Sans': true,
+      Lato: [100, 300],
+      Ultra: true,
+      Bevan: true,
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
