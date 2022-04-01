@@ -1,29 +1,108 @@
 <template>
   <div class="chambre">
+    <div class="chambreDetail">
+      <div class="chambreDetailTitre">
+        Nos Chambres
+      </div>
+      <div class="chambreDetailText">
+        Venez vous ressourcer tout au long de l'année, dans notre ancienne ferme
+        du XVII° siècle.
+        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
+        à votre disposition trois chambres d'hôtes spacieuses.
+      </div>
+    </div>
     
+
+    <ChambreParallax 
+    :chambres = chambres
+    />
+
   </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
+import ChambreParallax from './chambreParallax.vue';
 
 export default {
     name: "SectionChambre",
+    data() {
+        return {
+            chambres: [
+                {
+                    name: "L'Atelier",
+                    image: require("~/assets/atelier.png"),
+                },
+                {
+                    name: "La Mansarde",
+                    image: require("~/assets/mansarde.png"),
+                },
+                {
+                    name: "La Romance",
+                    image: require("~/assets/romance.png"),
+                },
+            ]
+        };
+    },
     mounted() {
     },
-    methods: {
-    },
+    methods: {},
+    components: { ChambreParallax }
 }
 
 </script>
 
 <style scoped lang="scss">
+@import url('http://fonts.cdnfonts.com/css/ballet-harmony');
+
+$colorMain: #131b1e;
+$colorTwo: #f7f6f8;
+$colorThree: #8FBF21;
+
+$colorBrown: #291315;
+$colorGreen: #8FBF21; //good
+$colorWhite: #f7f6f8; //good
+$colorBlue: #131b1e;
+$colorGray: #d1cfcf;
+$colorBeige: #c0b193;
+$colorOrange: #e25827;
+$colorYellow: #c9853c;
 
 .chambre {
   z-index: 1;
-  height: 100vh;
-  // width: 100vw;
-  background: #c9853c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: $colorYellow;
+  &Detail {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    border-top: solid 10px $colorBlue;
+    border-bottom: solid 10px $colorBlue;
+
+    &Titre {
+      display: flex;
+      align-items: center;
+      // height: 20vh;
+      font-family: 'Paytone One', sans-serif;
+      color: $colorBlue;
+      font-size: 8vh;
+      margin: 5vh 10px;
+    }
+
+    &Text {
+      font-size: 3vh;
+      // width: calc(100% - 20px);
+      max-width: 700px;
+      color: $colorBlue;
+      margin: 10px;
+      // font-weight: bold;
+    }
+  }
 }
 
 </style>

@@ -16,10 +16,12 @@ export default {
 
 <style lang="scss">
 body {
-  margin: 0;
+    margin: 0;
 //   height: 100vh;
 //   width: 100vw;
 //   overflow: none;
+    font-family: 'Noto Serif JP', serif;
+    word-spacing: 4px;
 }
 
 </style>

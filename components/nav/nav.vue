@@ -39,8 +39,8 @@ export default {
             let tl = gsap.timeline();
             if(this.buttonOn) {
                 tl.to(".navButtonBarre.mid", { scaleX: 0, duration: 0.2, ease: "power2.in" })
-                tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#e25827", ease: "power2.inOut" }, "-=0.15")
-                tl.to(".navButtonBarre.bottom", { rotateZ: 42, duration: 0.3, background: "#e25827", ease: "power2.inOut" }, "-=0.3")
+                tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.15")
+                tl.to(".navButtonBarre.bottom", { rotateZ: 42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.3")
                 tl.to(".navOverlay", { opacity: 1, duration: 0.3, ease: "none" }, "-=0.2")
                 tl.to(".navMainSvg", { opacity: 1, duration: 0, onComplete: this.showSvg })
 
@@ -77,10 +77,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$colorBrown: #291315;
 $colorGreen: #8FBF21; //good
 $colorWhite: #f7f6f8; //good
-$colorBlue: #0d1317;
-$colorBlueLight: #131b1e;
+$colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;

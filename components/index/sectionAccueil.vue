@@ -83,7 +83,7 @@ $colorThree: #8FBF21;
 $colorBrown: #291315;
 $colorGreen: #8FBF21; //good
 $colorWhite: #f7f6f8; //good
-$colorBlue: #0d1317;
+$colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;

@@ -50,11 +50,6 @@
         Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
         dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
         cet endroit ce cadre si particulier !<br/><br/>
-
-        Venez vous ressourceer tout au long de l'année, dans notre ancienne ferme
-        du XVII° siècle.
-        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
-        à votre disposition trois chambres d'hôtes spacieuses.
       </div>
     </section>
 
@@ -116,7 +111,7 @@ $colorThree: #8FBF21;
 $colorBrown: #291315;
 $colorGreen: #8FBF21; //good
 $colorWhite: #f7f6f8; //good
-$colorBlue: #0d1317;
+$colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
@@ -151,10 +146,10 @@ $colorYellow: #c9853c;
       &Text {
         width: 100%;
         text-align: center;
-        font-size: 5.5vh;
+        font-size: 4.5vh;
         color: $colorTwo;
         user-select: none;
-        font-family: 'Bevan', cursive;
+        font-family: 'Paytone One', sans-serif;
       }
     }
     // partie photo mask svg presentation
@@ -191,12 +186,11 @@ $colorYellow: #c9853c;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 5px;
+      max-width: 700px;
+      margin: 10px;
       font-size: 3vh;
       color: $colorTwo;
-      text-align: center;
-      max-width: 700px;
-      font-family: 'Ultra', serif;
+      //border pour aniamtion scroll possible
       &Border {
         width: 100%;
         border-top: solid 8px $colorTwo;

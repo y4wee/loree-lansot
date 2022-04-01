@@ -38,6 +38,17 @@ export default {
       Lato: [100, 300],
       Ultra: true,
       Bevan: true,
+      Lobster: true,
+      Shrikhand: true,
+      Pattaya: true,
+      'Bree Serif': true,
+      'Fugaz One': true,
+      Lalezar: true,
+      'Lilita One': true,
+      'Noto Serif JP': true,
+      'Oleo Script': true,
+      'Paytone One': true,
+      'Secular One': true,
     }
   },
 
