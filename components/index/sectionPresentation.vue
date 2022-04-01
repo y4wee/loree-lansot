@@ -54,9 +54,12 @@
     </section>
 
     <section class="presentationHouse">
-      <Parallax
-      :images = images
-      />
+      <div class="presentationHouseContainer" 
+        v-for="image in images" 
+        :key="image.url"
+        >
+            <img :src="image.url" alt="photo maison l'orée de lansot" class="presentationHouseContainerImage">
+        </div>
     </section>
 
   </div>
@@ -65,7 +68,6 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Parallax from './parallax.vue';
 
 export default {
     name: "SectionPresentation",
@@ -98,7 +100,6 @@ export default {
             });
         }
     },
-    components: { Parallax }
 }
 
 </script>
@@ -202,6 +203,17 @@ $colorYellow: #c9853c;
   &House {
     margin-top: 50px;
     width: 100%;
+    &Container {
+      z-index: 1;
+      height: 100vh;
+      width: 100%;
+      &Image {
+        object-position: center;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 }
 
