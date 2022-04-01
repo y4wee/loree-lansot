@@ -79,7 +79,6 @@ $colorYellow: #c9853c;
   &Detail {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     width: 100%;
     border-top: solid 10px $colorBlue;
     border-bottom: solid 10px $colorBlue;
@@ -91,7 +90,7 @@ $colorYellow: #c9853c;
       font-family: 'Paytone One', sans-serif;
       color: $colorBlue;
       font-size: 8vh;
-      margin: 5vh 10px;
+      margin: 40px 10px;
     }
 
     &Text {
@@ -99,7 +98,7 @@ $colorYellow: #c9853c;
       // width: calc(100% - 20px);
       max-width: 700px;
       color: $colorBlue;
-      margin: 10px;
+      margin: 0 10px 60px 10px;
       // font-weight: bold;
     }
   }
