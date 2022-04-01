@@ -16,6 +16,7 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Logo from '../svg/logo.vue';
 
 export default {
     name: "SectionAccueil",
@@ -25,18 +26,16 @@ export default {
             logoClass: "logoLoad",
             logoFill: "#f7f6f8",
             logoStroke: "#f7f6f8",
-        }
+        };
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         // this.disableScrolling();
-        gsap.fromTo(".accueilOverlay", 
-            {opacity: 1},
-            {opacity: 0.3, duration: 0.8, delay: 1, })
-        this.parallaxScroll();    
+        gsap.fromTo(".accueilOverlay", { opacity: 1 }, { opacity: 0.3, duration: 0.8, delay: 1, });
+        this.parallaxScroll();
     },
     methods: {
-        parallaxScroll: function() {
+        parallaxScroll: function () {
             // parallax img accueil
             gsap.to(".accueilImg", {
                 yPercent: 40,
@@ -48,7 +47,7 @@ export default {
                     end: "bottom top",
                     scrub: true
                 },
-            })
+            });
             // opacity overlay on scroll
             // gsap.to(".accueilOverlay", {
             //     opacity: 1,
@@ -61,16 +60,17 @@ export default {
             //     },
             // })
         },
-        noScrolling: function() {
+        noScrolling: function () {
             window.scrollTo(0, 0);
         },
-        disableScrolling: function() {
-            window.addEventListener("scroll", this.noScrolling)
+        disableScrolling: function () {
+            window.addEventListener("scroll", this.noScrolling);
         },
-        enableScrolling: function() {
-            window.removeEventListener("scroll", this.noScrolling)
+        enableScrolling: function () {
+            window.removeEventListener("scroll", this.noScrolling);
         },
     },
+    components: { Logo }
 }
 
 </script>
@@ -95,7 +95,6 @@ $colorYellow: #c9853c;
     position: relative;
     height: 100vh;
     overflow: hidden;
-
     &Img {
         z-index: 1;
         position: absolute;

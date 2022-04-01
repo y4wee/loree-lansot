@@ -59,7 +59,7 @@
     </section>
 
     <section class="presentationHouse">
-      <Parallax 
+      <Parallax
       :images = images
       />
     </section>
@@ -70,18 +70,19 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Parallax from './parallax.vue';
 
 export default {
     name: "SectionPresentation",
     data() {
-      return {
-        images: [
-          {url: require("~/assets/house1.png")},
-          {url: require("~/assets/house2.png")},
-          {url: require("~/assets/house3.png")},
-          {url: require("~/assets/house4.png")},
-        ],
-      }
+        return {
+            images: [
+                { url: require("~/assets/house1.png") },
+                { url: require("~/assets/house2.png") },
+                { url: require("~/assets/house3.png") },
+                { url: require("~/assets/house4.png") },
+            ],
+        };
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
@@ -102,6 +103,7 @@ export default {
             });
         }
     },
+    components: { Parallax }
 }
 
 </script>

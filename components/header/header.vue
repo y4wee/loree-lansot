@@ -7,7 +7,6 @@
     :logoFill = logoFill
     :logoStroke = logoStroke
     /> -->
-    <ButtonNav />
   </div>
 </template>
 
@@ -26,16 +25,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$colorGreen: #8FBF21; //good
+$colorWhite: #f7f6f8; //good
+$colorBlue: #0d1317;
+$colorBlueLight: #131b1e;
+$colorGray: #d1cfcf;
+$colorBeige: #c0b193;
+$colorOrange: #e25827;
+$colorYellow: #c9853c;
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row-reverse;
     position: fixed;
-    z-index: 10;
+    z-index: 20;
     width: 100vw;
     height: 8vh;
-    background: rgba(41, 19, 21, 1);
-    transform: translateY(-110%);
+    // background: rgba(41, 19, 21, 1);
+    // transform: translateY(-110%);
+    &Button {
+      z-index: 25;
+    }
   }
   .headerLogo {
     margin-left: 2%;

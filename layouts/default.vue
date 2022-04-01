@@ -1,15 +1,16 @@
 <template>
     <div>
-        <Header/>
-        <Nav/>
+        <Nav />
         <Nuxt/>
         <Footer/>
     </div>
 </template>
 
 <script>
+import Nav from "~/components/nav/nav.vue";
 export default {
-    name: 'IndexPage'
+    name: "IndexPage",
+    components: { Nav }
 }
 </script>
 

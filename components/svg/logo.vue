@@ -98,7 +98,6 @@ export default {
 }
 svg {
     overflow: visible;
-    z-index: 10;
     max-width: 85vw;
 }
 .feuille1 {
