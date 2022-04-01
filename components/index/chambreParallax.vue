@@ -49,7 +49,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url('http://fonts.cdnfonts.com/css/ballet-harmony');
 
 $colorBrown: #291315;
 $colorGreen: #8FBF21; //good
