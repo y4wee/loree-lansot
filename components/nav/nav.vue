@@ -132,13 +132,14 @@ $colorYellow: #c9853c;
     }
     &Main {
         display: flex;
-        align-items: center;
         justify-content: flex-end;
         z-index: 25;
         height: 100%;
         width: 100%;
         max-width: 350px;
         &Svg {
+            position: relative;
+            top: 85px;
             height: 80vh;
             width: auto;
             stroke: $colorWhite;
