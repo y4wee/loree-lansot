@@ -55,10 +55,10 @@
 
     <section class="presentationHouse">
       <div class="presentationHouseContainer" 
-        v-for="image in images" 
-        :key="image.url"
+        v-for="(image, index) in images" 
+        :key="index"
         >
-            <img :src="image.url" alt="photo maison l'orée de lansot" class="presentationHouseContainerImage">
+            <img :src="image.url" alt="photo maison l'orée de lansot" :class="'presentationHouseContainerImage ' + 'image' + index">
         </div>
     </section>
 
@@ -124,6 +124,7 @@ $colorYellow: #c9853c;
   min-height: 100vh;
   width: 100%;
   background: $colorMain;
+  border-bottom: solid 10px $colorWhite;
 // section presentation
   &Self {
     display: flex;
@@ -201,17 +202,37 @@ $colorYellow: #c9853c;
     }
   }
   &House {
-    margin-top: 50px;
+    margin: 50px 0;
     width: 100%;
     &Container {
       z-index: 1;
-      height: 100vh;
+      display: flex;
+      flex-direction: column;
       width: 100%;
+      // test animation translate 5 5 and shadow ease
       &Image {
         object-position: center;
         object-fit: cover;
-        height: 100%;
-        width: 100%;
+        height: 60vh;
+        width: 80%;
+        border: solid 5px $colorWhite;
+        margin: 10px;
+        &.image0 {
+          align-self: start;
+          box-shadow: 5px 5px 10px 0;
+        }
+        &.image1 {
+          align-self: end;
+          box-shadow: -5px 5px 10px 0;
+        }
+        &.image2 {
+          align-self: start;
+          box-shadow: 5px 5px 10px 0;
+        }
+        &.image3 {
+          align-self: end;
+          box-shadow: -5px 5px 10px 0;
+        }
       }
     }
   }
