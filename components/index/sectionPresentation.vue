@@ -1,16 +1,6 @@
 <template>
   <div class="presentation">
     <section class="presentationSelf">
-      <!-- <div class="presentationSelfHead">
-        <div class="presentationSelfHeadContainer">
-          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
-          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
-          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
-          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
-          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
-          <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
-        </div>
-      </div> -->
       <h1>Qui sommes nous ?</h1>
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
@@ -118,7 +108,7 @@ export default {
           duration: 0.8,
           scrollTrigger: {
             trigger: ".presentationSelfText",
-            markers: true,
+            // markers: true,
             start: "top 70%",
             end: "bottom 70%",
           },
@@ -136,26 +126,13 @@ export default {
             duration: 0.8,
             scrollTrigger: {
               trigger: image,
-              markers: true,
+              // markers: true,
               start: "top 70%",
               end: "bottom 70%",
             },
           });
         })
       },
-        headTranslate: function () {
-            gsap.to(".presentationSelfHeadContainer", {
-                xPercent: -25,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".accueil",
-                    // markers: true,
-                    start: "top top",
-                    end: "120% top",
-                    scrub: 0.5
-                },
-            });
-        }
     },
 }
 
@@ -196,27 +173,6 @@ $colorYellow: #c9853c;
       font-size: 3.5rem;
       color: $colorWhite;
     }
-    // headline en translate
-    // &Head {
-    //   display: flex;
-    //   width: 100%;
-    //   border-top: solid 8px $colorTwo;
-    //   border-bottom: solid 8px $colorTwo;
-    //   &Container {
-    //     display: flex;
-    //     flex-wrap: nowrap;
-    //     white-space: nowrap;
-    //     will-change: transform;
-    //   }
-    //   &Text {
-    //     width: 100%;
-    //     text-align: center;
-    //     font-size: 4.5vh;
-    //     color: $colorTwo;
-    //     user-select: none;
-    //     font-family: 'Paytone One', sans-serif;
-    //   }
-    // }
     // partie photo mask svg presentation
     &Photo {
       height: 350px;
