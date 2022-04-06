@@ -34,7 +34,7 @@ export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         // this.disableScrolling();
-        gsap.fromTo(".accueilOverlay", { opacity: 1 }, { opacity: 0.3, duration: 0.8, delay: 1, });
+        gsap.fromTo(".accueilOverlay", { opacity: 1 }, { opacity: 0, duration: 0.8, delay: 1, });
         this.parallaxScroll();
     },
     methods: {
@@ -144,7 +144,7 @@ $colorYellow: #c9853c;
         // background: #232832;
         // background: #0d1317;
         background: $colorMain;
-        opacity: 0.3;
+        opacity: 0;
         z-index: 5;
     }
 }
