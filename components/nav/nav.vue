@@ -55,11 +55,11 @@ export default {
                         clearTimeout(myTimeout);
                         myTimeout = setTimeout(() => {
                             this.showNavButton();
-                        }, 450)
+                        }, 400)
                     } else {
                         myTimeout = setTimeout(() => {
                             this.showNavButton();
-                        }, 450)
+                        }, 400)
                     }
                 }
                 
