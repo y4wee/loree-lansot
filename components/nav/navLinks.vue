@@ -1,18 +1,22 @@
 <template>
     <div class="navLinks">
-        <div v-for="(link, index) in links" :key="index" :class="'navLinksText ' + link.name" :data-hash="link.hash" > {{ link.name }} </div>
+        <div v-for="(link, index) in links" :key="index" 
+        :class="'navLinksText ' + link.name" 
+        :data-hash="link.hash" 
+        @click="linkScrollTo"
+        > {{ link.name }} </div>
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 export default {
     name: "NavLinks",
     props: ["navOn"],
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollToPlugin);
     },
     methods: {
         animationLinks: function() {
@@ -30,7 +34,13 @@ export default {
                     ease: "power1.inOut"
                 })
             })
-        }
+        },
+        linkScrollTo: function(e) {
+            let tl = gsap.timeline();
+
+            tl.to(window, {scrollTo: e.target.dataset.hash, duration: 1, ease: "power3.inOut"})
+            
+        },
     },
     data() {
         return {
