@@ -11,7 +11,7 @@
         />
         <div class="accueilPhone">
             <font-awesome-icon :icon="['fa', 'phone']" class="accueilPhoneIcon" />
-            05.56.25.85.23
+            <a href="tel:0612186397">- 06.12.18.63.97</a>
         </div>
     </div>
 </template>
@@ -111,6 +111,10 @@ $colorYellow: #c9853c;
             margin-right: 10px;
             font-size: 1.4em;
         }
+        & a {
+            text-decoration: none;
+            color: $colorYellow;
+        }
     }
     &Img {
         z-index: 1;
@@ -141,7 +145,7 @@ $colorYellow: #c9853c;
         // background: #0d1317;
         background: $colorMain;
         opacity: 0.3;
-        z-index: 1;
+        z-index: 5;
     }
 }
 

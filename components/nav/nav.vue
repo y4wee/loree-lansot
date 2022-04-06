@@ -46,30 +46,32 @@ export default {
         runTimeout: function() {
             let myTimeout;
             window.addEventListener("scroll", () => {
-                if(this.showButton) {
-                    this.showButton = !this.showButton;
-                    this.hideNavButton();
-                }
-                if(myTimeout != undefined) {
-                    clearTimeout(myTimeout);
-                    myTimeout = setTimeout(() => {
-                        this.showNavButton();
-                    }, 500)
-                } else {
-                    myTimeout = setTimeout(() => {
-                        this.showNavButton();
-                    }, 500)
+                if(!this.navOn) {
+                    if(this.showButton) {
+                        this.showButton = !this.showButton;
+                        this.hideNavButton();
+                    }
+                    if(myTimeout != undefined) {
+                        clearTimeout(myTimeout);
+                        myTimeout = setTimeout(() => {
+                            this.showNavButton();
+                        }, 450)
+                    } else {
+                        myTimeout = setTimeout(() => {
+                            this.showNavButton();
+                        }, 450)
+                    }
                 }
                 
             })
             
         },
         hideNavButton: function() {
-            gsap.to(".navButton", {xPercent: 300, duration: 0.2, ease: "back.in"})
+            gsap.to(".navButton", {xPercent: 300, duration: 0.25, ease: "back.in"})
         },
         showNavButton: function() {
             this.showButton = !this.showButton;
-            gsap.to(".navButton", {xPercent: 0, duration: 0.2, ease: "back.out"})
+            gsap.to(".navButton", {xPercent: 0, duration: 0.25, ease: "back.out"})
         },
         // animation quand clik sur le boutton nav
         navAnimation: function () {
