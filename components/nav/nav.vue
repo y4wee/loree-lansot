@@ -34,13 +34,43 @@ export default {
         return {
             buttonOn: true,
             navOn: false,
+            showButton: true,
         };
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
+        this.runTimeout();
         this.hideSvg();
     },
     methods: {
+        runTimeout: function() {
+            let myTimeout;
+            window.addEventListener("scroll", () => {
+                if(this.showButton) {
+                    this.showButton = !this.showButton;
+                    this.hideNavButton();
+                }
+                if(myTimeout != undefined) {
+                    clearTimeout(myTimeout);
+                    myTimeout = setTimeout(() => {
+                        this.showNavButton();
+                    }, 500)
+                } else {
+                    myTimeout = setTimeout(() => {
+                        this.showNavButton();
+                    }, 500)
+                }
+                
+            })
+            
+        },
+        hideNavButton: function() {
+            gsap.to(".navButton", {xPercent: 300, duration: 0.2, ease: "back.in"})
+        },
+        showNavButton: function() {
+            this.showButton = !this.showButton;
+            gsap.to(".navButton", {xPercent: 0, duration: 0.2, ease: "back.out"})
+        },
         // animation quand clik sur le boutton nav
         navAnimation: function () {
             let tl = gsap.timeline();
