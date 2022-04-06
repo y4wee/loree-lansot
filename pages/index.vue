@@ -1,9 +1,9 @@
 <template>
   <div class="main">
-    <SectionAccueil />
+    <SectionAccueil id="indexAccueil" />
     <SectionPresentation />
-    <SectionChambre />
-    <SectionDejeuner />
+    <SectionChambre id="indexChambre" />
+    <SectionDejeuner id="indexDejeuner" />
   </div>
 </template>
 

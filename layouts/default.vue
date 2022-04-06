@@ -2,7 +2,7 @@
     <div>
         <Nav />
         <Nuxt />
-        <Footer />
+        <Footer id="indexFooter"/>
     </div>
 </template>
 

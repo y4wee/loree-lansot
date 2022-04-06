@@ -85,7 +85,6 @@ $colorYellow: #c9853c;
     &Titre {
       display: flex;
       align-items: center;
-      // height: 20vh;
       font-family: 'Paytone One', sans-serif;
       color: $colorBlue;
       font-size: 7vh;
@@ -94,11 +93,9 @@ $colorYellow: #c9853c;
 
     &Text {
       font-size: 3vh;
-      // width: calc(100% - 20px);
       max-width: 700px;
       color: $colorBlue;
       margin: 0 10px 60px 10px;
-      // font-weight: bold;
     }
   }
 }

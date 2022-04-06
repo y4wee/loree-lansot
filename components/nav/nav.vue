@@ -14,6 +14,9 @@
                 <path data-duration="1" data-delay="0.5" class="navMainSvgPath p3" d="M96 445.014C91.3333 438.681 76.9 429.414 56.5 443.014M31 495.014C34.8333 502.681 40.9 520.414 34.5 530.014M88 502.014C91.5 505.847 95.9 516.814 85.5 530.014M177.5 448.514C186.5 454.681 206.3 471.014 213.5 487.014C222.5 507.014 223 509.014 227 511.514C230.2 513.514 237.667 517.014 241 518.514M151 536.014C146.167 537.681 136.1 544.014 134.5 556.014C132.5 571.014 134.5 580.514 125 593.014M175 589.514C179.167 590.014 187.9 591.814 189.5 595.014C191.1 598.214 191.5 604.014 191.5 606.514C191.167 608.181 191.9 612.214 197.5 615.014M220 456.514C225.5 458.681 225.3 460.814 242.5 460.014M107.5 561.514C114.5 549.014 110.5 529.514 109 523.014C107.5 516.514 109.5 510.014 110.5 502.014C111.5 494.014 123.5 477.014 134.5 464.014C143.3 453.614 141.833 441.347 140 436.514C144 442.681 151.5 457.614 149.5 468.014C147 481.014 136.5 489.014 140 502.014C142.8 512.414 143.167 512.681 143 511.514" stroke-linecap="round"/>
                 <path data-duration="0.9" data-delay="1.2" class="navMainSvgPath p4" d="M213.91 488C208.743 490.833 199.11 499.7 201.91 512.5M227.41 512.5C228.576 519 228.01 533 216.41 537C204.81 541 205.243 555.667 206.91 562.5M109.41 524C104.743 524.333 96.0095 529.3 98.4095 546.5M149.91 469C150.44 472 152.492 478.8 156.455 482M189.91 596C195.743 595.333 208.71 596.2 213.91 605"  stroke-linecap="round"/>
             </svg>
+            <NavLinks 
+            :navOn = navOn
+            />
         </div>
 
     </div>
@@ -22,39 +25,48 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import NavLinks from './navLinks.vue';
 
 export default {
     name: "Nav",
     data() {
         return {
             buttonOn: true,
-        }
+            navOn: false,
+        };
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         this.hideSvg();
     },
     methods: {
-        navAnimation: function() {
+        // animation quand clik sur le boutton nav
+        navAnimation: function () {
             let tl = gsap.timeline();
-            if(this.buttonOn) {
-                tl.to(".navButtonBarre.mid", { scaleX: 0, duration: 0.2, ease: "power2.in" })
-                tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.15")
-                tl.to(".navButtonBarre.bottom", { rotateZ: 42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.3")
-                tl.to(".navOverlay", { opacity: 1, duration: 0.3, ease: "none" }, "-=0.2")
-                tl.to(".navMainSvg", { opacity: 1, duration: 0, onComplete: this.showSvg })
+            if (this.buttonOn) {
+                tl.to(".nav", {pointerEvents: "all", duration: 0})
+                tl.to(".navButtonBarre.mid", { scaleX: 0, duration: 0.2, ease: "power2.in" });
+                tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.15");
+                tl.to(".navButtonBarre.bottom", { rotateZ: 42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.3");
+                tl.to(".navOverlay", { opacity: 1, duration: 0.3, ease: "none" }, "-=0.2");
+                tl.to(".navMain", { opacity: 1, duration: 0, onComplete: this.showSvg });
 
                 this.buttonOn = !this.buttonOn;
-            } else {
-                tl.to(".navMainSvg", { opacity: 0, duration: 0.3, ease: "power2.in", onComplete: this.hideSvg })
-                tl.to(".navOverlay", { opacity: 0, duration: 0.3, ease: "power2.in" }, "-=0.3")
-                tl.to(".navButtonBarre.top", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.2")
-                tl.to(".navButtonBarre.bottom", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.3")
-                tl.to(".navButtonBarre.mid", { scaleX: 1, duration: 0.2, ease: "power2.out" }, "-=0.15")
+                this.navOn = !this.navOn;
+            }
+            else {
+                tl.to(".navMain", { opacity: 0, duration: 0.3, ease: "power2.in", onComplete: this.hideSvg });
+                tl.to(".navOverlay", { opacity: 0, duration: 0.3, ease: "power2.in" }, "-=0.3");
+                tl.to(".navButtonBarre.top", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.2");
+                tl.to(".navButtonBarre.bottom", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.3");
+                tl.to(".navButtonBarre.mid", { scaleX: 1, duration: 0.2, ease: "power2.out" }, "-=0.15");
+                tl.to(".nav", {pointerEvents: "none", duration: 0})
 
                 this.buttonOn = !this.buttonOn;
+                this.navOn = !this.navOn;
             }
         },
+        // montre le svg 
         showSvg: function () {
             let totalDuration = 0;
             document.querySelectorAll(".navMainSvgPath").forEach((path, index) => {
@@ -64,14 +76,16 @@ export default {
                 gsap.to(path, { strokeDashoffset: 0, duration: duration, ease: "none", delay: delay });
             });
         },
-        hideSvg: function() {
+        // cache le svg
+        hideSvg: function () {
             gsap.killTweensOf(".navMainSvgPath");
             document.querySelectorAll(".navMainSvgPath").forEach((path, index) => {
                 let length = path.getTotalLength();
-                gsap.to(path, { strokeDashoffset: length, strokeDasharray: length, duration:0})
+                gsap.to(path, { strokeDashoffset: length, strokeDasharray: length, duration: 0 });
             });
         }
     },
+    components: { NavLinks }
 }
 
 </script>
@@ -132,20 +146,21 @@ $colorYellow: #c9853c;
     }
     &Main {
         display: flex;
-        justify-content: flex-end;
         z-index: 25;
         height: 100%;
         width: 100%;
         max-width: 350px;
+        opacity: 0;
         &Svg {
-            position: relative;
+            position: absolute;
             top: 85px;
+            right: 0;
             height: 80vh;
             width: auto;
             stroke: $colorWhite;
             stroke-width: 2px;
             overflow: visible;
-            opacity: 0;
+            // opacity: 0;
         }
     }
 }
