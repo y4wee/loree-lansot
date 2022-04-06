@@ -50,17 +50,17 @@
 
         Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
         dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
-        cet endroit ce cadre si particulier !<br/><br/>
+        cet endroit ce cadre si particulier !
       </div>
     </section>
 
     <section class="presentationHouse">
-      <div class="presentationHouseContainer" 
-        v-for="(image, index) in images" 
+      <div class="presentationHouseContainer"
+        v-for="(image, index) in images"
         :key="index"
         >
-            <img :src="image.url" alt="photo maison l'orée de lansot" :class="'presentationHouseContainerImage ' + 'image' + index">
-        </div>
+            <img :src="image.url" alt="photo maison l'orée de lansot" :data-translate="image.data" :class="'presentationHouseContainerImage ' + 'image' + index">
+      </div>
     </section>
 
   </div>
@@ -75,18 +75,74 @@ export default {
     data() {
         return {
             images: [
-                { url: require("~/assets/house1.png") },
-                { url: require("~/assets/house2.png") },
-                { url: require("~/assets/house3.png") },
-                { url: require("~/assets/house4.png") },
+                { url: require("~/assets/house1.png"), data: "translate(10px, 10px)" },
+                { url: require("~/assets/house2.png"), data: "translate(-10px, 10px)" },
+                { url: require("~/assets/house3.png"), data: "translate(10px, 10px)" },
+                { url: require("~/assets/house4.png"), data: "translate(-10px, 10px)" },
             ],
         };
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
+        this.animationScroll();
         // this.headTranslate();
     },
     methods: {
+      animationScroll: function() {
+        //animation titre h1
+        gsap.fromTo(".presentationSelf h1",{
+          xPercent: 10,
+          opacity: 0
+        },
+        {
+          xPercent: 0,
+          opacity: 1,
+          ease: "power1.out",
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: ".presentationSelf h1",
+            // markers: true,
+            start: "top 70%",
+            end: "bottom 70%",
+          },
+        });
+        // animation text
+        gsap.fromTo(".presentationSelfText",{
+          xPercent: 10,
+          opacity: 0
+        },
+        {
+          xPercent: 0,
+          opacity: 1,
+          ease: "power1.out",
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: ".presentationSelfText",
+            markers: true,
+            start: "top 70%",
+            end: "bottom 70%",
+          },
+        });
+        // animation photo
+        document.querySelectorAll(".presentationHouseContainerImage").forEach((image) => {
+          gsap.fromTo(image,{
+            transform: image.dataset.translate,
+            opacity: 0
+          },
+          {
+            transform: "translate(0, 0)",
+            opacity: 1,
+            ease: "power1.out",
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: image,
+              markers: true,
+              start: "top 70%",
+              end: "bottom 70%",
+            },
+          });
+        })
+      },
         headTranslate: function () {
             gsap.to(".presentationSelfHeadContainer", {
                 xPercent: -25,
