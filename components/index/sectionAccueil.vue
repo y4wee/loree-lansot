@@ -51,17 +51,6 @@ export default {
                     scrub: true
                 },
             });
-            // opacity overlay on scroll
-            // gsap.to(".accueilOverlay", {
-            //     opacity: 1,
-            //     scrollTrigger: {
-            //         trigger: ".accueil",
-            //         // markers: true,
-            //         start: "50% top",
-            //         end: "70% top",
-            //         scrub: 1
-            //     },
-            // })
         },
         noScrolling: function () {
             window.scrollTo(0, 0);
