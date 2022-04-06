@@ -22,24 +22,22 @@ export default {
         animationLinks: function() {
             gsap.killTweensOf(".navLinksText");
             document.querySelectorAll(".navLinksText").forEach((link, index) => {
-                let delay = 0.6 + (0.15 * index);
+                let delay = 0.5 + (0.15 * index);
                 gsap.fromTo(link, {
                     opacity: 0,
                     yPercent: 20
                 }, {
                     opacity: 1,
                     yPercent: 0,
-                    duration: 0.5,
+                    duration: 0.2,
                     delay: delay,
-                    ease: "power1.inOut"
+                    ease: "power1.in"
                 })
             })
         },
         linkScrollTo: function(e) {
-            let tl = gsap.timeline();
-
-            tl.to(window, {scrollTo: e.target.dataset.hash, duration: 1, ease: "power3.inOut"})
-            
+            gsap.to(window, {scrollTo: e.target.dataset.hash, duration: 1, ease: "power3.inOut"})
+            this.$emit('event');
         },
     },
     data() {
@@ -50,7 +48,7 @@ export default {
                     hash: "#indexAccueil"
                 },
                 {
-                    name: "Chambre",
+                    name: "Chambres",
                     hash: "#indexChambre"
                 },
                 {
@@ -66,7 +64,6 @@ export default {
     },
     watch: {
             navOn(newState) {
-                console.log(newState);
                 if(newState === true) {
                     this.animationLinks();
                 }

@@ -16,6 +16,7 @@
             </svg>
             <NavLinks 
             :navOn = navOn
+            @event="navAnimation()"
             />
         </div>
 
