@@ -30,7 +30,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/fontawesome'
   ],
   googleFonts: {
     families: {
@@ -50,6 +51,12 @@ export default {
       'Oleo Script': true,
       'Paytone One': true,
       'Secular One': true,
+    }
+  },
+  fontawesome: {
+    icons:{
+      solid:true,
+      brands:true
     }
   },
 

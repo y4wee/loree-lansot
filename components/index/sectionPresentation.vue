@@ -1,7 +1,7 @@
 <template>
   <div class="presentation">
     <section class="presentationSelf">
-      <div class="presentationSelfHead">
+      <!-- <div class="presentationSelfHead">
         <div class="presentationSelfHeadContainer">
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
@@ -10,7 +10,8 @@
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
           <div class="presentationSelfHeadText">Qui sommes nous !?&nbsp;</div>
         </div>
-      </div>
+      </div> -->
+      <h1>Qui sommes nous ?</h1>
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
         <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +84,7 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        this.headTranslate();
+        // this.headTranslate();
     },
     methods: {
         headTranslate: function () {
@@ -124,36 +125,42 @@ $colorYellow: #c9853c;
   min-height: 100vh;
   width: 100%;
   background: $colorMain;
+  border-top: solid 10px $colorWhite;
   border-bottom: solid 10px $colorWhite;
 // section presentation
   &Self {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    // headline en translate
-    &Head {
-      display: flex;
-      width: 100%;
-      border-top: solid 8px $colorTwo;
-      border-bottom: solid 8px $colorTwo;
-      &Container {
-        display: flex;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        will-change: transform;
-      }
-      &Text {
-        width: 100%;
-        text-align: center;
-        font-size: 4.5vh;
-        color: $colorTwo;
-        user-select: none;
-        font-family: 'Paytone One', sans-serif;
-      }
+    & h1 {
+      margin: 40px 10px;
+      font-family: 'Paytone One', sans-serif;
+      font-size: 7vh;
+      color: $colorWhite;
     }
+    // headline en translate
+    // &Head {
+    //   display: flex;
+    //   width: 100%;
+    //   border-top: solid 8px $colorTwo;
+    //   border-bottom: solid 8px $colorTwo;
+    //   &Container {
+    //     display: flex;
+    //     flex-wrap: nowrap;
+    //     white-space: nowrap;
+    //     will-change: transform;
+    //   }
+    //   &Text {
+    //     width: 100%;
+    //     text-align: center;
+    //     font-size: 4.5vh;
+    //     color: $colorTwo;
+    //     user-select: none;
+    //     font-family: 'Paytone One', sans-serif;
+    //   }
+    // }
     // partie photo mask svg presentation
     &Photo {
       height: 350px;
@@ -213,8 +220,8 @@ $colorYellow: #c9853c;
       &Image {
         object-position: center;
         object-fit: cover;
-        height: 60vh;
-        width: 80%;
+        height: 40vh;
+        width: 70%;
         border: solid 5px $colorWhite;
         margin: 10px;
         &.image0 {

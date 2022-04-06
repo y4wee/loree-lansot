@@ -9,7 +9,10 @@
         :logoFill = logoFill
         :logoStroke = logoStroke
         />
-        <!-- <Leaf class="accueilLeaf" /> -->
+        <div class="accueilPhone">
+            <font-awesome-icon :icon="['fa', 'phone']" class="accueilPhoneIcon" />
+            05.56.25.85.23
+        </div>
     </div>
 </template>
 
@@ -95,6 +98,20 @@ $colorYellow: #c9853c;
     position: relative;
     height: 100vh;
     overflow: hidden;
+    &Phone {
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+        color: $colorWhite;
+        &Icon {
+            margin-right: 10px;
+            font-size: 1.4em;
+        }
+    }
     &Img {
         z-index: 1;
         position: absolute;
@@ -108,10 +125,6 @@ $colorYellow: #c9853c;
     &Logo {
         position: relative;
         top: 20%;
-        z-index: 10;
-    }
-
-    &Leaf {
         z-index: 10;
     }
 

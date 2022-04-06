@@ -88,7 +88,7 @@ $colorYellow: #c9853c;
       // height: 20vh;
       font-family: 'Paytone One', sans-serif;
       color: $colorBlue;
-      font-size: 8vh;
+      font-size: 7vh;
       margin: 40px 10px;
     }
 

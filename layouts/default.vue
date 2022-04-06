@@ -1,16 +1,17 @@
 <template>
     <div>
         <Nav />
-        <Nuxt/>
-        <Footer/>
+        <Nuxt />
+        <Footer />
     </div>
 </template>
 
 <script>
 import Nav from "~/components/nav/nav.vue";
+import Footer from "~/components/footer/footer.vue";
 export default {
     name: "IndexPage",
-    components: { Nav }
+    components: { Nav, Footer }
 }
 </script>
 
