@@ -5,9 +5,11 @@
         :key="chambre.image"
         >
             <img :src="chambre.image" alt="photo maison l'orée de lansot" class="chambreParallaxContainerImage">
-            <div class="containerDetail">
+            <div class="chambreDetail">
                 <h2> {{ chambre.name }} </h2>
-                <div class="containerDetailLink">
+                <div class="chambreDetailPersonnes">{{ chambre.personnes }}</div>
+                <div class="chambreDetailPrix">{{ chambre.prix }}</div>
+                <div class="chambreDetailLink">
                     Plus de détails..
                 </div>
             </div>
@@ -68,6 +70,7 @@ $colorYellow: #c9853c;
         align-items: center;
         height: 100vh;
         width: 100%;
+        user-select: none;
         &Image {
             object-position: center;
             object-fit: cover;
@@ -76,7 +79,7 @@ $colorYellow: #c9853c;
         }
     }
 }
-.containerDetail {
+.chambreDetail {
     position: absolute;
     top: 40%;
     display: flex;
@@ -88,16 +91,27 @@ $colorYellow: #c9853c;
     max-width: 500px;
     backdrop-filter: blur(5px) saturate(130%) brightness(70%);
     border-radius: 30px;
+    font-size: 1.1rem;
+    color: $colorWhite;
     & h2 {
-        font-family: 'Ballet Harmony', sans-serif;
-        font-size: 5.5vh;
+        // font-family: 'Ballet Harmony', sans-serif;
+        font-family: 'Paytone One', sans-serif;
+        font-size: 2.8rem;
         color: $colorYellow;
-        margin: 0 0 30px 0;
+        margin: 0 0 20px 0;
+    }
+    &Personnes {
+        // font-size: 2vh;
+        // color: $colorWhite;
+    }
+    &Prix {
+        // font-size: 2vh;
+        // color: $colorWhite;
     }
     &Link {
-        font-size: 2vh;
-        color: $colorWhite;
-        text-decoration: underline solid $colorWhite;
+        margin-top: 15px;
+        text-decoration: none;
+        border-bottom: solid 2px $colorYellow;
     }
 }
 

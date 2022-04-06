@@ -98,7 +98,7 @@ $colorYellow: #c9853c;
         color: $colorWhite;
         &Icon {
             margin-right: 10px;
-            font-size: 1.4em;
+            font-size: 1.5rem;
         }
         & a {
             text-decoration: none;

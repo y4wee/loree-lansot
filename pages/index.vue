@@ -3,7 +3,7 @@
     <SectionAccueil id="indexAccueil" />
     <SectionPresentation />
     <SectionChambre id="indexChambre" />
-    <SectionDejeuner id="indexDejeuner" />
+    <SectionService id="indexService" />
   </div>
 </template>
 
@@ -12,13 +12,13 @@ import { gsap } from 'gsap';
 import SectionAccueil from '../components/index/sectionAccueil.vue';
 import SectionPresentation from '~/components/index/sectionPresentation.vue';
 import SectionChambre from '~/components/index/sectionChambre.vue';
-import SectionDejeuner from '~/components/index/sectionDejeuner.vue';
+import SectionService from '~/components/index/sectionService.vue';
 
 export default {
     name: "IndexPage",
     mounted() {
     },
-    components: { SectionAccueil, SectionPresentation, SectionChambre, SectionDejeuner }
+    components: { SectionAccueil, SectionPresentation, SectionChambre, SectionService }
 }
 </script>
 
@@ -36,7 +36,6 @@ $colorYellow: #c9853c;
   display: flex;
   flex-direction: column;
   max-width: 100vw;
-  // z-index: 1;
 }
 
 

@@ -32,14 +32,20 @@ export default {
                 {
                     name: "L'Atelier",
                     image: require("~/assets/atelier.png"),
+                    personnes: "1 - 4 personnes",
+                    prix: "70€ - 106€ / nuit"
                 },
                 {
                     name: "La Mansarde",
                     image: require("~/assets/mansarde.png"),
+                    personnes: "1 - 3 personnes",
+                    prix: "60€ - 78€ / nuit"
                 },
                 {
                     name: "La Romance",
                     image: require("~/assets/romance.png"),
+                    personnes: "1 - 4 personnes",
+                    prix: "65€ - 101€ / nuit"
                 },
             ]
         };
@@ -87,12 +93,12 @@ $colorYellow: #c9853c;
       align-items: center;
       font-family: 'Paytone One', sans-serif;
       color: $colorBlue;
-      font-size: 7vh;
+      font-size: 3.5rem;
       margin: 40px 10px;
     }
 
     &Text {
-      font-size: 3vh;
+      font-size: 1.4rem;
       max-width: 700px;
       color: $colorBlue;
       margin: 0 10px 60px 10px;

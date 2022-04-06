@@ -52,8 +52,8 @@ export default {
                     hash: "#indexChambre"
                 },
                 {
-                    name: "Dejeuner",
-                    hash: "#indexDejeuner"
+                    name: "Service",
+                    hash: "#indexService"
                 },
                 {
                     name: "Contact",

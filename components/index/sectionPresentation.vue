@@ -137,7 +137,7 @@ $colorYellow: #c9853c;
     & h1 {
       margin: 40px 10px;
       font-family: 'Paytone One', sans-serif;
-      font-size: 7vh;
+      font-size: 3.5rem;
       color: $colorWhite;
     }
     // headline en translate
@@ -197,7 +197,7 @@ $colorYellow: #c9853c;
       align-items: center;
       max-width: 700px;
       margin: 10px;
-      font-size: 3vh;
+      font-size: 1.4rem;
       color: $colorTwo;
       //border pour aniamtion scroll possible
       &Border {
