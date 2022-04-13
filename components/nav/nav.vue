@@ -32,7 +32,7 @@ export default {
     name: "Nav",
     data() {
         return {
-            buttonOn: true,
+            buttonNavOn: true,
             navOn: false,
             showButton: true,
         };
@@ -61,10 +61,8 @@ export default {
                             this.showNavButton();
                         }, 400)
                     }
-                }
-                
-            })
-            
+                }    
+            }) 
         },
         hideNavButton: function() {
             gsap.to(".navButton", {xPercent: 300, duration: 0.25, ease: "back.in"})
@@ -76,7 +74,7 @@ export default {
         // animation quand clik sur le boutton nav
         navAnimation: function () {
             let tl = gsap.timeline();
-            if (this.buttonOn) {
+            if (this.buttonNavOn) {
                 tl.to(".nav", {pointerEvents: "all", duration: 0})
                 tl.to(".navButtonBarre.mid", { scaleX: 0, duration: 0.2, ease: "power2.in" });
                 tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.15");
@@ -84,7 +82,7 @@ export default {
                 tl.to(".navOverlay", { opacity: 1, duration: 0.3, ease: "none" }, "-=0.2");
                 tl.to(".navMain", { opacity: 1, duration: 0, onComplete: this.showSvg });
 
-                this.buttonOn = !this.buttonOn;
+                this.buttonNavOn = !this.buttonNavOn;
                 this.navOn = !this.navOn;
             }
             else {
@@ -95,7 +93,7 @@ export default {
                 tl.to(".navButtonBarre.mid", { scaleX: 1, duration: 0.2, ease: "power2.out" }, "-=0.15");
                 tl.to(".nav", {pointerEvents: "none", duration: 0})
 
-                this.buttonOn = !this.buttonOn;
+                this.buttonNavOn = !this.buttonNavOn;
                 this.navOn = !this.navOn;
             }
         },

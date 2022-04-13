@@ -30,5 +30,9 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c9853c;
 
+.header {
+    display: flex;
+    height: 100vh;
+}
 
 </style>

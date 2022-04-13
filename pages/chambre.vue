@@ -1,5 +1,10 @@
 <template>
-    <div class="main">
+    <div class="chambre">
+        <div class="buttonBack">
+            <nuxt-link to="/" class="buttonBackLink">
+                <font-awesome-icon :icon="['fa', 'angle-left']" />
+            </nuxt-link>
+        </div>
         <ChambreHeader />
         <ChambreInfo />
         <ChambreCarousel />
@@ -15,10 +20,44 @@ import ChambreCarousel from '~/components/chambre/chambreCarousel.vue';
 
 export default {
     name: "Chambre",
+    data() {
+        return {
+            showButton: true,
+        };
+    },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
+        this.runTimeout();
     },
-    methods: {},
+    methods: {
+        // timeout pour hide or show le buttonBack while scrolling
+        runTimeout: function() {
+            let myTimeout;
+            window.addEventListener("scroll", () => {
+                if(this.showButton) {
+                    this.showButton = !this.showButton;
+                    this.hideButtonBack();
+                }
+                if(myTimeout != undefined) {
+                    clearTimeout(myTimeout);
+                    myTimeout = setTimeout(() => {
+                        this.showButtonBack();
+                    }, 400)
+                } else {
+                    myTimeout = setTimeout(() => {
+                        this.showButtonBack();
+                    }, 400)
+                }  
+            }) 
+        },
+        hideButtonBack: function() {
+            gsap.to(".buttonBack", {xPercent: -300, duration: 0.25, ease: "back.in"})
+        },
+        showButtonBack: function() {
+            this.showButton = !this.showButton;
+            gsap.to(".buttonBack", {xPercent: 0, duration: 0.25, ease: "back.out"})
+        },
+    },
     components: { ChambreHeader, ChambreInfo, ChambreCarousel }
 }
 
@@ -35,5 +74,28 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c9853c;
 
-
+.chambre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $colorBlue;
+}
+.buttonBack {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 25px;
+    &Link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        border: solid 2px $colorWhite;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $colorWhite;
+    }
+}
 </style>
