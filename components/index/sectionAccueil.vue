@@ -48,7 +48,7 @@ export default {
                     // markers: true,
                     start: "top top",
                     end: "bottom top",
-                    scrub: true
+                    scrub: 0.01
                 },
             });
         },
@@ -112,7 +112,6 @@ $colorYellow: #c9853c;
         object-fit: cover;
         width: 100%;
         height: 100%;
-        will-change: transform;
     }
 
     &Logo {
@@ -130,8 +129,6 @@ $colorYellow: #c9853c;
         height: 100%;
         width: 100%;
         // background: rgba(41, 19, 21, 1);
-        // background: #232832;
-        // background: #0d1317;
         background: $colorMain;
         opacity: 0;
         z-index: 5;

@@ -12,9 +12,6 @@
                 <nuxt-link to="/chambre" class="chambreDetailLink">
                     Plus de détails..
                 </nuxt-link>
-                <!-- <div class="chambreDetailLink">
-                    Plus de détails..
-                </div> -->
             </div>
         </div>
     </div>
@@ -42,7 +39,7 @@ export default {
                         // markers: true,
                         start: "top top",
                         end: "bottom top",
-                        scrub: true
+                        scrub: 0.01
                     },
                 })
             })
@@ -75,6 +72,7 @@ $colorYellow: #c9853c;
         width: 100%;
         user-select: none;
         &Image {
+            position: absolute;
             object-position: center;
             object-fit: cover;
             height: 100%;
