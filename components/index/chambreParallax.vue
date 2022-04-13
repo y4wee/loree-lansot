@@ -9,9 +9,12 @@
                 <h2> {{ chambre.name }} </h2>
                 <div class="chambreDetailPersonnes">{{ chambre.personnes }}</div>
                 <div class="chambreDetailPrix">{{ chambre.prix }}</div>
-                <div class="chambreDetailLink">
+                <nuxt-link to="/chambre" class="chambreDetailLink">
                     Plus de détails..
-                </div>
+                </nuxt-link>
+                <!-- <div class="chambreDetailLink">
+                    Plus de détails..
+                </div> -->
             </div>
         </div>
     </div>
@@ -100,17 +103,10 @@ $colorYellow: #c9853c;
         color: $colorYellow;
         margin: 0 0 20px 0;
     }
-    &Personnes {
-        // font-size: 2vh;
-        // color: $colorWhite;
-    }
-    &Prix {
-        // font-size: 2vh;
-        // color: $colorWhite;
-    }
     &Link {
         margin-top: 15px;
         text-decoration: none;
+        color: $colorWhite;
         border-bottom: solid 2px $colorYellow;
     }
 }

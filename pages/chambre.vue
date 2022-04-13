@@ -1,20 +1,25 @@
 <template>
-    <div class="temoin">
-    
+    <div class="main">
+        <ChambreHeader />
+        <ChambreInfo />
+        <ChambreCarousel />
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ChambreHeader from '~/components/chambre/chambreHeader.vue';
+import ChambreInfo from '~/components/chambre/chambreInfo.vue';
+import ChambreCarousel from '~/components/chambre/chambreCarousel.vue';
 
 export default {
-    name: "Temoin",
+    name: "Chambre",
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
     },
-    methods: {
-    },
+    methods: {},
+    components: { ChambreHeader, ChambreInfo, ChambreCarousel }
 }
 
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <div class="temoin">
-    
+    <div class="info">
+        
     </div>
 </template>
 
@@ -9,7 +9,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
-    name: "Temoin",
+    name: "ChambreInfo",
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
     },
