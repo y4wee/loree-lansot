@@ -9,7 +9,7 @@
                 <h2> {{ chambre.name }} </h2>
                 <div class="chambreDetailPersonnes">{{ chambre.personnes }}</div>
                 <div class="chambreDetailPrix">{{ chambre.prix }}</div>
-                <nuxt-link to="/chambre" class="chambreDetailLink">
+                <nuxt-link :to="'/' + chambre.id" class="chambreDetailLink">
                     Plus de détails..
                 </nuxt-link>
             </div>
@@ -32,7 +32,7 @@ export default {
         parallaxScrolling: function() {
             document.querySelectorAll(".chambreParallaxContainerImage").forEach(image => {
                 gsap.to(image, {
-                    yPercent: 35,
+                    yPercent: 30,
                     ease: "none",
                     scrollTrigger: {
                         trigger: image,

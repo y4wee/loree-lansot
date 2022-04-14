@@ -41,7 +41,7 @@ export default {
         parallaxScroll: function () {
             // parallax img accueil
             gsap.to(".accueilImg", {
-                yPercent: 40,
+                yPercent: 30,
                 ease: "none",
                 scrollTrigger: {
                     trigger: ".accueilImg",

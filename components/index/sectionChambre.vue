@@ -13,7 +13,7 @@
     </div>
     
 
-    <ChambreParallax 
+    <ChambreParallax
     :chambres = chambres
     />
 
@@ -30,18 +30,21 @@ export default {
         return {
             chambres: [
                 {
+                    id: "atelier",
                     name: "L'Atelier",
                     image: require("~/assets/atelier.png"),
                     personnes: "1 - 4 personnes",
                     prix: "70€ - 106€ / nuit"
                 },
                 {
+                    id: "mansarde",
                     name: "La Mansarde",
                     image: require("~/assets/mansarde.png"),
                     personnes: "1 - 3 personnes",
                     prix: "60€ - 78€ / nuit"
                 },
                 {
+                    id: "romance",
                     name: "La Romance",
                     image: require("~/assets/romance.png"),
                     personnes: "1 - 4 personnes",
