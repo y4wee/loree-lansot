@@ -1,10 +1,12 @@
 <template>
     <div class="header">
-        <img 
-        class="headerImage"
-        :src="chambre[chambreIndex].image" 
-        :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
-        >
+        <div class="headerContainer">
+            <img 
+            class="headerContainerImage"
+            :src="chambre[chambreIndex].image" 
+            :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
+            >
+        </div>
         <div class="headerLogo">
             <img :src="chambre[chambreIndex].logo" :alt="'titre de la chambre ' + chambre[chambreIndex].name">
         </div>
@@ -46,11 +48,11 @@ export default {
     methods: {
         parallaxScroll: function () {
             // parallax img accueil
-            gsap.to(".headerImage", {
-                yPercent: 30,
+            gsap.to(".headerContainer", {
+                y: "300px",
                 ease: "none",
                 scrollTrigger: {
-                    trigger: ".headerImage",
+                    trigger: ".headerContainer",
                     // markers: true,
                     start: "top top",
                     end: "bottom top",
@@ -83,12 +85,15 @@ $colorYellow: #c9853c;
     height: 100vh;
     width: 100%;
     user-select: none;
-    &Image {
+    &Container {
         position: absolute;
-        object-position: center;
-        object-fit: cover;
         height: 100%;
-        width: 100%;
+        &Image {
+            object-position: center;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
     }
     &Logo {
         z-index: 5;
