@@ -97,8 +97,8 @@ $colorYellow: #c9853c;
         justify-content: center;
         align-items: center;
         & img {
-            max-width: 90vw;
-            height: 40vh;
+            width: 90vw;
+            max-width: 600px;
         }
     }
 }

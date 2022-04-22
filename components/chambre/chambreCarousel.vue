@@ -37,26 +37,26 @@ export default {
                     name: "atelier",
                     images: 
                         [
-                            require("~/assets/atelier2.jpg"),
-                            require("~/assets/atelier3.jpg"),
-                            require("~/assets/atelier4.jpg"),
+                            require("~/assets/atelier2.png"),
+                            require("~/assets/atelier3.png"),
+                            require("~/assets/atelier4.png"),
                         ],
                 },
                 {
                     name: "mansarde",
                     images:
                         [
-                            require("~/assets/mansarde2.jpg"),
-                            require("~/assets/mansarde3.jpg"),
+                            require("~/assets/mansarde2.png"),
+                            require("~/assets/mansarde3.png"),
                         ],
                 },
                 {
                     name: "romance",
                     images: 
                         [
-                            require("~/assets/romance2.jpg"),
-                            require("~/assets/romance3.jpg"),
-                            require("~/assets/romance4.jpg"),
+                            require("~/assets/romance2.png"),
+                            require("~/assets/romance3.png"),
+                            require("~/assets/romance4.png"),
                         ],
                 },
             ],
@@ -126,6 +126,7 @@ $colorYellow: #c9853c;
         width: 100%;
         max-width: 900px;
         height: 60vh;
+        background: $colorBlue;
         & img {
             display: none;
             position: absolute;
