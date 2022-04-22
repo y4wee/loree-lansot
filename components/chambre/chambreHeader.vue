@@ -56,7 +56,7 @@ export default {
                     // markers: true,
                     start: "top top",
                     end: "bottom top",
-                    scrub: 0.1
+                    scrub: true
                 },
             });
         },
