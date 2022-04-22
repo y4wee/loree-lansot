@@ -22,7 +22,7 @@ export default {
         animationLinks: function() {
             gsap.killTweensOf(".navLinksText");
             document.querySelectorAll(".navLinksText").forEach((link, index) => {
-                let delay = 0.5 + (0.15 * index);
+                let delay = 0.5 + (0.12 * index);
                 gsap.fromTo(link, {
                     opacity: 0,
                     yPercent: 20
