@@ -2,8 +2,8 @@
     <div class="header">
         <img 
         class="headerImage"
-        :src="chambreImage[chambreIndex].url" 
-        :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex]"
+        :src="chambre[index].image" 
+        :alt="'photo de la chambre qui a pour nom ' + chambre[index]"
         >
         <div class="headerLogo">{{ currentChambre }}</div>
     </div>
@@ -15,18 +15,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "ChambreHeader",
-    props: ["currentChambre"],
+    props: ["currentChambre", "index"],
     data() {
         return {
-            chambre: ["atelier", "mansarde", "romance"],
-            chambreImage: [
-                { url: require("~/assets/atelier.png") },
-                { url: require("~/assets/mansarde.png") },
-                { url: require("~/assets/romance.png") },
+            chambre: [
+                {
+                    name: "atelier",
+                    image: require("~/assets/atelier.png"),
+                    logo: 0
+                },
+                {
+                    name: "mansarde",
+                    image: require("~/assets/mansarde.png"),
+                    logo: 0
+                },
+                {
+                    name: "romance",
+                    image: require("~/assets/romance.png"),
+                    logo: 0
+                },
             ],
-            chambreLogo: [
-
-            ]
         }
     },
     mounted() {
@@ -48,11 +56,6 @@ export default {
                 },
             });
         },
-    },
-    computed: {
-        chambreIndex: function() {
-            return this.chambre.indexOf(this.currentChambre)
-        }
     },
 }
 

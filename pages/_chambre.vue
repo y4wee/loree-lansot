@@ -5,9 +5,18 @@
                 <font-awesome-icon :icon="['fa', 'angle-left']" />
             </nuxt-link>
         </div>
-        <ChambreHeader :currentChambre="this.$route.params.chambre"/>
-        <ChambreInfo :currentChambre="this.$route.params.chambre"/>
-        <ChambreCarousel :currentChambre="this.$route.params.chambre"/>
+        <ChambreHeader 
+        :currentChambre="$route.params.chambre"
+        :index="chambreIndex"
+        />
+        <ChambreInfo 
+        :currentChambre="$route.params.chambre"
+        :index="chambreIndex"
+        />
+        <ChambreCarousel 
+        :currentChambre="$route.params.chambre"
+        :index="chambreIndex"
+        />
     </div>
 </template>
 
@@ -22,14 +31,18 @@ export default {
     name: "Chambre",
     data() {
         return {
-            currentChambre: "",
             showButton: true,
+            chambre: ["atelier", "mansarde", "romance"],
         };
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         this.runTimeout();
-        this.currentChambre = this.$route.params.chambre
+    },
+    computed: {
+        chambreIndex: function() {
+            return this.chambre.indexOf(this.$route.params.chambre)
+        }
     },
     methods: {
         // timeout pour hide or show le buttonBack while scrolling
