@@ -6,16 +6,13 @@
             </nuxt-link>
         </div>
         <ChambreHeader 
-        :currentChambre="$route.params.chambre"
-        :index="chambreIndex"
+        :chambreIndex="chambreIndex"
         />
         <ChambreInfo 
-        :currentChambre="$route.params.chambre"
-        :index="chambreIndex"
+        :chambreIndex="chambreIndex"
         />
         <ChambreCarousel 
-        :currentChambre="$route.params.chambre"
-        :index="chambreIndex"
+        :chambreIndex="chambreIndex"
         />
     </div>
 </template>

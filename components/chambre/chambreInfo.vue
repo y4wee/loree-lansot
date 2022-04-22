@@ -1,13 +1,13 @@
 <template>
     <div class="info">
         <div class="infoText">
-            {{ chambre[index].text }}
+            {{ chambre[chambreIndex].text }}
         </div>
 
         <div class="infoPrix">
             <p>Tarifs petit déjeuner inclus :</p>
             <ul class="infoPrixListe">
-                <li v-for="(eachPrice, index) in chambre[index].prix" :key="index">
+                <li v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index">
                     {{ eachPrice }}
                 </li>
             </ul>
@@ -25,7 +25,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "ChambreInfo",
-    props: ["currentChambre", "index"],
+    props: ["chambreIndex"],
     data() {
         return {
             chambre: [
@@ -90,14 +90,14 @@ $colorYellow: #c9853c;
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: $colorBlue;
-    border-top: solid 10px $colorWhite;
-    border-bottom: solid 10px $colorWhite;
+    background: $colorBeige;
+    border-top: solid 10px $colorBlue;
+    border-bottom: solid 10px $colorBlue;
     &Text {
         max-width: 700px;
         margin: 50px 10px;
         font-size: 1.4rem;
-        color: $colorWhite;
+        color: $colorBlue;
     }
     &Prix {
         display: flex;
@@ -105,7 +105,7 @@ $colorYellow: #c9853c;
         max-width: 700px;
         margin: 0 10px;
         font-size: 1.4rem;
-        color: $colorWhite;
+        color: $colorBlue;
     }
     &Icon {
         display: flex;

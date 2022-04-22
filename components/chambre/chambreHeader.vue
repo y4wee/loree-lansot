@@ -2,10 +2,12 @@
     <div class="header">
         <img 
         class="headerImage"
-        :src="chambre[index].image" 
-        :alt="'photo de la chambre qui a pour nom ' + chambre[index]"
+        :src="chambre[chambreIndex].image" 
+        :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
         >
-        <div class="headerLogo">{{ currentChambre }}</div>
+        <div class="headerLogo">
+            <img :src="chambre[chambreIndex].logo" :alt="'titre de la chambre ' + chambre[chambreIndex].name">
+        </div>
     </div>
 </template>
 
@@ -15,24 +17,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "ChambreHeader",
-    props: ["currentChambre", "index"],
+    props: ["chambreIndex"],
     data() {
         return {
             chambre: [
                 {
                     name: "atelier",
                     image: require("~/assets/atelier.png"),
-                    logo: 0
+                    logo: require("~/assets/atelierlogo1.svg"),
                 },
                 {
                     name: "mansarde",
                     image: require("~/assets/mansarde.png"),
-                    logo: 0
+                    logo: require("~/assets/mansardelogo1.svg"),
                 },
                 {
                     name: "romance",
                     image: require("~/assets/romance.png"),
-                    logo: 0
+                    logo: require("~/assets/romancelogo1.svg"),
                 },
             ],
         }
@@ -91,8 +93,13 @@ $colorYellow: #c9853c;
     &Logo {
         z-index: 5;
         position: relative;
-        font-size: 2rem;
-        color: $colorGreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & img {
+            max-width: 90vw;
+            height: 40vh;
+        }
     }
 }
 
