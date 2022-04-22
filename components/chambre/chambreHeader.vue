@@ -49,14 +49,14 @@ export default {
         parallaxScroll: function () {
             // parallax img accueil
             gsap.to(".headerContainer", {
-                y: "300px",
+                yPercent: 30,
                 ease: "none",
                 scrollTrigger: {
                     trigger: ".headerContainer",
                     // markers: true,
                     start: "top top",
                     end: "bottom top",
-                    scrub: 0.01
+                    scrub: 0.1
                 },
             });
         },
@@ -88,6 +88,7 @@ $colorYellow: #c9853c;
     &Container {
         position: absolute;
         height: 100%;
+        width: 100%;
         &Image {
             object-position: center;
             object-fit: cover;
