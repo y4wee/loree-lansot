@@ -18,6 +18,7 @@
 
 <script>
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from '../svg/logo.vue';
 
 export default {
