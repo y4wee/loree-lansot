@@ -70,7 +70,9 @@ export default {
             let image = document.querySelector(".headerContainerImage")
             new simpleParallax(image, {
                 customWrapper: ".headerContainer",
-                orientation: "down"
+                orientation: "down",
+                delay: .3,
+	            transition: 'cubic-bezier(0,0,0,1)'
             });
         }
     },
