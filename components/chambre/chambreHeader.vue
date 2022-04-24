@@ -1,12 +1,19 @@
 <template>
     <div class="header">
-        <div class="headerContainer">
+        <!-- <div class="headerContainer">
             <img 
             class="headerContainerImage"
             :src="chambre[chambreIndex].image" 
             :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
             >
-        </div>
+        </div> -->
+        <scroll-parallax direction="y" :speed="0.25" class="headerContainer">
+            <img 
+            class="headerContainerImage"
+            :src="chambre[chambreIndex].image" 
+            :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
+            >
+        </scroll-parallax>
         <div class="headerLogo">
             <img :src="chambre[chambreIndex].logo" :alt="'titre de la chambre ' + chambre[chambreIndex].name">
         </div>
@@ -16,10 +23,14 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollParallax from 'vue3-parallax/src/components/ScrollParallax.vue';
 
 export default {
     name: "ChambreHeader",
     props: ["chambreIndex"],
+    components: {
+        ScrollParallax
+    },
     data() {
         return {
             chambre: [
@@ -43,7 +54,7 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        this.parallaxScroll();
+        // this.parallaxScroll();
     },
     methods: {
         parallaxScroll: function () {
