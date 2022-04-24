@@ -7,6 +7,11 @@
             :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
             >
         </div>
+        <!-- <img 
+        class="headerImage"
+        :src="chambre[chambreIndex].image" 
+        :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
+        > -->
         <div class="headerLogo">
             <img :src="chambre[chambreIndex].logo" :alt="'titre de la chambre ' + chambre[chambreIndex].name">
         </div>
@@ -44,6 +49,7 @@ export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         // this.parallaxScroll();
+        this.testParallax();
     },
     methods: {
         parallaxScroll: function () {
@@ -60,6 +66,13 @@ export default {
                 },
             });
         },
+        testParallax: function() {
+            let image = document.querySelector(".headerContainerImage")
+            new simpleParallax(image, {
+                customWrapper: ".headerContainer",
+                orientation: "down"
+            });
+        }
     },
 }
 
@@ -75,7 +88,10 @@ $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c9853c;
-
+.simpleParallax {
+    height: 100%;
+    width: 100%;
+}
 .header {
     z-index: 1;
     position: relative;
@@ -85,6 +101,12 @@ $colorYellow: #c9853c;
     height: 100vh;
     width: 100%;
     user-select: none;
+    &Image {
+        object-position: center;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
     &Container {
         position: absolute;
         height: 100%;
