@@ -18,7 +18,6 @@
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from '../svg/logo.vue';
 
 export default {
@@ -38,18 +37,13 @@ export default {
         this.parallaxScroll();
     },
     methods: {
-        parallaxScroll: function () {
-            // parallax img accueil
-            gsap.to(".accueilImg", {
-                yPercent: 30,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".accueilImg",
-                    // markers: true,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 0.01
-                },
+        parallaxScroll: function() {
+            let image = document.querySelector(".accueilImg")
+            new simpleParallax(image, {
+                customWrapper: ".accueil",
+                orientation: "down",
+                delay: .2,
+	            transition: 'cubic-bezier(0,0,0,1)'
             });
         },
         noScrolling: function () {
@@ -111,7 +105,7 @@ $colorYellow: #c9853c;
         object-position: 50% 30%;
         object-fit: cover;
         width: 100%;
-        height: 100%;
+        height: 88%;
     }
 
     &Logo {

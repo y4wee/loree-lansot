@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "ChambreHeader",
@@ -47,34 +45,18 @@ export default {
         }
     },
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
-        // this.parallaxScroll();
-        this.testParallax();
+        this.parallaxScroll();
     },
     methods: {
-        parallaxScroll: function () {
-            // parallax img accueil
-            gsap.to(".headerContainer", {
-                yPercent: 30,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".headerContainer",
-                    // markers: true,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true
-                },
-            });
-        },
-        testParallax: function() {
+        parallaxScroll: function() {
             let image = document.querySelector(".headerContainerImage")
             new simpleParallax(image, {
                 customWrapper: ".headerContainer",
                 orientation: "down",
-                delay: .3,
+                delay: .2,
 	            transition: 'cubic-bezier(0,0,0,1)'
             });
-        }
+        },
     },
 }
 

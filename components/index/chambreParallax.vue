@@ -18,30 +18,22 @@
 </template>
 
 <script>
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "ChambreParallax",
     props: ["chambres"],
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
         this.parallaxScrolling();
     },
     methods: {
         parallaxScrolling: function() {
             document.querySelectorAll(".chambreParallaxContainerImage").forEach(image => {
-                gsap.to(image, {
-                    yPercent: 30,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: image,
-                        // markers: true,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: 0.01
-                    },
-                })
+                new simpleParallax(image, {
+                    customWrapper: ".chambreParallaxContainer",
+                    orientation: "down",
+                    delay: .2,
+                    transition: 'cubic-bezier(0,0,0,1)'
+                });
             })
             
         }
@@ -75,7 +67,7 @@ $colorYellow: #c9853c;
             position: absolute;
             object-position: center;
             object-fit: cover;
-            height: 100%;
+            height: 80%;
             width: 100%;
         }
     }
