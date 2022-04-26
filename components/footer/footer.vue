@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <div class="footerContact">
-            <h2>Contactez Nous</h2>
+            <h2>Contactez <br/> Nous</h2>
             <div class="footerContactPhone">
                 <font-awesome-icon :icon="['fa', 'phone']" class="footerContactPhoneIcon" />
                 <div class="footerContactPhoneNumber">
@@ -57,9 +57,10 @@ $colorYellow: #c9853c;
         display: flex;
         flex-direction: column;
         & h2 {
-            margin: 40px 10px;
-            font-family: 'Paytone One', sans-serif;
-            font-size: 7vh;
+            margin: 40px 15px;
+            // font-family: 'Paytone One', sans-serif;
+            font-family: "Ballet Harmony", sans-serif;
+            font-size: 5rem;
         }
         &Phone {
             display: flex;
