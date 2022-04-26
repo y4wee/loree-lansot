@@ -111,7 +111,7 @@ $colorYellow: #c9853c;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    // flex-direction: column;
     width: 100%;
     // height: 100vh;
     background: $colorBeige;
@@ -121,9 +121,7 @@ $colorYellow: #c9853c;
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        max-width: 900px;
-        height: 80vh;
-        margin-top: 10vh;
+        height: 100vh;
         background: $colorBlue;
         overflow: hidden;
         & img {
@@ -159,11 +157,14 @@ $colorYellow: #c9853c;
         }
     }
     &Dots {
+        position: absolute;
+        bottom: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         height: 10vh;
+        backdrop-filter: blur(5px) saturate(130%) brightness(70%);
         &Each {
             width: 14px;
             height: 14px;
