@@ -34,7 +34,6 @@
 
       </div>
       <div class="presentationSelfText">
-        <div class="presentationSelfTextBorder"></div>
         Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère,
         que nous rénovons dans un style alliant modernité & ancient.<br/><br/>
 
@@ -212,15 +211,10 @@ $colorYellow: #c9853c;
       align-items: center;
       max-width: 700px;
       margin: 10px;
+      padding-left: 10px;
+      border-left: solid 2px $colorYellow;
       font-size: 1.4rem;
       color: $colorTwo;
-      //border pour aniamtion scroll possible
-      &Border {
-        width: 100%;
-        border-top: solid 8px $colorTwo;
-        margin-bottom: 25px;
-        transform: scaleX(0);
-      }
     }
   }
   &House {

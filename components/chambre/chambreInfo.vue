@@ -139,6 +139,8 @@ $colorYellow: #c9853c;
         margin: 50px 10px;
         font-size: 1.4rem;
         color: $colorWhite;
+        border-left: solid 2px $colorYellow;
+        padding-left: 10px;
     }
     &Prix {
         position: relative;
@@ -147,7 +149,7 @@ $colorYellow: #c9853c;
         align-items: center;
         width: 95%;
         max-width: 700px;
-        margin: 50px 10px;
+        margin: 50px 0;
         font-size: 1.4rem;
         background: $colorBeige;
         color: $colorBlue;
@@ -172,7 +174,7 @@ $colorYellow: #c9853c;
                 display: flex;
                 justify-content: space-between;
                 margin: 10px 0;
-                border-bottom: solid 1px $colorWhite;
+                border-bottom: solid 2px $colorWhite;
             }
             &Prix {
                 color: $colorYellow;

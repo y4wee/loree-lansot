@@ -107,6 +107,8 @@ $colorYellow: #c9853c;
       max-width: 700px;
       color: $colorBlue;
       margin: 0 10px 60px 10px;
+      padding-left: 10px;
+      border-left: solid 2px $colorWhite;
     }
   }
 }
