@@ -115,8 +115,6 @@ $colorYellow: #c9853c;
     width: 100%;
     // height: 100vh;
     background: $colorBeige;
-    border-top: solid 10px $colorWhite;
-    border-bottom: solid 10px $colorWhite;
     &Images {
         position: relative;
         display: flex;

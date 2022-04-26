@@ -91,6 +91,7 @@ $colorYellow: #c9853c;
     flex-direction: column;
     align-items: center;
     background: $colorBlue;
+    border-bottom: solid 10px $colorWhite;
 }
 .buttonBack {
     z-index: 10;

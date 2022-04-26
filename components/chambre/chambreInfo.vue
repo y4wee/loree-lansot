@@ -6,12 +6,13 @@
 
         <div class="infoPrix">
             <span class="infoPrixTitre">Nos Tarifs</span>
-            <p>petit-déjeuner inclus</p>
-            <ul class="infoPrixListe">
-                <li v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index">
-                    {{ eachPrice }}
-                </li>
-            </ul>
+            <p>(petit-déjeuner inclus)</p>
+            <div class="infoPrixListe">
+                <div v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index" class="infoPrixListeEach" >
+                    <span class="infoPrixListeText"> {{ eachPrice.text }} </span>
+                    <span class="infoPrixListePrix"> {{ eachPrice.prix }} </span>
+                </div>
+            </div>
         </div>
 
         <div class="infoIcon">
@@ -37,31 +38,70 @@ export default {
                             de 2 grandes douches, un wc et 2 lavabos. Le prix pour la nuitée est provisoire, car
                             il reste quelques finitions. Le SPA est à disposition uniquement pour cette chambre, de juillet à août
                             (l'accès aux enfants de moins de 10 ans est interdit)`,
-                    prix: [ "70 € pour 1 ou 2 personnes.",
-                            "88 € pour 3 adultes.",
-                            "106 € pour 4 adultes.",
-                            "85 € pour 2 adultes et 1 enfant.",
-                            "100 € pour 2 adultes et 2 enfants."]
+                    prix: [ {
+                                text: "1 ou 2 personnes",
+                                prix: "70€"
+                            },
+                            {
+                                text: "3 adultes",
+                                prix: "88€"
+                            },
+                            {
+                                text: "4 adultes",
+                                prix: "106€"
+                            },
+                            {
+                                text: "2 adultes et 1 enfant",
+                                prix: "85€"
+                            },
+                            {
+                                text: "2 adultes et 2 enfant",
+                                prix: "100€"
+                            } ]
                 },
                 {
                     name: "mansarde",
                     text: ` Elle se situe à l'étage, c'est une chambre très cozy,
                             elle dispose d'un lit en 140, d'une méridienne en 90,
                             elle a un wc, une belle douche et un lavabo.`,
-                    prix: [ "60 € pour 1 ou 2 personnes.",
-                            "78 € pour 3 adultes.",
-                            "75 € pour 2 adultes et 1 enfant." ]
+                    prix: [ {
+                                text: "1 ou 2 personnes",
+                                prix: "60€"
+                            },
+                            {
+                                text: "3 adultes",
+                                prix: "78€"
+                            },
+                            {
+                                text: "2 adultes et 1 enfant",
+                                prix: "75€"
+                            } ]
                 },
                 {
                     name: "romance",
                     text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.
                             Elle dispose d'un lit en 140 et d'un convertible en 120.
                             Elle a une grande douche à l'italienne, d'un WC et d'un lavabo.`,
-                    prix: [ "65 € pour 1 ou 2 personnes.",
-                            "83 € pour 3 adultes.",
-                            "101 € pour 4 adultes.",
-                            "80 € pour 2 adultes et 1 enfant.",
-                            "95 € pour 2 adultes et 2 enfants"]
+                    prix: [ {
+                                text: "1 ou 2 personnes",
+                                prix: "65€"
+                            },
+                            {
+                                text: "3 adultes",
+                                prix: "83€"
+                            },
+                            {
+                                text: "4 adultes",
+                                prix: "101€"
+                            },
+                            {
+                                text: "2 adultes et 1 enfant",
+                                prix: "80€"
+                            },
+                            {
+                                text: "2 adultes et 2 enfant",
+                                prix: "95€"
+                            } ]
                 },
             ],
         }
@@ -102,6 +142,7 @@ $colorYellow: #c9853c;
         color: $colorWhite;
     }
     &Prix {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -112,11 +153,31 @@ $colorYellow: #c9853c;
         background: $colorBeige;
         color: $colorBlue;
         border-radius: 30px;
+        box-shadow: 0 5px 10px 0 black;
         &Titre {
+            margin-top: 20px;
             font-family: "Ballet Harmony", sans-serif;
+            font-size: 5rem;
+            color: $colorYellow;
         }
         & p {
             margin: 0;
+            font-size: 0.9rem;
+        }
+        &Liste {
+            width: 90%;
+            max-width: 600px;
+            font-size: 1.3rem;
+            margin: 20px 0;
+            &Each {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+                border-bottom: solid 1px $colorWhite;
+            }
+            &Prix {
+                color: $colorYellow;
+            }
         }
     }
     &Icon {
