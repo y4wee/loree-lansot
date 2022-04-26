@@ -1,10 +1,26 @@
 <template>
     <div class="navLinks">
-        <div v-for="(link, index) in links" :key="index" 
+        <!-- <div v-for="(link, index) in links" :key="index" 
         :class="'navLinksText ' + link.name" 
         :data-hash="link.hash" 
         @click="linkScrollTo"
-        > {{ link.name }} </div>
+        > {{ link.name }} </div> -->
+
+        <div class="navLinksMain" v-if="routerName === '/index'">
+            <div v-for="(link, index) in linksIndex" :key="index" 
+            :class="'navLinksText ' + link.name" 
+            :data-hash="link.hash" 
+            @click="linkScrollTo"
+            > {{ link.name }} </div>
+        </div>
+
+        <div class="navLinksMain" v-else>
+            <div v-for="(link, index) in linksChambre" :key="index" 
+            :class="'navLinksText ' + link.name" 
+            :data-hash="link.hash" 
+            @click="linkTo"
+            > {{ link.name }} </div>
+        </div>
     </div>
 </template>
 
@@ -17,6 +33,12 @@ export default {
     props: ["navOn"],
     mounted() {
         gsap.registerPlugin(ScrollToPlugin);
+        console.log(this.routerName)
+    },
+    computed: {
+        routerName: function() {
+            return this.$route.path
+        }
     },
     methods: {
         animationLinks: function() {
@@ -39,10 +61,25 @@ export default {
             gsap.to(window, {scrollTo: e.target.dataset.hash, duration: 1, ease: "power3.inOut"})
             this.$emit('event');
         },
+        linkTo: function(e) {
+            console.log(e.target.dataset.hash)
+            console.log(this.$route.params.chambre)
+            // console.log(e.target.classList[1])
+            // this.$route.push(`/${hash}`)
+            if(e.target.classList[1] === "Contact") {
+                gsap.to(window, {scrollTo: e.target.dataset.hash, duration: 1, ease: "power3.inOut"})
+                this.$emit('event');
+            } else if (e.target.dataset.hash === this.routerName) {
+                gsap.to(window, {scrollTo: 0, duration: 1, ease: "power3.inOut"})
+                this.$emit('event');
+            } else {
+                this.$router.push(e.target.dataset.hash)
+            }
+        }
     },
     data() {
         return {
-            links: [
+            linksIndex: [
                 {
                     name: "Accueil",
                     hash: "#indexAccueil"
@@ -54,6 +91,24 @@ export default {
                 {
                     name: "Service",
                     hash: "#indexService"
+                },
+                {
+                    name: "Contact",
+                    hash: "#indexFooter"
+                },
+            ],
+            linksChambre: [
+                {
+                    name: "Atelier",
+                    hash: "/atelier"
+                },
+                {
+                    name: "Mansarde",
+                    hash: "/mansarde"
+                },
+                {
+                    name: "Romance",
+                    hash: "/romance"
                 },
                 {
                     name: "Contact",
@@ -91,6 +146,11 @@ $colorYellow: #c9853c;
     position: relative;
     width: 70%;
     top: 25vh;
+    &Main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &Text {
         margin: 2.2vh 0;
         color: $colorYellow;

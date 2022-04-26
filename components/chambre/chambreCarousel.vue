@@ -120,11 +120,12 @@ $colorYellow: #c9853c;
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        flex-flow: nowrap;
         width: 100%;
         max-width: 900px;
-        height: 60vh;
+        height: 80vh;
+        margin-top: 10vh;
         background: $colorBlue;
+        overflow: hidden;
         & img {
             display: none;
             position: absolute;
@@ -132,7 +133,7 @@ $colorYellow: #c9853c;
             object-fit: cover;
             height: 100%;
             width: 100%;
-            animation: fadeImage 1.5s both;
+            animation: fadeImage 1.3s ease-in-out both;
         }
     }
     &Button {
@@ -182,9 +183,11 @@ $colorYellow: #c9853c;
 @keyframes fadeImage {
     from {
         opacity: 0.2;
+        transform: scale(1.05);
     }
     to {
         opacity: 1;
+        transform: scale(1);
     }
 }
 

@@ -35,8 +35,7 @@ export default {
                     name: "atelier",
                     text: ` Chambre style atelier, faite en bonne partie avec des matériaux chinés ou récupérés,
                             elle est spacieuse et en duplex, elle dispose de 2 couchage en 140,
-                            de 2 grandes douches, un wc et 2 lavabos. Le prix pour la nuitée est provisoire, car
-                            il reste quelques finitions. Le SPA est à disposition uniquement pour cette chambre, de juillet à août
+                            de 2 grandes douches, un wc et 2 lavabos. Le SPA est à disposition uniquement pour cette chambre, de juillet à août
                             (l'accès aux enfants de moins de 10 ans est interdit)`,
                     prix: [ {
                                 text: "1 ou 2 personnes",
@@ -63,7 +62,7 @@ export default {
                     name: "mansarde",
                     text: ` Elle se situe à l'étage, c'est une chambre très cozy,
                             elle dispose d'un lit en 140, d'une méridienne en 90,
-                            elle a un wc, une belle douche et un lavabo.`,
+                            elle a un wc, une belle douche à l'italienne et un lavabo.`,
                     prix: [ {
                                 text: "1 ou 2 personnes",
                                 prix: "60€"
@@ -81,7 +80,7 @@ export default {
                     name: "romance",
                     text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.
                             Elle dispose d'un lit en 140 et d'un convertible en 120.
-                            Elle a une grande douche à l'italienne, d'un WC et d'un lavabo.`,
+                            Elle a une grande douche à l'italienne, un WC et un lavabo.`,
                     prix: [ {
                                 text: "1 ou 2 personnes",
                                 prix: "65€"
