@@ -33,8 +33,8 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        // this.disableScrolling();
         gsap.fromTo(".accueilOverlay", { opacity: 1 }, { opacity: 0, duration: 0.8, delay: 1, });
+        gsap.fromTo("body", { overflow: "hidden" }, { overflow: "visible", delay: 1.1, });
         this.parallaxScroll();
     },
     methods: {
@@ -46,15 +46,6 @@ export default {
                 delay: .2,
 	            transition: 'cubic-bezier(0,0,0,1)'
             });
-        },
-        noScrolling: function () {
-            window.scrollTo(0, 0);
-        },
-        disableScrolling: function () {
-            window.addEventListener("scroll", this.noScrolling);
-        },
-        enableScrolling: function () {
-            window.removeEventListener("scroll", this.noScrolling);
         },
     },
     components: { Logo }
@@ -103,10 +94,11 @@ $colorYellow: #c9853c;
     &Img {
         z-index: 1;
         position: absolute;
-        object-position: 50% 30%;
+        top: 100px;
+        // object-position: 50% 30%;
         object-fit: cover;
-        width: 100%;
-        height: 88%;
+        width: 80%;
+        height: 80%;
     }
 
     &Logo {

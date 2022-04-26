@@ -75,6 +75,7 @@ export default {
         navAnimation: function () {
             let tl = gsap.timeline();
             if (this.buttonNavOn) {
+                tl.to("body", {overflow: "hidden", duration: 0})
                 tl.to(".nav", {pointerEvents: "all", duration: 0})
                 tl.to(".navButtonBarre.mid", { scaleX: 0, duration: 0.2, ease: "power2.in" });
                 tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.15");
@@ -86,6 +87,7 @@ export default {
                 this.navOn = !this.navOn;
             }
             else {
+                tl.to("body", {overflow: "visible", duration: 0})
                 tl.to(".navMain", { opacity: 0, duration: 0.3, ease: "power2.in", onComplete: this.hideSvg });
                 tl.to(".navOverlay", { opacity: 0, duration: 0.3, ease: "power2.in" }, "-=0.3");
                 tl.to(".navButtonBarre.top", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.2");
