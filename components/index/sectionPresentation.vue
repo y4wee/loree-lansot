@@ -1,7 +1,7 @@
 <template>
   <div class="presentation">
     <section class="presentationSelf">
-      <h1>Qui sommes nous ?</h1>
+      <h1>Qui sommes nous</h1>
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
         <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -168,10 +168,13 @@ $colorYellow: #c9853c;
     min-height: 100vh;
     overflow-x: hidden;
     & h1 {
-      margin: 40px 10px;
-      font-family: 'Paytone One', sans-serif;
-      font-size: 3.5rem;
-      color: $colorWhite;
+      margin: 40px 15px;
+      // font-family: 'Paytone One', sans-serif;
+      // font-size: 3.5rem;
+      font-family: "Ballet Harmony", sans-serif;
+      font-size: 5rem;
+      color: $colorYellow;
+      text-align: center;
     }
     // partie photo mask svg presentation
     &Photo {

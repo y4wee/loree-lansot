@@ -87,9 +87,9 @@ $colorYellow: #c9853c;
     font-size: 1.1rem;
     color: $colorWhite;
     & h2 {
-        // font-family: 'Ballet Harmony', sans-serif;
-        font-family: 'Paytone One', sans-serif;
-        font-size: 2.8rem;
+        font-family: 'Ballet Harmony', sans-serif;
+        font-size: 4rem;
+        text-align: center;
         color: $colorYellow;
         margin: 0 0 20px 0;
     }

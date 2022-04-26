@@ -2,7 +2,7 @@
   <div class="chambre">
     <div class="chambreDetail">
       <div class="chambreDetailTitre">
-        Nos Chambres
+        Nos <br/> Chambres
       </div>
       <div class="chambreDetailText">
         Venez vous ressourcer tout au long de l'année, dans notre ancienne ferme
@@ -31,7 +31,7 @@ export default {
             chambres: [
                 {
                     id: "atelier",
-                    name: "L'Atelier",
+                    name: "L atelier",
                     image: require("~/assets/atelier.png"),
                     personnes: "1 - 4 personnes",
                     prix: "70€ - 106€ / nuit"
@@ -94,10 +94,12 @@ $colorYellow: #c9853c;
     &Titre {
       display: flex;
       align-items: center;
-      font-family: 'Paytone One', sans-serif;
-      color: $colorBlue;
-      font-size: 3.5rem;
-      margin: 40px 10px;
+      // font-family: 'Paytone One', sans-serif;
+      font-family: "Ballet Harmony", sans-serif;
+      font-size: 5rem;
+      color: $colorWhite;
+      // font-size: 3.5rem;
+      margin: 40px 15px;
     }
 
     &Text {
