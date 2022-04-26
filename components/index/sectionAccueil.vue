@@ -94,11 +94,10 @@ $colorYellow: #c9853c;
     &Img {
         z-index: 1;
         position: absolute;
-        top: 100px;
         // object-position: 50% 30%;
         object-fit: cover;
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
     }
 
     &Logo {

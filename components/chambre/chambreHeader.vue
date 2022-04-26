@@ -1,17 +1,10 @@
 <template>
     <div class="header">
-        <div class="headerContainer">
-            <img 
-            class="headerContainerImage"
-            :src="chambre[chambreIndex].image" 
-            :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
-            >
-        </div>
-        <!-- <img 
+        <img 
         class="headerImage"
         :src="chambre[chambreIndex].image" 
         :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
-        > -->
+        >
         <div class="headerLogo">
             <img :src="chambre[chambreIndex].logo" :alt="'titre de la chambre ' + chambre[chambreIndex].name">
         </div>
@@ -49,9 +42,9 @@ export default {
     },
     methods: {
         parallaxScroll: function() {
-            let image = document.querySelector(".headerContainerImage")
+            let image = document.querySelector(".headerImage")
             new simpleParallax(image, {
-                customWrapper: ".headerContainer",
+                customWrapper: ".header",
                 orientation: "down",
                 delay: .2,
 	            transition: 'cubic-bezier(0,0,0,1)'
@@ -86,21 +79,11 @@ $colorYellow: #c9853c;
     width: 100%;
     user-select: none;
     &Image {
+        position: absolute;
         object-position: center;
         object-fit: cover;
         height: 100%;
         width: 100%;
-    }
-    &Container {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        &Image {
-            object-position: center;
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-        }
     }
     &Logo {
         z-index: 5;
