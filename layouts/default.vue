@@ -24,5 +24,10 @@ body {
     font-family: 'Noto Serif JP', serif;
     word-spacing: 4px;
 }
+@font-face {
+    font-family: "Ballet Harmony";
+    src: local("Ballet Harmony"),
+     url(~assets/BalletHarmony.ttf) format("truetype");
+}
 
 </style>

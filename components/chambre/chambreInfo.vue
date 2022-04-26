@@ -5,7 +5,8 @@
         </div>
 
         <div class="infoPrix">
-            <p>Tarifs petit déjeuner inclus :</p>
+            <span class="infoPrixTitre">Nos Tarifs</span>
+            <p>petit-déjeuner inclus</p>
             <ul class="infoPrixListe">
                 <li v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index">
                     {{ eachPrice }}
@@ -89,23 +90,34 @@ $colorYellow: #c9853c;
     z-index: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    background: $colorBeige;
-    border-top: solid 10px $colorBlue;
-    border-bottom: solid 10px $colorBlue;
+    background: $colorBlue;
+    border-top: solid 10px $colorWhite;
+    border-bottom: solid 10px $colorWhite;
     &Text {
         max-width: 700px;
         margin: 50px 10px;
         font-size: 1.4rem;
-        color: $colorBlue;
+        color: $colorWhite;
     }
     &Prix {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        width: 95%;
         max-width: 700px;
-        margin: 0 10px;
+        margin: 50px 10px;
         font-size: 1.4rem;
+        background: $colorBeige;
         color: $colorBlue;
+        border-radius: 30px;
+        &Titre {
+            font-family: "Ballet Harmony", sans-serif;
+        }
+        & p {
+            margin: 0;
+        }
     }
     &Icon {
         display: flex;
