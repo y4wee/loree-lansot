@@ -82,7 +82,7 @@ $colorYellow: #c9853c;
         position: absolute;
         object-position: center;
         object-fit: cover;
-        height: 100%;
+        height: 80%;
         width: 100%;
     }
     &Logo {

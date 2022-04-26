@@ -6,7 +6,7 @@
         @click="linkScrollTo"
         > {{ link.name }} </div> -->
 
-        <div class="navLinksMain" v-if="routerName === '/index'">
+        <div class="navLinksMain" v-if="routerName === '/'">
             <div v-for="(link, index) in linksIndex" :key="index" 
             :class="'navLinksText ' + link.name" 
             :data-hash="link.hash" 
@@ -62,10 +62,6 @@ export default {
             this.$emit('event');
         },
         linkTo: function(e) {
-            console.log(e.target.dataset.hash)
-            console.log(this.$route.params.chambre)
-            // console.log(e.target.classList[1])
-            // this.$route.push(`/${hash}`)
             if(e.target.classList[1] === "Contact") {
                 gsap.to(window, {scrollTo: e.target.dataset.hash, duration: 1, ease: "power3.inOut"})
                 this.$emit('event');

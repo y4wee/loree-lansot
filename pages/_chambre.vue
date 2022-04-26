@@ -46,20 +46,22 @@ export default {
         runTimeout: function() {
             let myTimeout;
             window.addEventListener("scroll", () => {
-                if(this.showButton) {
-                    this.showButton = !this.showButton;
-                    this.hideButtonBack();
+                if(this.$route.path !== "/") {
+                    if(this.showButton) {
+                        this.showButton = !this.showButton;
+                        this.hideButtonBack();
+                    }
+                    if(myTimeout != undefined) {
+                        clearTimeout(myTimeout);
+                        myTimeout = setTimeout(() => {
+                            this.showButtonBack();
+                        }, 400)
+                    } else {
+                        myTimeout = setTimeout(() => {
+                            this.showButtonBack();
+                        }, 400)
+                    }  
                 }
-                if(myTimeout != undefined) {
-                    clearTimeout(myTimeout);
-                    myTimeout = setTimeout(() => {
-                        this.showButtonBack();
-                    }, 400)
-                } else {
-                    myTimeout = setTimeout(() => {
-                        this.showButtonBack();
-                    }, 400)
-                }  
             }) 
         },
         hideButtonBack: function() {
