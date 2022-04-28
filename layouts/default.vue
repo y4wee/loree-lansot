@@ -1,5 +1,6 @@
 <template>
     <div>
+        <OverlayTransition />
         <Nav />
         <Nuxt />
         <Footer id="indexFooter"/>
@@ -9,9 +10,10 @@
 <script>
 import Nav from "~/components/nav/nav.vue";
 import Footer from "~/components/footer/footer.vue";
+import OverlayTransition from "~/components/overlayTransition.vue";
 export default {
     name: "IndexPage",
-    components: { Nav, Footer }
+    components: { Nav, Footer, OverlayTransition }
 }
 </script>
 
@@ -23,6 +25,12 @@ body {
 //   overflow: none;
     font-family: 'Noto Serif JP', serif;
     word-spacing: 4px;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 @font-face {
     font-family: "Ballet Harmony";

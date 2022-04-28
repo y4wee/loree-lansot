@@ -1,11 +1,5 @@
 <template>
     <div class="navLinks">
-        <!-- <div v-for="(link, index) in links" :key="index" 
-        :class="'navLinksText ' + link.name" 
-        :data-hash="link.hash" 
-        @click="linkScrollTo"
-        > {{ link.name }} </div> -->
-
         <div class="navLinksMain" v-if="routerName === '/'">
             <div v-for="(link, index) in linksIndex" :key="index" 
             :class="'navLinksText ' + link.name" 
@@ -69,7 +63,17 @@ export default {
                 gsap.to(window, {scrollTo: 0, duration: 1, ease: "power3.inOut"})
                 this.$emit('event');
             } else {
-                this.$router.push(e.target.dataset.hash)
+                this.$emit('event');
+                let tl = gsap.timeline();
+
+                tl.delay(0.3)
+
+                tl.to("body", { overflow: "hidden", duration: 0 });
+                tl.to(".overlayTransition", { opacity: 1, duration: 0 })
+                tl.to(".overlayTransition", { yPercent: 0, duration: 0.3, ease: "power1.out" })
+                tl.then(() => {
+                    this.$router.push(e.target.dataset.hash);
+                })
             }
         }
     },

@@ -121,7 +121,7 @@ $colorYellow: #c9853c;
         align-items: center;
         justify-content: flex-start;
         width: 100%;
-        height: 100vh;
+        height: 80vh;
         background: $colorBlue;
         overflow: hidden;
         & img {

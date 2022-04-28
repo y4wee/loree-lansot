@@ -134,7 +134,7 @@ $colorOrange: #e25827;
 $colorYellow: #c9853c;
 
 .nav {
-    z-index: 20;
+    z-index: 40;
     position: fixed;
     top: 0;
     right: 0;
@@ -145,8 +145,8 @@ $colorYellow: #c9853c;
     justify-content: flex-end;
     pointer-events: none;
     user-select: none;
+    transform: translateZ(10px);
     &Button {
-        z-index: 30;
         position: absolute;
         top: 0;
         right: 0;
@@ -179,7 +179,6 @@ $colorYellow: #c9853c;
     }
     &Main {
         display: flex;
-        z-index: 25;
         height: 100%;
         width: 100%;
         max-width: 350px;
@@ -193,7 +192,6 @@ $colorYellow: #c9853c;
             stroke: $colorWhite;
             stroke-width: 2px;
             overflow: visible;
-            // opacity: 0;
         }
     }
 }

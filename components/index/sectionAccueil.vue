@@ -1,7 +1,6 @@
 <template>
     <div class="accueil">
         <img src="~/assets/accueil143.png" alt="image accueil" class="accueilImg">
-        <div class="accueilOverlay"></div>
         <Logo 
         class="accueilLogo"
         :animation = logoAnimation
@@ -33,8 +32,7 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.fromTo(".accueilOverlay", { opacity: 1 }, { opacity: 0, duration: 0.8, delay: 1, });
-        gsap.fromTo("body", { overflow: "hidden" }, { overflow: "visible", delay: 1.1, });
+        // gsap.fromTo(".accueilLogo",{ translateZ: 1000 }, { translateZ: -10, duration: 0.5, delay: 1.1, });
         this.parallaxScroll();
     },
     methods: {
@@ -103,21 +101,7 @@ $colorYellow: #c9853c;
     &Logo {
         position: relative;
         top: 20%;
-        z-index: 10;
-    }
-
-    &Overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        // background: rgba(41, 19, 21, 1);
-        background: $colorMain;
-        opacity: 0;
-        z-index: 5;
+        z-index: 30;
     }
 }
 

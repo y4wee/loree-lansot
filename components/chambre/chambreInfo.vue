@@ -1,5 +1,14 @@
 <template>
     <div class="info">
+        <lottie-player 
+            class="infoLeaf"
+            src="https://assets8.lottiefiles.com/packages/lf20_hyfprsvc.json"
+            background="transparent"
+            color="black"
+            speed="1"
+            style="width: 300px; height: 300px;"
+            autoplay>
+        </lottie-player>
         <div class="infoText">
             {{ chambre[chambreIndex].text }}
         </div>
@@ -107,6 +116,8 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
+        let test = document.querySelector('.infoLeaf')
+        console.log(test)
     },
     methods: {
     },
@@ -127,6 +138,7 @@ $colorYellow: #c9853c;
 
 .info {
     z-index: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,6 +146,10 @@ $colorYellow: #c9853c;
     background: $colorBlue;
     border-top: solid 10px $colorWhite;
     border-bottom: solid 10px $colorWhite;
+    &Leaf {
+        position: absolute;
+        top: -220px;
+    }
     &Text {
         max-width: 700px;
         margin: 50px 10px;

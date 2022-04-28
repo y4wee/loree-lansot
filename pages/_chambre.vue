@@ -1,9 +1,7 @@
 <template>
     <div class="chambre">
-        <div class="buttonBack">
-            <nuxt-link to="/" class="buttonBackLink">
-                <font-awesome-icon :icon="['fa', 'angle-left']" />
-            </nuxt-link>
+        <div class="buttonBack" @click="linkTo">
+            <font-awesome-icon :icon="['fa', 'angle-left']" />
         </div>
         <ChambreHeader 
         :chambreIndex="chambreIndex"
@@ -71,6 +69,19 @@ export default {
             this.showButton = !this.showButton;
             gsap.to(".buttonBack", {xPercent: 0, duration: 0.25, ease: "back.out"})
         },
+        linkTo: function(e) {
+            let tl = gsap.timeline();
+
+            tl.delay(0.3)
+
+            tl.to("body", { overflow: "hidden", duration: 0 });
+            tl.to(".overlayTransition", { opacity: 1, duration: 0 })
+            tl.to(".overlayTransition", { yPercent: 0, duration: 0.3, ease: "power1.out" })
+            tl.then(() => {
+                this.$router.push("/");
+            })
+            
+        }
     },
     components: { ChambreHeader, ChambreInfo, ChambreCarousel }
 }
@@ -101,17 +112,15 @@ $colorYellow: #c9853c;
     top: 0;
     left: 0;
     margin: 25px;
-    &Link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 35px;
-        height: 35px;
-        border: solid 2px $colorWhite;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        text-decoration: none;
-        color: $colorWhite;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: solid 2px $colorWhite;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: $colorWhite;
+    cursor: pointer;
 }
 </style>

@@ -9,15 +9,16 @@
                 <h2> {{ chambre.name }} </h2>
                 <div class="chambreDetailPersonnes">{{ chambre.personnes }}</div>
                 <div class="chambreDetailPrix">{{ chambre.prix }}</div>
-                <nuxt-link :to="'/' + chambre.id" class="chambreDetailLink">
+                <div :data-hash="'/' + chambre.id" class="chambreDetailLink" @click="linkTo">
                     Plus de détails..
-                </nuxt-link>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { gsap } from 'gsap';
 
 export default {
     name: "ChambreParallax",
@@ -35,7 +36,18 @@ export default {
                     transition: 'cubic-bezier(0,0,0,1)'
                 });
             })
-            
+        },
+        linkTo: function(e) {
+            let tl = gsap.timeline();
+
+            tl.delay(0.3)
+
+            tl.to("body", { overflow: "hidden", duration: 0 });
+            tl.to(".overlayTransition", { opacity: 1, duration: 0 })
+            tl.to(".overlayTransition", { yPercent: 0, duration: 0.3, ease: "power1.out" })
+            tl.then(() => {
+                this.$router.push(e.target.dataset.hash);
+            })
         }
     },
 }
@@ -95,9 +107,9 @@ $colorYellow: #c9853c;
     }
     &Link {
         margin-top: 15px;
-        text-decoration: none;
         color: $colorWhite;
         border-bottom: solid 2px $colorYellow;
+        cursor: pointer;
     }
 }
 
