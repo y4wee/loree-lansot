@@ -95,7 +95,7 @@ $colorYellow: #c9853c;
         margin: 40px 0px 10px;
         & a {
             text-decoration: none;
-            color: $colorYellow;
+            color: $colorGreen;
         }
     }
 }

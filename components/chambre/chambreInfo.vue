@@ -13,6 +13,13 @@
             {{ chambre[chambreIndex].text }}
         </div>
 
+        <div class="infoServices">
+            <div v-for="(service, index) in chambre[chambreIndex].services" :key="index" class="infoServicesEach">
+                <font-awesome-icon :icon="['fa', service.icon]" class="infoServicesEachIcon" />
+                <span class="infoServicesEachText"> {{ service.text }} </span>
+            </div>
+        </div>
+
         <div class="infoPrix">
             <span class="infoPrixTitre">Nos Tarifs</span>
             <p>(petit-déjeuner inclus)</p>
@@ -22,10 +29,6 @@
                     <span class="infoPrixListePrix"> {{ eachPrice.prix }} </span>
                 </div>
             </div>
-        </div>
-
-        <div class="infoIcon">
-
         </div>
     </div>
 </template>
@@ -43,9 +46,27 @@ export default {
                 {
                     name: "atelier",
                     text: ` Chambre style atelier, faite en bonne partie avec des matériaux chinés ou récupérés,
-                            elle est spacieuse et en duplex, elle dispose de 2 couchage en 140,
-                            de 2 grandes douches, un wc et 2 lavabos. Le SPA est à disposition uniquement pour cette chambre, de juillet à août
-                            (l'accès aux enfants de moins de 10 ans est interdit)`,
+                            elle est spacieuse et en duplex`,
+                    services: [ {
+                                    icon: "user-group",
+                                    text: "1 - 4 personnes"
+                                },
+                                {
+                                    icon: "bed",
+                                    text: "2 couchages en 140"
+                                },
+                                {
+                                    icon: "shower",
+                                    text: "2 douches italiennes"
+                                },
+                                {
+                                    icon: "toilet",
+                                    text: "1 wc"
+                                },
+                                {
+                                    icon: "hot-tub-person",
+                                    text: "SPA uniquement pour cette chambre, de juillet à août. (l'accès aux enfants de moins de 10 ans est interdit)"
+                                }],
                     prix: [ {
                                 text: "1 ou 2 personnes",
                                 prix: "70€"
@@ -69,9 +90,23 @@ export default {
                 },
                 {
                     name: "mansarde",
-                    text: ` Elle se situe à l'étage, c'est une chambre très cozy,
-                            elle dispose d'un lit en 140, d'une méridienne en 90,
-                            elle a un wc, une belle douche à l'italienne et un lavabo.`,
+                    text: ` Chambre chaleureuse et très cozy se situant à l'étage. `,
+                    services: [ {
+                                    icon: "user-group",
+                                    text: "1 - 3 personnes"
+                                },
+                                {
+                                    icon: "bed",
+                                    text: "1 lit en 140 et 1 méridienne en 90"
+                                },
+                                {
+                                    icon: "shower",
+                                    text: "1 douche italienne"
+                                },
+                                {
+                                    icon: "toilet",
+                                    text: "1 wc"
+                                }],
                     prix: [ {
                                 text: "1 ou 2 personnes",
                                 prix: "60€"
@@ -87,9 +122,23 @@ export default {
                 },
                 {
                     name: "romance",
-                    text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.
-                            Elle dispose d'un lit en 140 et d'un convertible en 120.
-                            Elle a une grande douche à l'italienne, un WC et un lavabo.`,
+                    text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.`,
+                    services: [ {
+                                    icon: "user-group",
+                                    text: "1 - 4 personnes"
+                                },
+                                {
+                                    icon: "bed",
+                                    text: "1 lit en 140 et 1 lit convertible en 120"
+                                },
+                                {
+                                    icon: "shower",
+                                    text: "1 douche italiennes"
+                                },
+                                {
+                                    icon: "toilet",
+                                    text: "1 wc"
+                                }],
                     prix: [ {
                                 text: "1 ou 2 personnes",
                                 prix: "65€"
@@ -116,8 +165,6 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
-        let test = document.querySelector('.infoLeaf')
-        console.log(test)
     },
     methods: {
     },
@@ -144,20 +191,43 @@ $colorYellow: #c9853c;
     align-items: center;
     width: 100%;
     background: $colorBlue;
+    font-size: 1.2rem;
     border-top: solid 10px $colorWhite;
     border-bottom: solid 10px $colorWhite;
     &Leaf {
         position: absolute;
         top: -220px;
     }
+    // section text description
     &Text {
         max-width: 700px;
         margin: 50px 10px;
-        font-size: 1.4rem;
         color: $colorWhite;
         border-left: solid 2px $colorYellow;
         padding-left: 10px;
     }
+    // section service icon plus text
+    &Services {
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Each {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+            &Icon {
+                font-size: 1.5rem;
+                color: $colorGreen;
+            }
+            &Text {
+                color: $colorWhite;
+                text-align: center;
+            }
+        }
+    }
+    // section carte tarifs nuit par personne
     &Prix {
         position: relative;
         display: flex;
@@ -166,7 +236,6 @@ $colorYellow: #c9853c;
         width: 95%;
         max-width: 700px;
         margin: 50px 0;
-        font-size: 1.4rem;
         background: $colorBeige;
         color: $colorBlue;
         border-radius: 30px;
@@ -196,13 +265,6 @@ $colorYellow: #c9853c;
                 color: $colorYellow;
             }
         }
-    }
-    &Icon {
-        display: flex;
-        flex-direction: column;
-        max-width: 700px;
-        margin: 0 10px;
-        background: $colorYellow;
     }
 }
 
