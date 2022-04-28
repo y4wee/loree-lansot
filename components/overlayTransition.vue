@@ -58,7 +58,7 @@ $colorYellow: #c9853c;
     top: 0;
     left: 0;
     right: 0;
-    height: 140vh;
+    bottom: 0;
     background: $colorBlue;
 }
 
