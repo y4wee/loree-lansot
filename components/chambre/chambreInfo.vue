@@ -194,7 +194,7 @@ export default {
                     yPercent: 0,
                     opacity: 1,
                     ease: "power1.out",
-                    duration: 0.5,
+                    duration: 0.3,
                     scrollTrigger: {
                         trigger: service,
                         // markers: true,
@@ -211,7 +211,7 @@ export default {
                 yPercent: 0,
                 opacity: 1,
                 ease: "power1.out",
-                duration: 0.5,
+                duration: 0.3,
                 scrollTrigger: {
                     trigger: ".infoPrix",
                     // markers: true,
@@ -293,6 +293,7 @@ $colorYellow: #c9853c;
         color: $colorBlue;
         border-radius: 30px;
         box-shadow: 0 5px 10px 0 black;
+        will-change: transform;
         &Titre {
             margin-top: 20px;
             font-family: "Ballet Harmony", sans-serif;
