@@ -65,6 +65,7 @@ export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         this.showSlide(this.slideIndex);
+        this.animationScroll();
     },
     methods: {
         changeSlide: function(n) {
@@ -90,6 +91,22 @@ export default {
             slides[this.slideIndex].style.display = "block";
             dots[this.slideIndex].className += " carouselDotsActive";
         },
+        animationScroll: function() {
+            gsap.fromTo(".carousel",{
+                opacity: 0
+                },
+                {
+                opacity: 1,
+                ease: "power1.out",
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: ".carousel",
+                    // markers: true,
+                    start: "top 75%",
+                    end: "bottom 75%",
+                },
+            });
+        }
     },
 }
 

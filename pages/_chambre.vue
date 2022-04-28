@@ -6,7 +6,7 @@
         <ChambreHeader 
         :chambreIndex="chambreIndex"
         />
-        <ChambreInfo 
+        <ChambreInfo
         :chambreIndex="chambreIndex"
         />
         <ChambreCarousel 
@@ -105,6 +105,7 @@ $colorYellow: #c9853c;
     align-items: center;
     background: $colorBlue;
     border-bottom: solid 10px $colorWhite;
+    overflow-x: hidden;
 }
 .buttonBack {
     z-index: 10;

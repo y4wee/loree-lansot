@@ -165,8 +165,61 @@ export default {
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
+        this.animationScroll();
     },
     methods: {
+        animationScroll: function() {
+            gsap.fromTo(".infoText",{
+                xPercent: 10,
+                opacity: 0
+                },
+                {
+                xPercent: 0,
+                opacity: 1,
+                ease: "power1.out",
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: ".infoText",
+                    // markers: true,
+                    start: "top 75%",
+                    end: "bottom 75%",
+                },
+            });
+            document.querySelectorAll(".infoServicesEach").forEach(service => {
+                gsap.fromTo(service,{
+                    yPercent: 15,
+                    opacity: 0
+                    },
+                    {
+                    yPercent: 0,
+                    opacity: 1,
+                    ease: "power1.out",
+                    duration: 0.5,
+                    scrollTrigger: {
+                        trigger: service,
+                        // markers: true,
+                        start: "top 75%",
+                        end: "bottom 75%",
+                    },
+                });
+            })
+            gsap.fromTo(".infoPrix",{
+                yPercent: 20,
+                opacity: 0
+                },
+                {
+                yPercent: 0,
+                opacity: 1,
+                ease: "power1.out",
+                duration: 0.5,
+                scrollTrigger: {
+                    trigger: ".infoPrix",
+                    // markers: true,
+                    start: "top 75%",
+                    end: "bottom 75%",
+                },
+            });
+        },
     },
 }
 
