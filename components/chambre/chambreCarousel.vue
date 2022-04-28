@@ -141,7 +141,7 @@ $colorYellow: #c9853c;
         align-items: center;
         width: 30px;
         height: 60px;
-        color: $colorYellow;
+        color: $colorGreen;
         font-size: 2rem;
         backdrop-filter: blur(5px) saturate(130%) brightness(70%);
         cursor: pointer;
@@ -169,7 +169,7 @@ $colorYellow: #c9853c;
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: $colorBlue;
+            background: $colorWhite;
             margin: 0 9px;
             cursor: pointer;
             transition: all 0.4s ease-in-out;
@@ -177,7 +177,7 @@ $colorYellow: #c9853c;
         }
         &Active {
             transform: scale(1.3);
-            background: $colorYellow;
+            background: $colorGreen;
         }
     }
 }
