@@ -4,7 +4,7 @@
             <svg class="houseContainerSvg" width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
                 <mask :id="'myMask' + index">
                     <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <rect :class="'houseContainerSvgMask maskPhoto' + index" x="0" y="0" :width="image.width" height="95%" fill="black" />
+                    <rect :class="'houseContainerSvgMask maskPhoto' + index" x="0" y="3.5%" :width="image.width" height="95%" fill="black" />
                 </mask>
 
                 <image class="houseContainerSvgImageBack" :xlink:href="image.url" x="0" y="0" width="100%" />
@@ -12,7 +12,7 @@
 
                 <rect 
                 :class="'houseContainerSvgMask houseContainerSvgRect maskPhoto' + index + ' houseContainerSvgMask' + image.direction" 
-                x="0" y="0" :width="image.width" height="95%" fill="none" />
+                x="0" y="3.5%" :width="image.width" height="95%" fill="none" />
             </svg>
         </div>
     
@@ -28,11 +28,11 @@ export default {
     data() {
         return {
             images: [
-                { url: require("~/assets/house1.png"), origin: "top left", xFrom: "2%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house4.png"), origin: "top right", xFrom: "18%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house2.png"), origin: "top left", xFrom: "2%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house3.png"), origin: "top right", xFrom: "18%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house5.png"), origin: "top left", xFrom: "2%", xTo: "18%", width: "80%", height: "95%" }
+                { url: require("~/assets/house1.png"), origin: "top left", xFrom: "10%", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house4.png"), origin: "top right", xFrom: "10%", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house2.png"), origin: "top left", xFrom: "10%", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house3.png"), origin: "top right", xFrom: "10%", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house5.png"), origin: "top left", xFrom: "10%", xTo: "18%", width: "80%", height: "95%" }
             ],
         };
     },
@@ -47,11 +47,13 @@ export default {
                 gsap.fromTo(`.maskPhoto${i}`,
                 {
                     transformOrigin: this.images[i].origin,
-                    transform: `translate(${this.images[i].xFrom}, 3.5%)`
+                    opacity: 0,
+                    transform: `translateX(${this.images[i].xFrom})`
                 }, 
                 {
-                    transform: `translate(${this.images[i].xTo}, 3.5%)`,
-                    ease: "power1.out",
+                    opacity: 1,
+                    transform: `translateX(${this.images[i].xTo})`,
+                    ease: "power1",
                     duration: 0.3,
                     scrollTrigger: {
                         trigger: container,
