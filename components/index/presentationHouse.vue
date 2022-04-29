@@ -28,11 +28,11 @@ export default {
     data() {
         return {
             images: [
-                { url: require("~/assets/house1.png"), origin: "top left", xFrom: "10%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house4.png"), origin: "top right", xFrom: "10%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house2.png"), origin: "top left", xFrom: "10%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house3.png"), origin: "top right", xFrom: "10%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house5.png"), origin: "top left", xFrom: "10%", xTo: "18%", width: "80%", height: "95%" }
+                { url: require("~/assets/house1.png"), origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house4.png"), origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house2.png"), origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house3.png"), origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house5.png"), origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" }
             ],
         };
     },
@@ -53,7 +53,7 @@ export default {
                 {
                     opacity: 1,
                     transform: `translateX(${this.images[i].xTo})`,
-                    ease: "power1",
+                    ease: "power1.out",
                     duration: 0.3,
                     scrollTrigger: {
                         trigger: container,
