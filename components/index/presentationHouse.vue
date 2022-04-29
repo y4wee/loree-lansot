@@ -47,10 +47,10 @@ export default {
                 gsap.fromTo(`.maskPhoto${i}`,
                 {
                     transformOrigin: this.images[i].origin,
-                    transform: `translate(${this.images[i].xFrom}, 3.5%) scale(0.4)`
+                    transform: `translate(${this.images[i].xFrom}, 3.5%)`
                 }, 
                 {
-                    transform: `translate(${this.images[i].xTo}, 3.5%) scale(1)`,
+                    transform: `translate(${this.images[i].xTo}, 3.5%)`,
                     ease: "power1.out",
                     duration: 0.3,
                     scrollTrigger: {
@@ -95,7 +95,7 @@ $colorYellow: #c9853c;
         border-top: solid 10px $colorWhite;
         &Svg {
             &ImageFront {
-                fill: rgba($color: black, $alpha: 0.90);
+                fill: rgba($color: black, $alpha: 0.85);
             }
             &Rect {
                 stroke: $colorGreen;
