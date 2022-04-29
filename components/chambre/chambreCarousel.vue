@@ -160,7 +160,8 @@ $colorYellow: #c9853c;
         height: 60px;
         color: $colorGreen;
         font-size: 2rem;
-        backdrop-filter: blur(5px) saturate(130%) brightness(70%);
+        // backdrop-filter: blur(5px) saturate(130%) brightness(70%);
+        background: rgba($color: #000000, $alpha: 0.85);
         cursor: pointer;
         &Left {
             left: 0;
@@ -181,7 +182,9 @@ $colorYellow: #c9853c;
         align-items: center;
         width: 100%;
         height: 10vh;
-        backdrop-filter: blur(5px) saturate(130%) brightness(70%);
+        // backdrop-filter: blur(5px) saturate(130%) brightness(70%);
+        background: rgba($color: #000000, $alpha: 0.85);
+        // box-shadow: inset 0 0 100px 35px rgba($color: #000000, $alpha: 1.0);
         &Each {
             width: 14px;
             height: 14px;

@@ -94,7 +94,7 @@ $colorYellow: #c9853c;
     min-height: 30vh;
     width: 90%;
     max-width: 500px;
-    backdrop-filter: blur(5px) saturate(130%) brightness(70%);
+    box-shadow: inset 0 0 80px 100px $colorBlue;
     border-radius: 30px;
     font-size: 1.1rem;
     color: $colorWhite;

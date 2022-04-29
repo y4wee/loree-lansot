@@ -174,7 +174,8 @@ $colorYellow: #c9853c;
         position: absolute;
         width: 100%;
         height: 100%;
-        backdrop-filter: blur(10px) brightness(40%);
+        // backdrop-filter: blur(5px) saturate(130%) brightness(70%);
+        background: rgba($color: black, $alpha: 0.90);
         opacity: 0;
     }
     &Main {

@@ -3,12 +3,12 @@
         <div class="houseContainer" v-for="(image, index) in images" :key="index" :data-index="index">
             <svg class="houseContainerSvg" width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
                 <mask :id="'myMask' + index">
-                    <rect x="0" y="0" width="100%" height="100%" fill="black" />
-                    <rect :class="'houseContainerSvgMask maskPhoto' + index" x="0" y="0" :width="image.width" height="95%" fill="white" />
+                    <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                    <rect :class="'houseContainerSvgMask maskPhoto' + index" x="0" y="0" :width="image.width" height="95%" fill="black" />
                 </mask>
 
                 <image class="houseContainerSvgImageBack" :xlink:href="image.url" x="0" y="0" width="100%" />
-                <image class="houseContainerSvgImageFront" :xlink:href="image.url" x="0" y="0" width="100%" :mask="`url(#myMask${index})`" />
+                <rect class="houseContainerSvgImageFront" x="0" y="0" width="100%" height="100%" :mask="`url(#myMask${index})`" />
 
                 <rect 
                 :class="'houseContainerSvgMask houseContainerSvgRect maskPhoto' + index + ' houseContainerSvgMask' + image.direction" 
@@ -51,8 +51,8 @@ export default {
                 }, 
                 {
                     transform: `translate(${this.images[i].xTo}, 3.5%) scale(1)`,
-                    ease: "power1.inOut",
-                    duration: 0.5,
+                    ease: "power1.out",
+                    duration: 0.3,
                     scrollTrigger: {
                         trigger: container,
                         // markers: true,
@@ -92,10 +92,10 @@ $colorYellow: #c9853c;
         justify-content: center;
         width: 100%;
         overflow: hidden;
+        border-top: solid 10px $colorWhite;
         &Svg {
-            border-top: solid 10px $colorBlue;
-            &ImageBack {
-                filter: blur(5px) saturate(130%) brightness(70%);
+            &ImageFront {
+                fill: rgba($color: black, $alpha: 0.90);
             }
             &Rect {
                 stroke: $colorGreen;
