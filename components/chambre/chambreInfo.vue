@@ -164,61 +164,66 @@ export default {
         }
     },
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
-        this.animationScroll();
+        this.animationText();
+        this.animationServices();
+        this.animationPrix();
+        
     },
     methods: {
-        animationScroll: function() {
-            gsap.fromTo(".infoText",{
-                xPercent: 10,
-                opacity: 0
-                },
-                {
-                xPercent: 0,
-                opacity: 1,
-                ease: "power1.out",
-                duration: 0.8,
-                scrollTrigger: {
-                    trigger: ".infoText",
-                    // markers: true,
-                    start: "top 75%",
-                    end: "bottom 75%",
-                },
+        animationText: function() {
+            let element = document.querySelector(".infoText");
+            let callback = (entries) => {
+                if(entries[0].isIntersecting) {
+                    gsap.to(element, {
+                        transform: "translateX(0)",
+                        opacity: 1,
+                        ease: "power1.out",
+                        duration: 0.8,
+                        onComplete: observer.disconnect(),
+                    });
+                }
+            }
+            const observer = new IntersectionObserver(callback, {
+                threshold: 0.8,
             });
+            observer.observe(element);
+        },
+        animationServices: function() {
             document.querySelectorAll(".infoServicesEach").forEach(service => {
-                gsap.fromTo(service,{
-                    yPercent: 15,
-                    opacity: 0
-                    },
-                    {
-                    yPercent: 0,
-                    opacity: 1,
-                    ease: "power1.out",
-                    duration: 0.3,
-                    scrollTrigger: {
-                        trigger: service,
-                        // markers: true,
-                        start: "top 75%",
-                        end: "bottom 75%",
-                    },
+                let callback = (entries) => {
+                    if(entries[0].isIntersecting) {
+                        gsap.to(service, {
+                            transform: "translateY(0)",
+                            opacity: 1,
+                            ease: "power1.out",
+                            duration: 0.3,
+                            onComplete: observer.disconnect(),
+                        });
+                    }
+                }
+                const observer = new IntersectionObserver(callback, {
+                    threshold: 1,
                 });
+                observer.observe(service);
             })
-            gsap.fromTo(".infoPrix",{
-                yPercent: 20,
-                opacity: 0
-                },
-                {
-                yPercent: 0,
-                opacity: 1,
-                ease: "power1.out",
-                duration: 0.3,
-                scrollTrigger: {
-                    trigger: ".infoPrix",
-                    // markers: true,
-                    start: "top 75%",
-                    end: "bottom 75%",
-                },
+        },
+        animationPrix: function() {
+            let element = document.querySelector(".infoPrix");
+            let callback = (entries) => {
+                if(entries[0].isIntersecting) {
+                    gsap.to(element, {
+                        transform: "translateY(0)",
+                        opacity: 1,
+                        ease: "power1.out",
+                        duration: 0.3,
+                        onComplete: observer.disconnect(),
+                    });
+                }
+            }
+            const observer = new IntersectionObserver(callback, {
+                threshold: 0.7,
             });
+            observer.observe(element);
         },
     },
 }
@@ -258,6 +263,8 @@ $colorYellow: #c9853c;
         color: $colorWhite;
         border-left: solid 2px $colorYellow;
         padding-left: 10px;
+        opacity: 0;
+        transform: translateX(10%);
     }
     // section service icon plus text
     &Services {
@@ -270,6 +277,8 @@ $colorYellow: #c9853c;
             flex-direction: column;
             align-items: center;
             margin: 10px;
+            opacity: 0;
+            transform: translateY(15%);
             &Icon {
                 font-size: 1.5rem;
                 color: $colorGreen;
@@ -294,6 +303,8 @@ $colorYellow: #c9853c;
         border-radius: 30px;
         box-shadow: 0 5px 10px 0 black;
         will-change: transform;
+        opacity: 0;
+        transform: translateY(20%);
         &Titre {
             margin-top: 20px;
             font-family: "Ballet Harmony", sans-serif;
