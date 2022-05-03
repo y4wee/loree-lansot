@@ -48,7 +48,7 @@ export default {
                             transform: `translateX(${this.images[i].xTo})`,
                             opacity: 1,
                             ease: "power1.out",
-                            duration: 0.2,
+                            duration: 0.25,
                             onComplete: observer.disconnect(),
                         });
                     }
@@ -96,7 +96,6 @@ $colorYellow: #c9853c;
             }
             &Mask {
                 opacity: 0;
-                will-change: transform;
             }
             &Rect {
                 stroke: $colorWhite;
