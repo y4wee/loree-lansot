@@ -88,7 +88,7 @@ $colorYellow: #c9853c;
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-top: solid 10px $colorBlue;
+    // border-top: solid 10px $colorBlue;
     border-bottom: solid 10px $colorBlue;
 
     &Titre {

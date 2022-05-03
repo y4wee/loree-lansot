@@ -23,7 +23,6 @@
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PresentationHouse from './presentationHouse.vue';
 
 export default {
@@ -34,62 +33,45 @@ export default {
         };
     },
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
-        this.animationScroll();
-        // this.headTranslate();
+        this.animationTitle();
+        this.animationText();
     },
     methods: {
-        animationScroll: function () {
-            //animation titre h1
-            gsap.fromTo(".presentationSelf h1", {
-                xPercent: 10,
-                opacity: 0
-            }, {
-                xPercent: 0,
-                opacity: 1,
-                ease: "power1.out",
-                duration: 0.8,
-                scrollTrigger: {
-                    trigger: ".presentationSelf h1",
-                    // markers: true,
-                    start: "top 70%",
-                    end: "bottom 70%",
-                },
+      animationTitle: function() {
+            let element = document.querySelector(".presentationSelf h1");
+            let callback = (entries) => {
+                if(entries[0].isIntersecting) {
+                    gsap.to(element, {
+                        transform: "translateX(0)",
+                        opacity: 1,
+                        ease: "power1.out",
+                        duration: 0.8,
+                        onComplete: observer.disconnect(),
+                    });
+                }
+            }
+            const observer = new IntersectionObserver(callback, {
+                threshold: 0.8,
             });
-            // animation text
-            gsap.fromTo(".presentationSelfText", {
-                xPercent: 10,
-                opacity: 0
-            }, {
-                xPercent: 0,
-                opacity: 1,
-                ease: "power1.out",
-                duration: 0.8,
-                scrollTrigger: {
-                    trigger: ".presentationSelfText",
-                    // markers: true,
-                    start: "top 70%",
-                    end: "bottom 70%",
-                },
+            observer.observe(element);
+        },
+        animationText: function() {
+            let element = document.querySelector(".presentationSelfText");
+            let callback = (entries) => {
+                if(entries[0].isIntersecting) {
+                    gsap.to(element, {
+                        transform: "translateX(0)",
+                        opacity: 1,
+                        ease: "power1.out",
+                        duration: 0.8,
+                        onComplete: observer.disconnect(),
+                    });
+                }
+            }
+            const observer = new IntersectionObserver(callback, {
+                threshold: 0.5,
             });
-            // animation photo
-            document.querySelectorAll(".presentationHouseContainerImage").forEach((image) => {
-                gsap.fromTo(image, {
-                    transform: image.dataset.translate,
-                    opacity: 0
-                }, {
-                    transform: "translate(0, 0)",
-                    opacity: 1,
-                    ease: "power1.out",
-                    duration: 0.8,
-                    scrollTrigger: {
-                        trigger: image,
-                        // markers: true,
-                        start: "top 70%",
-                        end: "bottom 70%",
-                    },
-                });
-            });
+            observer.observe(element);
         },
     },
     components: { PresentationHouse }
@@ -118,7 +100,7 @@ $colorYellow: #c9853c;
   width: 100%;
   background: $colorMain;
   border-top: solid 10px $colorWhite;
-  border-bottom: solid 10px $colorWhite;
+  border-bottom: solid 10px $colorBlue;
 // section presentation
   &Self {
     display: flex;
@@ -128,12 +110,12 @@ $colorYellow: #c9853c;
     overflow-x: hidden;
     & h1 {
       margin: 40px 15px;
-      // font-family: 'Paytone One', sans-serif;
-      // font-size: 3.5rem;
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
       color: $colorYellow;
       text-align: center;
+      opacity: 0;
+      transform: translateX(10%);
     }
     // partie photo mask svg presentation
     &Photo {
@@ -175,6 +157,8 @@ $colorYellow: #c9853c;
       border-left: solid 2px $colorYellow;
       font-size: 1.4rem;
       color: $colorTwo;
+      opacity: 0;
+      transform: translateX(10%);
     }
   }
 }

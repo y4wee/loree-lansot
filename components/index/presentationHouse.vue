@@ -4,14 +4,14 @@
             <svg class="houseContainerSvg" width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
                 <mask :id="'myMask' + index">
                     <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <rect :class="'houseContainerSvgMask maskPhoto' + index" x="0" y="3.5%" :width="image.width" height="95%" fill="black" />
+                    <rect :class="image.class + ' houseContainerSvgMask maskPhoto' + index" x="0" y="3.5%" :width="image.width" height="95%" fill="black" />
                 </mask>
 
                 <image class="houseContainerSvgImageBack" :xlink:href="image.url" x="0" y="0" width="100%" />
                 <rect class="houseContainerSvgImageFront" x="0" y="0" width="100%" height="100%" :mask="`url(#myMask${index})`" />
 
                 <rect 
-                :class="'houseContainerSvgMask houseContainerSvgRect maskPhoto' + index + ' houseContainerSvgMask' + image.direction" 
+                :class="image.class + ' houseContainerSvgMask houseContainerSvgRect maskPhoto' + index" 
                 x="0" y="3.5%" :width="image.width" height="95%" fill="none" />
             </svg>
         </div>
@@ -21,47 +21,42 @@
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "PresentationHouse",
     data() {
         return {
             images: [
-                { url: require("~/assets/house1.png"), origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house4.png"), origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house2.png"), origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house3.png"), origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house5.png"), origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" }
+                { url: require("~/assets/house1.png"), class: "maskLeft", origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house4.png"), class: "maskRight", origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house2.png"), class: "maskLeft", origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house3.png"), class: "maskRight", origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house5.png"), class: "maskLeft", origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" }
             ],
         };
     },
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
-        this.animationScrolling();
+        this.animationImages();
     },
     methods: {
-        animationScrolling: function() {
+        animationImages: function() {
             document.querySelectorAll(".houseContainer").forEach(container => {
                 let i = container.dataset.index;
-                gsap.fromTo(`.maskPhoto${i}`,
-                {
-                    transformOrigin: this.images[i].origin,
-                    opacity: 0,
-                    transform: `translateX(${this.images[i].xFrom})`
-                }, 
-                {
-                    opacity: 1,
-                    transform: `translateX(${this.images[i].xTo})`,
-                    ease: "power1.out",
-                    duration: 0.3,
-                    scrollTrigger: {
-                        trigger: container,
-                        // markers: true,
-                        start: "top 75%",
-                        end: "bottom 70%",
-                    },
+                let callback = (entries) => {
+                    if(entries[0].isIntersecting) {
+                        gsap.to(`.maskPhoto${i}`, {
+                            transform: `translateX(${this.images[i].xTo})`,
+                            opacity: 1,
+                            ease: "power1.out",
+                            duration: 0.3,
+                            onComplete: observer.disconnect(),
+                        });
+                    }
+                }
+                const observer = new IntersectionObserver(callback, {
+                    threshold: 0.8,
                 });
+                observer.observe(container);
             })
         },
     }
@@ -94,17 +89,28 @@ $colorYellow: #c9853c;
         justify-content: center;
         width: 100%;
         overflow: hidden;
-        border-top: solid 10px $colorWhite;
+        border-top: solid 10px $colorBlue;
         &Svg {
             &ImageFront {
                 fill: rgba($color: black, $alpha: 0.85);
             }
+            &Mask {
+                opacity: 0;
+            }
             &Rect {
-                stroke: $colorGreen;
+                stroke: $colorWhite;
                 stroke-width: 5px;
             }
         }
     }
+}
+.maskLeft {
+    transform-origin: top left;
+    transform: translateX(12%);
+}
+.maskRight {
+    transform-origin: top right;
+    transform: translateX(8%);
 }
 
 
