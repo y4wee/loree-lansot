@@ -54,8 +54,47 @@ export default {
         };
     },
     mounted() {
+      this.animationTitle();
+      this.animationText();
     },
-    methods: {},
+    methods: {
+        animationTitle: function() {
+            let element = document.querySelector(".chambreDetailTitre");
+            let callback = (entries) => {
+                if(entries[0].isIntersecting) {
+                    gsap.to(element, {
+                        transform: "translateX(0)",
+                        opacity: 1,
+                        ease: "power1.out",
+                        duration: 0.8,
+                        onComplete: observer.disconnect(),
+                    });
+                }
+            }
+            const observer = new IntersectionObserver(callback, {
+                threshold: 0.8,
+            });
+            observer.observe(element);
+        },
+        animationText: function() {
+            let element = document.querySelector(".chambreDetailText");
+            let callback = (entries) => {
+                if(entries[0].isIntersecting) {
+                    gsap.to(element, {
+                        transform: "translateX(0)",
+                        opacity: 1,
+                        ease: "power1.out",
+                        duration: 0.8,
+                        onComplete: observer.disconnect(),
+                    });
+                }
+            }
+            const observer = new IntersectionObserver(callback, {
+                threshold: 0.7,
+            });
+            observer.observe(element);
+        },
+    },
     components: { ChambreParallax }
 }
 
@@ -100,6 +139,8 @@ $colorYellow: #c9853c;
       color: $colorWhite;
       // font-size: 3.5rem;
       margin: 40px 15px;
+      opacity: 0;
+      transform: translateX(10%);
     }
 
     &Text {
@@ -109,6 +150,8 @@ $colorYellow: #c9853c;
       margin: 0 10px 60px 10px;
       padding-left: 10px;
       border-left: solid 2px $colorWhite;
+      opacity: 0;
+      transform: translateX(10%);
     }
   }
 }
