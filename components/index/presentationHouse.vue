@@ -48,7 +48,7 @@ export default {
                             transform: `translateX(${this.images[i].xTo})`,
                             opacity: 1,
                             ease: "power1.out",
-                            duration: 0.3,
+                            duration: 0.2,
                             onComplete: observer.disconnect(),
                         });
                     }

@@ -45,7 +45,7 @@ export default {
                         transform: "translateX(0)",
                         opacity: 1,
                         ease: "power1.out",
-                        duration: 0.8,
+                        duration: 0.3,
                         onComplete: observer.disconnect(),
                     });
                 }
@@ -63,7 +63,7 @@ export default {
                         transform: "translateX(0)",
                         opacity: 1,
                         ease: "power1.out",
-                        duration: 0.8,
+                        duration: 0.3,
                         onComplete: observer.disconnect(),
                     });
                 }
@@ -115,7 +115,7 @@ $colorYellow: #c9853c;
       color: $colorYellow;
       text-align: center;
       opacity: 0;
-      transform: translateX(10%);
+      transform: translateX(12%);
     }
     // partie photo mask svg presentation
     &Photo {
@@ -158,7 +158,7 @@ $colorYellow: #c9853c;
       font-size: 1.4rem;
       color: $colorTwo;
       opacity: 0;
-      transform: translateX(10%);
+      transform: translateX(12%);
     }
   }
 }

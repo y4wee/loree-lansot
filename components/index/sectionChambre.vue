@@ -66,7 +66,7 @@ export default {
                         transform: "translateX(0)",
                         opacity: 1,
                         ease: "power1.out",
-                        duration: 0.8,
+                        duration: 0.3,
                         onComplete: observer.disconnect(),
                     });
                 }
@@ -84,7 +84,7 @@ export default {
                         transform: "translateX(0)",
                         opacity: 1,
                         ease: "power1.out",
-                        duration: 0.8,
+                        duration: 0.3,
                         onComplete: observer.disconnect(),
                     });
                 }
@@ -123,6 +123,7 @@ $colorYellow: #c9853c;
   min-height: 100vh;
   width: 100%;
   background: $colorYellow;
+  overflow-x: hidden;
   &Detail {
     display: flex;
     flex-direction: column;
@@ -133,14 +134,12 @@ $colorYellow: #c9853c;
     &Titre {
       display: flex;
       align-items: center;
-      // font-family: 'Paytone One', sans-serif;
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
       color: $colorWhite;
-      // font-size: 3.5rem;
       margin: 40px 15px;
       opacity: 0;
-      transform: translateX(10%);
+      transform: translateX(12%);
     }
 
     &Text {
@@ -151,7 +150,7 @@ $colorYellow: #c9853c;
       padding-left: 10px;
       border-left: solid 2px $colorWhite;
       opacity: 0;
-      transform: translateX(10%);
+      transform: translateX(12%);
     }
   }
 }
