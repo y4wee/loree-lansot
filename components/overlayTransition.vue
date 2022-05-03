@@ -20,7 +20,6 @@ export default {
     },
     watch: {
             routerName(newState) {
-                console.log(newState)
                 this.overlayLoading();
             }
     },

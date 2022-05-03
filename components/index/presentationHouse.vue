@@ -96,6 +96,7 @@ $colorYellow: #c9853c;
             }
             &Mask {
                 opacity: 0;
+                will-change: transform;
             }
             &Rect {
                 stroke: $colorWhite;

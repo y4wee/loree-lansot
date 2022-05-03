@@ -27,7 +27,6 @@ export default {
     props: ["navOn"],
     mounted() {
         gsap.registerPlugin(ScrollToPlugin);
-        console.log(this.routerName)
     },
     computed: {
         routerName: function() {
