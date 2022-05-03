@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="footerDev">
-            Developed by&nbsp;
+            Coded by&nbsp;
             <a href="https://quentin-jt.net" target="_blank">Quentin.jt</a>
         </div>
         <div class="footerBack"></div>

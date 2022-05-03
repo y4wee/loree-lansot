@@ -1,23 +1,31 @@
 <template>
     <div class="accueil">
-        <img src="~/assets/accueil143.png" alt="image accueil" class="accueilImg">
+        <div class="accueilUtils">
+            <h1 class="accueilUtilsTitle">Chambres d ' Hôtes</h1>
+            <div class="accueilUtilsButton" @click="buttonScrollTo">
+                Réserver
+            </div>
+        </div>
+        
+        <img src="~/assets/accueil3.jpg" alt="image accueil" class="accueilImg">
         <Logo 
-        class="accueilLogo"
-        :animation = logoAnimation
-        :className = logoClass
-        :logoFill = logoFill
-        :logoStroke = logoStroke
+            class="accueilLogo"
+            :animation = logoAnimation
+            :className = logoClass
+            :logoFill = logoFill
+            :logoStroke = logoStroke
         />
         <div class="accueilPhone">
             <font-awesome-icon :icon="['fa', 'phone']" class="accueilPhoneIcon" />
             <a href="tel:0612186397">- 06.12.18.63.97</a>
         </div>
+        <div class="accueilOverlay"></div>
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Logo from '../svg/logo.vue';
 
 export default {
@@ -31,8 +39,7 @@ export default {
         };
     },
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
-        // gsap.fromTo(".accueilLogo",{ translateZ: 1000 }, { translateZ: -10, duration: 0.5, delay: 1.1, });
+        gsap.registerPlugin(ScrollToPlugin);
         this.parallaxScroll();
     },
     methods: {
@@ -44,6 +51,9 @@ export default {
                 delay: .2,
 	            transition: 'cubic-bezier(0,0,0,1)'
             });
+        },
+        buttonScrollTo: function(e) {
+            gsap.to(window, {scrollTo: "#indexFooter", duration: 1, ease: "power3.inOut"})
         },
     },
     components: { Logo }
@@ -71,8 +81,16 @@ $colorYellow: #c9853c;
     position: relative;
     height: 100vh;
     overflow: hidden;
+    user-select: none;
+    &Overlay {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: black, $alpha: 0.45);
+    }
     &Phone {
-        z-index: 1;
+        z-index: 3;
         display: flex;
         align-items: center;
         position: absolute;
@@ -95,9 +113,43 @@ $colorYellow: #c9853c;
         object-fit: cover;
         width: 100%;
         height: 100%;
+        &::before {
+            width: 100%;
+            height: 100%;
+            background: rgba($color: black, $alpha: 1.0);
+        }
+    }
+    &Utils {
+        z-index: 3;
+        position: absolute;
+        bottom: 8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Title {
+            margin: 30px 0;
+            color: $colorWhite;
+            font-size: 1.5rem;
+            // font-style: italic;
+        }
+        &Button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 50px;
+            border-radius: 30px;
+            background: $colorGreen;
+            box-shadow: 0 4px 5px 0 rgba($color: black, $alpha: 0.7);
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: $colorBlue;
+            cursor: pointer;
+        }
     }
 
     &Logo {
+        z-index: 30;
         position: relative;
         top: 20%;
         z-index: 30;

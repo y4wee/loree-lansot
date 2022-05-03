@@ -1,17 +1,23 @@
 <template>
     <div class="service">
-    
+        <h1 class="serviceTitle">Nos <br/> Services</h1>
+        <section class="serviceDejeuner">
+            <h2>Nos petits <br /> dejeuners</h2>
+        </section>
+
+        <section class="serviceRepas">
+            <h2>Nos<br /> Plateaux repas</h2>
+        </section>
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "Service",
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
+        
     },
     methods: {
     },
@@ -30,5 +36,12 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c9853c;
 
+.service {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+}
 
 </style>
