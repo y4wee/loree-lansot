@@ -122,7 +122,7 @@ $colorYellow: #c9853c;
     &Utils {
         z-index: 3;
         position: absolute;
-        bottom: 8%;
+        bottom: 12%;
         display: flex;
         flex-direction: column;
         align-items: center;
