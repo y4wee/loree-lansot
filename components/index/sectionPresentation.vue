@@ -115,7 +115,7 @@ $colorYellow: #c9853c;
       color: $colorYellow;
       text-align: center;
       opacity: 0;
-      transform: translateX(12%);
+      transform: translateX(12px);
     }
     // partie photo mask svg presentation
     &Photo {
@@ -152,13 +152,13 @@ $colorYellow: #c9853c;
       flex-direction: column;
       align-items: center;
       max-width: 700px;
-      margin: 10px;
+      margin: 40px 10px;
       padding-left: 10px;
       border-left: solid 2px $colorYellow;
       font-size: 1.4rem;
       color: $colorTwo;
       opacity: 0;
-      transform: translateX(12%);
+      transform: translateX(12px);
     }
   }
 }

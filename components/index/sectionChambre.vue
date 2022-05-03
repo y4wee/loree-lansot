@@ -139,7 +139,7 @@ $colorYellow: #c9853c;
       color: $colorWhite;
       margin: 40px 15px;
       opacity: 0;
-      transform: translateX(12%);
+      transform: translateX(12px);
     }
 
     &Text {
@@ -150,7 +150,7 @@ $colorYellow: #c9853c;
       padding-left: 10px;
       border-left: solid 2px $colorWhite;
       opacity: 0;
-      transform: translateX(12%);
+      transform: translateX(12px);
     }
   }
 }

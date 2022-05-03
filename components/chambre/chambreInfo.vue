@@ -47,118 +47,43 @@ export default {
                     name: "atelier",
                     text: ` Chambre style atelier, faite en bonne partie avec des matériaux chinés ou récupérés,
                             elle est spacieuse et en duplex`,
-                    services: [ {
-                                    icon: "user-group",
-                                    text: "1 - 4 personnes"
-                                },
-                                {
-                                    icon: "bed",
-                                    text: "2 couchages en 140"
-                                },
-                                {
-                                    icon: "shower",
-                                    text: "2 douches italiennes"
-                                },
-                                {
-                                    icon: "toilet",
-                                    text: "1 wc"
-                                },
-                                {
-                                    icon: "hot-tub-person",
-                                    text: "SPA uniquement pour cette chambre, de juillet à août. (l'accès aux enfants de moins de 10 ans est interdit)"
+                    services: [ { icon: "user-group", text: "1 - 4 personnes" },
+                                { icon: "bed", text: "2 couchages en 140" },
+                                { icon: "shower", text: "2 douches italiennes" },
+                                { icon: "toilet", text: "1 wc" },
+                                { 
+                                    icon: "hot-tub-person", 
+                                    text: "SPA uniquement pour cette chambre, de juillet à août. (l'accès aux enfants de moins de 10 ans est interdit)" 
                                 }],
-                    prix: [ {
-                                text: "1 ou 2 personnes",
-                                prix: "70€"
-                            },
-                            {
-                                text: "3 adultes",
-                                prix: "88€"
-                            },
-                            {
-                                text: "4 adultes",
-                                prix: "106€"
-                            },
-                            {
-                                text: "2 adultes et 1 enfant",
-                                prix: "85€"
-                            },
-                            {
-                                text: "2 adultes et 2 enfant",
-                                prix: "100€"
-                            } ]
+                    prix: [ { text: "1 ou 2 personnes", prix: "70€" },
+                            { text: "3 adultes", prix: "88€" },
+                            { text: "4 adultes", prix: "106€" },
+                            { text: "2 adultes et 1 enfant", prix: "85€" },
+                            { text: "2 adultes et 2 enfant", prix: "100€" } ]
                 },
                 {
                     name: "mansarde",
                     text: ` Chambre chaleureuse et très cozy se situant à l'étage. `,
-                    services: [ {
-                                    icon: "user-group",
-                                    text: "1 - 3 personnes"
-                                },
-                                {
-                                    icon: "bed",
-                                    text: "1 lit en 140 et 1 méridienne en 90"
-                                },
-                                {
-                                    icon: "shower",
-                                    text: "1 douche italienne"
-                                },
-                                {
-                                    icon: "toilet",
-                                    text: "1 wc"
-                                }],
-                    prix: [ {
-                                text: "1 ou 2 personnes",
-                                prix: "60€"
-                            },
-                            {
-                                text: "3 adultes",
-                                prix: "78€"
-                            },
-                            {
-                                text: "2 adultes et 1 enfant",
-                                prix: "75€"
-                            } ]
+                    services: [ { icon: "user-group", text: "1 - 3 personnes" },
+                                { icon: "bed", text: "1 lit en 140 et 1 méridienne en 90" },
+                                { icon: "shower", text: "1 douche italienne" },
+                                { icon: "toilet", text: "1 wc" }],
+                    prix: [ { text: "1 ou 2 personnes", prix: "60€" },
+                            { text: "3 adultes", prix: "78€" },
+                            { text: "2 adultes et 1 enfant", prix: "75€" } ]
                 },
                 {
                     name: "romance",
                     text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.`,
-                    services: [ {
-                                    icon: "user-group",
-                                    text: "1 - 4 personnes"
-                                },
-                                {
-                                    icon: "bed",
-                                    text: "1 lit en 140 et 1 lit convertible en 120"
-                                },
-                                {
-                                    icon: "shower",
-                                    text: "1 douche italiennes"
-                                },
-                                {
-                                    icon: "toilet",
-                                    text: "1 wc"
-                                }],
-                    prix: [ {
-                                text: "1 ou 2 personnes",
-                                prix: "65€"
-                            },
-                            {
-                                text: "3 adultes",
-                                prix: "83€"
-                            },
-                            {
-                                text: "4 adultes",
-                                prix: "101€"
-                            },
-                            {
-                                text: "2 adultes et 1 enfant",
-                                prix: "80€"
-                            },
-                            {
-                                text: "2 adultes et 2 enfant",
-                                prix: "95€"
-                            } ]
+                    services: [ { icon: "user-group", text: "1 - 4 personnes" },
+                                { icon: "bed", text: "1 lit en 140 et 1 lit convertible en 120" },
+                                { icon: "shower", text: "1 douche italiennes" },
+                                { icon: "toilet", text: "1 wc" }],
+                    prix: [ { text: "1 ou 2 personnes", prix: "65€" },
+                            { text: "3 adultes", prix: "83€" },
+                            { text: "4 adultes", prix: "101€" },
+                            { text: "2 adultes et 1 enfant", prix: "80€" },
+                            { text: "2 adultes et 2 enfant", prix: "95€" } ]
                 },
             ],
         }

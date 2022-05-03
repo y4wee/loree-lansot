@@ -4,7 +4,7 @@
             <svg class="houseContainerSvg" width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
                 <mask :id="'myMask' + index">
                     <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <rect :class="image.class + ' houseContainerSvgMask maskPhoto' + index" x="0" y="3.5%" :width="image.width" height="95%" fill="black" />
+                    <rect :class="image.class + ' houseContainerSvgMask maskPhoto' + index" :x="image.xTo" y="3.5%" :width="image.width" height="95%" fill="black" />
                 </mask>
 
                 <image class="houseContainerSvgImageBack" :xlink:href="image.url" x="0" y="0" width="100%" />
@@ -12,7 +12,7 @@
 
                 <rect 
                 :class="image.class + ' houseContainerSvgMask houseContainerSvgRect maskPhoto' + index" 
-                x="0" y="3.5%" :width="image.width" height="95%" fill="none" />
+                :x="image.xTo" y="3.5%" :width="image.width" height="95%" fill="none" />
             </svg>
         </div>
     
@@ -27,11 +27,11 @@ export default {
     data() {
         return {
             images: [
-                { url: require("~/assets/house1.png"), class: "maskLeft", origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house4.png"), class: "maskRight", origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house2.png"), class: "maskLeft", origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house3.png"), class: "maskRight", origin: "top right", xFrom: "8%", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house5.png"), class: "maskLeft", origin: "top left", xFrom: "12%", xTo: "18%", width: "80%", height: "95%" }
+                { url: require("~/assets/house1.png"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house4.png"), class: "maskRight", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house2.png"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house3.png"), class: "maskRight", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house5.png"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" }
             ],
         };
     },
@@ -45,7 +45,7 @@ export default {
                 let callback = (entries) => {
                     if(entries[0].isIntersecting) {
                         gsap.to(`.maskPhoto${i}`, {
-                            transform: `translateX(${this.images[i].xTo})`,
+                            transform: "translateX(0)",
                             opacity: 1,
                             ease: "power1.out",
                             duration: 0.25,
@@ -92,6 +92,7 @@ $colorYellow: #c9853c;
         border-top: solid 10px $colorBlue;
         &Svg {
             &ImageFront {
+                display: flex;
                 fill: rgba($color: black, $alpha: 0.85);
             }
             &Mask {
@@ -106,11 +107,11 @@ $colorYellow: #c9853c;
 }
 .maskLeft {
     transform-origin: top left;
-    transform: translateX(12%);
+    transform: translateX(-10px);
 }
 .maskRight {
     transform-origin: top right;
-    transform: translateX(8%);
+    transform: translateX(10px);
 }
 
 
