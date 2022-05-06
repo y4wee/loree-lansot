@@ -78,8 +78,8 @@ export default {
                 tl.to("body", {overflow: "hidden", duration: 0})
                 tl.to(".nav", {pointerEvents: "all", duration: 0})
                 tl.to(".navButtonBarre.mid", { scaleX: 0, duration: 0.2, ease: "power2.in" });
-                tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.15");
-                tl.to(".navButtonBarre.bottom", { rotateZ: 42, duration: 0.3, background: "#8FBF21", ease: "power2.inOut" }, "-=0.3");
+                tl.to(".navButtonBarre.top", { rotateZ: -42, duration: 0.3, ease: "power2.inOut" }, "-=0.15");
+                tl.to(".navButtonBarre.bottom", { rotateZ: 42, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
                 tl.to(".navOverlay", { opacity: 1, duration: 0.3, ease: "none" }, "-=0.2");
                 tl.to(".navMain", { opacity: 1, duration: 0, onComplete: this.showSvg });
 
@@ -90,8 +90,8 @@ export default {
                 tl.to("body", {overflow: "visible", duration: 0})
                 tl.to(".navMain", { opacity: 0, duration: 0.3, ease: "power2.in", onComplete: this.hideSvg });
                 tl.to(".navOverlay", { opacity: 0, duration: 0.3, ease: "power2.in" }, "-=0.3");
-                tl.to(".navButtonBarre.top", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.2");
-                tl.to(".navButtonBarre.bottom", { rotateZ: 0, duration: 0.3, background: "#f7f6f8", ease: "power2.inOut" }, "-=0.3");
+                tl.to(".navButtonBarre.top", { rotateZ: 0, duration: 0.3, ease: "power2.inOut" }, "-=0.2");
+                tl.to(".navButtonBarre.bottom", { rotateZ: 0, duration: 0.3, ease: "power2.inOut" }, "-=0.3");
                 tl.to(".navButtonBarre.mid", { scaleX: 1, duration: 0.2, ease: "power2.out" }, "-=0.15");
                 tl.to(".nav", {pointerEvents: "none", duration: 0})
 
@@ -194,6 +194,11 @@ $colorYellow: #c9853c;
             stroke-width: 2px;
             overflow: visible;
         }
+    }
+}
+@media all and (min-width: 1025px) {
+    .navButtonBarre {
+        background: $colorYellow;
     }
 }
 </style>

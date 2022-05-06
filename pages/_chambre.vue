@@ -103,8 +103,7 @@ $colorYellow: #c9853c;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: $colorBlue;
-    border-bottom: solid 10px $colorWhite;
+    background: $colorWhite;
     overflow-x: hidden;
 }
 .buttonBack {
@@ -124,4 +123,14 @@ $colorYellow: #c9853c;
     color: $colorWhite;
     cursor: pointer;
 }
+@media all and (min-width: 1025px) {
+    .chambre {
+        border-bottom: none;
+    }
+    .buttonBack {
+        color: $colorYellow;
+        border: solid 2px $colorYellow;
+    }
+}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <img 
+        <img
         class="headerImage"
         :src="chambre[chambreIndex].image" 
         :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"

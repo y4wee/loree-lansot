@@ -18,6 +18,16 @@ export default {
 </script>
 
 <style lang="scss">
+
+$colorBrown: #291315;
+$colorGreen: #8FBF21; //good
+$colorWhite: #f7f6f8; //good
+$colorBlue: #131b1e;
+$colorGray: #d1cfcf;
+$colorBeige: #c0b193;
+$colorOrange: #e25827;
+$colorYellow: #c9853c;
+
 body {
     margin: 0;
 //   height: 100vh;
@@ -28,6 +38,7 @@ body {
     overflow-x: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    background: $colorWhite;
 }
 body::-webkit-scrollbar {
   display: none;

@@ -4,8 +4,6 @@
             class="infoLeaf"
             src="https://assets8.lottiefiles.com/packages/lf20_hyfprsvc.json"
             background="transparent"
-            color="black"
-            speed="1"
             style="width: 300px; height: 300px;"
             autoplay>
         </lottie-player>
@@ -13,20 +11,34 @@
             {{ chambre[chambreIndex].text }}
         </div>
 
-        <div class="infoServices">
-            <div v-for="(service, index) in chambre[chambreIndex].services" :key="index" class="infoServicesEach">
-                <font-awesome-icon :icon="['fa', service.icon]" class="infoServicesEachIcon" />
-                <span class="infoServicesEachText"> {{ service.text }} </span>
+        <div class="infoSection">
+            <div class="infoServices">
+                <div v-for="(service, index) in chambre[chambreIndex].services" :key="index" class="infoServicesEach">
+                    <font-awesome-icon :icon="['fa', service.icon]" class="infoServicesEachIcon" />
+                    <span class="infoServicesEachText"> {{ service.text }} </span>
+                </div>
             </div>
-        </div>
 
-        <div class="infoPrix">
-            <span class="infoPrixTitre">Nos Tarifs</span>
-            <p>(petit-déjeuner inclus)</p>
-            <div class="infoPrixListe">
-                <div v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index" class="infoPrixListeEach" >
-                    <span class="infoPrixListeText"> {{ eachPrice.text }} </span>
-                    <span class="infoPrixListePrix"> {{ eachPrice.prix }} </span>
+            <div class="infoPrix">
+                <div class="infoPrixHole"></div>
+                <div class="infoPrixFlower">
+                    <lottie-player
+                        src="https://assets1.lottiefiles.com/packages/lf20_bbne9r3v.json"
+                        background="transparent"
+                        mode="bounce"
+                        style="width: 180px; height: 180px;"
+                        autoplay
+                        loop
+                        >
+                    </lottie-player>
+                </div>
+                <span class="infoPrixTitre">Nos Tarifs</span>
+                <p>(petit-déjeuner inclus)</p>
+                <div class="infoPrixListe">
+                    <div v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index" class="infoPrixListeEach" >
+                        <span class="infoPrixListeText"> {{ eachPrice.text }} </span>
+                        <span class="infoPrixListePrix"> {{ eachPrice.prix }} </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,6 +54,7 @@ export default {
     props: ["chambreIndex"],
     data() {
         return {
+            //data chambres pour creation html par boucle
             chambre: [
                 {
                     name: "atelier",
@@ -89,55 +102,17 @@ export default {
         }
     },
     mounted() {
-        this.animationText();
-        this.animationServices();
         this.animationPrix();
         
     },
     methods: {
-        animationText: function() {
-            let element = document.querySelector(".infoText");
-            let callback = (entries) => {
-                if(entries[0].isIntersecting) {
-                    gsap.to(element, {
-                        transform: "translateX(0)",
-                        opacity: 1,
-                        ease: "power1.out",
-                        duration: 0.8,
-                        onComplete: observer.disconnect(),
-                    });
-                }
-            }
-            const observer = new IntersectionObserver(callback, {
-                threshold: 0.8,
-            });
-            observer.observe(element);
-        },
-        animationServices: function() {
-            document.querySelectorAll(".infoServicesEach").forEach(service => {
-                let callback = (entries) => {
-                    if(entries[0].isIntersecting) {
-                        gsap.to(service, {
-                            transform: "translateY(0)",
-                            opacity: 1,
-                            ease: "power1.out",
-                            duration: 0.3,
-                            onComplete: observer.disconnect(),
-                        });
-                    }
-                }
-                const observer = new IntersectionObserver(callback, {
-                    threshold: 1,
-                });
-                observer.observe(service);
-            })
-        },
+        // animation quand la carte prix rentre dans le viewport
         animationPrix: function() {
             let element = document.querySelector(".infoPrix");
             let callback = (entries) => {
                 if(entries[0].isIntersecting) {
                     gsap.to(element, {
-                        transform: "translateY(0)",
+                        transform: "translateX(0)",
                         opacity: 1,
                         ease: "power1.out",
                         duration: 0.3,
@@ -167,7 +142,7 @@ $colorOrange: #e25827;
 $colorYellow: #c9853c;
 
 .info {
-    z-index: 1;
+    z-index: 2;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -188,12 +163,16 @@ $colorYellow: #c9853c;
         color: $colorWhite;
         border-left: solid 2px $colorYellow;
         padding-left: 10px;
-        opacity: 0;
-        transform: translateX(10%);
+    }
+    // section regroupant service plus carte prix
+    &Section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
     // section service icon plus text
     &Services {
-        max-width: 700px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -202,8 +181,6 @@ $colorYellow: #c9853c;
             flex-direction: column;
             align-items: center;
             margin: 10px;
-            opacity: 0;
-            transform: translateY(15%);
             &Icon {
                 font-size: 1.5rem;
                 color: $colorGreen;
@@ -221,15 +198,34 @@ $colorYellow: #c9853c;
         flex-direction: column;
         align-items: center;
         width: 95%;
-        max-width: 700px;
-        margin: 50px 0;
+        max-width: 660px;
+        margin: 150px 0 50px;
         background: $colorBeige;
         color: $colorBlue;
         border-radius: 30px;
         box-shadow: 0 5px 10px 0 black;
         will-change: transform;
         opacity: 0;
-        transform: translateY(20%);
+        transform: translateX(20px);
+        // fleur lottie
+        &Flower {
+            position: absolute;
+            right: -55px;
+            top: -147.5px;
+            transform: rotateZ(-20deg);
+        }
+        // trou fleur lottie
+        &Hole {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: $colorGreen;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: solid 2px $colorWhite;
+        }
+        // titre carte prix
         &Titre {
             margin-top: 20px;
             font-family: "Ballet Harmony", sans-serif;
@@ -240,6 +236,7 @@ $colorYellow: #c9853c;
             margin: 0;
             font-size: 0.9rem;
         }
+        // liste des prix en fonction du nombre de personne
         &Liste {
             width: 90%;
             max-width: 600px;
@@ -254,6 +251,66 @@ $colorYellow: #c9853c;
             &Prix {
                 color: $colorYellow;
             }
+        }
+    }
+}
+@media all and (min-width: 1025px) {
+    .info {
+        background: none;
+        border-top: solid 10px $colorBlue;
+        border-bottom: none;
+        // section text description
+        &Leaf {
+            top: -210px;
+        }
+        &Text {
+            margin: 70px 0 40px;
+            width: 50%;
+            border-left: none;
+            border-bottom: solid 2px $colorYellow;
+            padding-left: 0;
+            padding-bottom: 50px;
+            text-align: center;
+            color: $colorBlue;
+        }
+        &Section {
+            position: relative;
+            top: 24.5px;
+            justify-content: flex-end;
+            flex-direction: row;
+            margin: 70px 0 0;
+            transform: translateZ(1000px);
+        }
+        // section service icon plus text
+        &Services {
+            position: absolute;
+            left: 0;
+            align-items: flex-start;
+            width: 100%;
+            background: $colorBlue;
+            &Each {
+                flex-direction: row;
+                align-items: center;
+                margin: 15px;
+                width: 50%;
+                &Text {
+                    margin-left: 25px;
+                    text-align: left;
+                }
+            }
+        }
+        // section carte tarifs nuit par personne
+        &Prix {
+            z-index: 3;
+            width: 45%;
+            margin: 0 25px;
+        }
+    }
+}
+@media all and (min-width: 1165px) {
+    .info {
+        &Section {
+            top: 38px;
         }
     }
 }

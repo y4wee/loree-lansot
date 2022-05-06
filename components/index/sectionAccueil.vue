@@ -91,7 +91,7 @@ $colorYellow: #c9853c;
     }
     &Phone {
         z-index: 3;
-        display: flex;
+        display: none;
         align-items: center;
         position: absolute;
         top: 0;
@@ -130,7 +130,7 @@ $colorYellow: #c9853c;
             margin: 30px 0;
             color: $colorWhite;
             font-size: 1.5rem;
-            // font-style: italic;
+            font-weight: normal;
         }
         &Button {
             display: flex;

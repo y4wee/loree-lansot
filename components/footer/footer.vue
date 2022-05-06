@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
+        <h2>Contactez <br/> Nous</h2>
         <div class="footerContact">
-            <h2>Contactez <br/> Nous</h2>
             <div class="footerContactPhone">
                 <font-awesome-icon :icon="['fa', 'phone']" class="footerContactPhoneIcon" />
                 <div class="footerContactPhoneNumber">
@@ -24,12 +24,10 @@
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "Footer",
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
     },
     methods: {
     },
@@ -53,15 +51,14 @@ $colorYellow: #c9853c;
     flex-direction: column;
     background: $colorBlue;
     color: $colorWhite;
+    & h2 {
+        margin: 40px 15px;
+        font-family: "Ballet Harmony", sans-serif;
+        font-size: 5rem;
+    }
     &Contact {
         display: flex;
         flex-direction: column;
-        & h2 {
-            margin: 40px 15px;
-            // font-family: 'Paytone One', sans-serif;
-            font-family: "Ballet Harmony", sans-serif;
-            font-size: 5rem;
-        }
         &Phone {
             display: flex;
             align-items: center;
@@ -96,6 +93,23 @@ $colorYellow: #c9853c;
         & a {
             text-decoration: none;
             color: $colorGreen;
+        }
+    }
+}
+@media all and (min-width: 700px) {
+    .footer {
+        align-items: center;
+        & h2 {
+            text-align: center;
+        }
+        &Contact {
+            flex-direction: row;
+            &Phone {
+                margin: 15px 30px;
+            }
+            &Email {
+                margin: 15px 30px;
+            }
         }
     }
 }

@@ -132,8 +132,6 @@ $colorYellow: #c9853c;
     border-bottom: solid 10px $colorBlue;
 
     &Titre {
-      display: flex;
-      align-items: center;
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
       color: $colorWhite;

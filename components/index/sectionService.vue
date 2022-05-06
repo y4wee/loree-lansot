@@ -42,6 +42,14 @@ $colorYellow: #c9853c;
     // align-items: center;
     width: 100%;
     overflow-x: hidden;
+    background: $colorBeige;
+    color: $colorBlue;
+    border-top: solid 10px $colorBlue;
+    &Title {
+        font-family: "Ballet Harmony", sans-serif;
+        font-size: 5rem;
+        margin: 40px 15px;
+    }
 }
 
 </style>

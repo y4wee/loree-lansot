@@ -1,10 +1,12 @@
 <template>
     <div class="carousel">
         <div class="carouselImages">
-            <img class="carouselImagesEach" v-for="(image, index) in chambre[chambreIndex].images"
+            <div class="carouselContainer">
+                <img class="carouselImagesEach" v-for="(image, index) in chambre[chambreIndex].images"
                 :key="index" 
                 :src="image" 
                 :alt=" 'image du carousel ' + chambre[chambreIndex].name">
+            </div>
             <div class="carouselButton carouselButtonLeft" @click="changeSlide(-1)">
                 <font-awesome-icon :icon="['fa', 'angle-left']" />
             </div>
@@ -126,13 +128,21 @@ $colorOrange: #e25827;
 $colorYellow: #c9853c;
 
 .carousel {
+    z-index: 1;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: $colorBeige;
     opacity: 0;
+    border-top: solid 10px $colorWhite;
+    border-bottom: solid 10px $colorWhite;
+    &Container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
     &Images {
         position: relative;
         display: flex;
@@ -140,8 +150,6 @@ $colorYellow: #c9853c;
         justify-content: flex-start;
         width: 100%;
         height: 80vh;
-        background: $colorBlue;
-        overflow: hidden;
         & img {
             display: none;
             position: absolute;
@@ -161,7 +169,6 @@ $colorYellow: #c9853c;
         height: 60px;
         color: $colorGreen;
         font-size: 2rem;
-        // backdrop-filter: blur(5px) saturate(130%) brightness(70%);
         background: rgba($color: #000000, $alpha: 0.85);
         cursor: pointer;
         &Left {
@@ -183,9 +190,7 @@ $colorYellow: #c9853c;
         align-items: center;
         width: 100%;
         height: 10vh;
-        // backdrop-filter: blur(5px) saturate(130%) brightness(70%);
         background: rgba($color: #000000, $alpha: 0.85);
-        // box-shadow: inset 0 0 100px 35px rgba($color: #000000, $alpha: 1.0);
         &Each {
             width: 14px;
             height: 14px;
@@ -212,5 +217,29 @@ $colorYellow: #c9853c;
         transform: scale(1);
     }
 }
-
+@media all and (min-width: 1025px) {
+    .carousel {
+        background: rgba($color: #000000, $alpha: 0.85);
+        &Images {
+            max-width: 950px;
+            border-right: solid 10px $colorWhite;
+            border-left: solid 10px $colorWhite;
+        }
+        &Button {
+            width: 60px;
+            height: 60px;
+            &Left {
+                left: -35px;
+                border-radius: 10px;
+            }
+            &Right {
+                right: -35px;
+                border-radius: 10px;
+            }
+        }
+        &Dots {
+            max-width: 950px;
+        }
+    }
+}
 </style>
