@@ -78,7 +78,6 @@ $colorYellow: #c9853c;
 .house {
     z-index: 1;
     width: 100%;
-    background: $colorBeige;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,6 +87,7 @@ $colorYellow: #c9853c;
         align-items: center;
         justify-content: center;
         width: 100%;
+        height: 100%;
         overflow: hidden;
         border-top: solid 10px $colorBlue;
         &Svg {
@@ -113,6 +113,41 @@ $colorYellow: #c9853c;
     transform-origin: top right;
     transform: translateX(10px);
 }
-
+@media all and (min-width: 680px) and (max-width: 1024px) {
+    .house {
+        &Container {
+            height: 80vh;
+        }
+    }
+}
+@media all and (min-width: 1025px){
+    .house {
+        width: calc(40% - 10px);
+        border-left: solid 10px $colorWhite;
+        &Container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            // border-top: solid 10px $colorBlue;
+            border: none;
+            &Svg {
+                &ImageFront {
+                    display: flex;
+                    fill: rgba($color: black, $alpha: 0.85);
+                }
+                &Mask {
+                    opacity: 0;
+                }
+                &Rect {
+                    stroke: $colorWhite;
+                    stroke-width: 5px;
+                }
+            }
+        }
+    }
+}
 
 </style>

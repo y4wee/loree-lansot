@@ -23,58 +23,53 @@
 
 <script>
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PresentationHouse from './presentationHouse.vue';
 
 export default {
     name: "SectionPresentation",
     data() {
         return {
-            
+            pinOn: false,
         };
     },
     mounted() {
-        this.animationTitle();
-        this.animationText();
+        gsap.registerPlugin(ScrollTrigger);
+        // responsive du js 
+        window.addEventListener('resize', () => {
+          console.log()
+          this.reloadSize();
+        });
+        if(innerWidth > 1024) {
+          this.pinScrolling();
+          this.pinOn = true;
+        }
     },
     methods: {
-      animationTitle: function() {
-            let element = document.querySelector(".presentationSelf h1");
-            let callback = (entries) => {
-                if(entries[0].isIntersecting) {
-                    gsap.to(element, {
-                        transform: "translateX(0)",
-                        opacity: 1,
-                        ease: "power1.out",
-                        duration: 0.3,
-                        onComplete: observer.disconnect(),
-                    });
-                }
-            }
-            const observer = new IntersectionObserver(callback, {
-                threshold: 0.8,
-            });
-            observer.observe(element);
-        },
-        animationText: function() {
-            let element = document.querySelector(".presentationSelfText");
-            let callback = (entries) => {
-                if(entries[0].isIntersecting) {
-                    gsap.to(element, {
-                        transform: "translateX(0)",
-                        opacity: 1,
-                        ease: "power1.out",
-                        duration: 0.3,
-                        onComplete: observer.disconnect(),
-                    });
-                }
-            }
-            const observer = new IntersectionObserver(callback, {
-                threshold: 0.5,
-            });
-            observer.observe(element);
-        },
+      reloadSize: function() {
+        let width = document.querySelector("body").offsetWidth;
+        if(width > 1024 && this.pinOn === false) {
+          this.pinScrolling();
+          this.pinOn = true;
+        }
+        else if(width < 1024 && this.pinOn === true) {
+          this.pinOn = false;
+          location.reload();
+        } else {
+          return;
+        }
+      },
+      pinScrolling: function() {
+        ScrollTrigger.create({
+          // markers: true,
+          trigger: ".presentation",
+          pin: ".presentationSelf",
+          start: "10px top",
+          end: "bottom bottom",
+        });
+      },
     },
-    components: { PresentationHouse }
+    components: { PresentationHouse },
 }
 
 </script>
@@ -114,8 +109,6 @@ $colorYellow: #c9853c;
       font-size: 5rem;
       color: $colorYellow;
       text-align: center;
-      opacity: 0;
-      transform: translateX(12px);
     }
     // partie photo mask svg presentation
     &Photo {
@@ -151,14 +144,69 @@ $colorYellow: #c9853c;
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 700px;
       margin: 40px 10px;
-      padding-left: 10px;
+      padding: 0 10px;
       border-left: solid 2px $colorYellow;
       font-size: 1.4rem;
       color: $colorTwo;
-      opacity: 0;
-      transform: translateX(12px);
+    }
+  }
+}
+@media all and (min-width: 1025px) {
+  .presentation {
+    flex-direction: row;
+    border-bottom: solid 10px $colorWhite;
+  // section presentation
+    &Self {
+      width: 60%;
+      max-height: 100vh;
+      align-items: center;
+      & h1 {
+        margin: 40px 15px;
+        font-family: "Ballet Harmony", sans-serif;
+        font-size: 5rem;
+        color: $colorYellow;
+        text-align: center;
+      }
+      // partie photo mask svg presentation
+      &Photo {
+        height: 200px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & img {
+          position: absolute;
+          width: 100%;
+          max-width: 400px;
+          mask-image: url("~/assets/maskimage.svg");
+          mask-size: 200px;
+          mask-repeat: no-repeat;
+          mask-position: center;
+        }
+        & svg {
+          position: absolute;
+          width: 200px;
+          overflow: visible;
+        }
+        &Circle {
+          stroke: $colorTwo;
+          stroke-width: 5px;
+          fill: none;
+        }
+      }
+  // partie text presentation
+      &Text {
+        text-align: center;
+        max-width: 700px;
+        margin: 40px 10px;
+        padding-left: 10px;
+        border-left: solid 2px $colorYellow;
+        font-size: 1.4rem;
+        color: $colorTwo;
+      }
     }
   }
 }
