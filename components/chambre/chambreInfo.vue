@@ -151,7 +151,6 @@ $colorYellow: #c9853c;
     background: $colorBlue;
     font-size: 1.2rem;
     border-top: solid 10px $colorWhite;
-    border-bottom: solid 10px $colorWhite;
     &Leaf {
         position: absolute;
         top: -220px;
@@ -258,7 +257,6 @@ $colorYellow: #c9853c;
     .info {
         background: none;
         border-top: solid 10px $colorBlue;
-        border-bottom: none;
         // section text description
         &Leaf {
             top: -210px;
