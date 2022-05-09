@@ -56,8 +56,6 @@ export default {
         };
     },
     mounted() {
-      // this.animationTitle();
-      // this.animationText();
         gsap.registerPlugin(ScrollTrigger);
         // responsive du js 
         window.addEventListener('resize', () => {
@@ -85,7 +83,7 @@ export default {
       },
       pinScrolling: function() {
         ScrollTrigger.create({
-          markers: true,
+          // markers: true,
           trigger: ".chambre",
           pin: ".chambreDetail",
           start: "10px top",

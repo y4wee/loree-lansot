@@ -1,18 +1,19 @@
 <template>
     <div class="house">
         <div class="houseContainer" v-for="(image, index) in images" :key="index" :data-index="index">
-            <svg class="houseContainerSvg" width="100%" height="100%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+            <img :src="image.url" alt="photo maison" class="houseContainerImage">
+            <svg class="houseContainerSvg" width="100%" height="100%" viewBox="0 0 1000 1000"  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+
                 <mask :id="'myMask' + index">
-                    <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                    <rect class="houseContainerSvgBack" x="0" y="0" width="100%" height="100%" fill="white" />
                     <rect :class="image.class + ' houseContainerSvgMask maskPhoto' + index" :x="image.xTo" y="3.5%" :width="image.width" height="95%" fill="black" />
                 </mask>
 
-                <image class="houseContainerSvgImageBack" :xlink:href="image.url" x="0" y="0" width="100%" />
                 <rect class="houseContainerSvgImageFront" x="0" y="0" width="100%" height="100%" :mask="`url(#myMask${index})`" />
-
                 <rect 
                 :class="image.class + ' houseContainerSvgMask houseContainerSvgRect maskPhoto' + index" 
                 :x="image.xTo" y="3.5%" :width="image.width" height="95%" fill="none" />
+
             </svg>
         </div>
     
@@ -87,12 +88,19 @@ $colorYellow: #c9853c;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: 75vh;
         overflow: hidden;
         border-top: solid 10px $colorBlue;
+        &Image {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
         &Svg {
+            position: absolute;
+            z-index: 2;
             &ImageFront {
-                display: flex;
                 fill: rgba($color: black, $alpha: 0.85);
             }
             &Mask {
@@ -113,39 +121,12 @@ $colorYellow: #c9853c;
     transform-origin: top right;
     transform: translateX(10px);
 }
-@media all and (min-width: 680px) and (max-width: 1024px) {
-    .house {
-        &Container {
-            height: 80vh;
-        }
-    }
-}
 @media all and (min-width: 1025px){
     .house {
         width: calc(40% - 10px);
         border-left: solid 10px $colorWhite;
         &Container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            overflow: hidden;
-            // border-top: solid 10px $colorBlue;
             border: none;
-            &Svg {
-                &ImageFront {
-                    display: flex;
-                    fill: rgba($color: black, $alpha: 0.85);
-                }
-                &Mask {
-                    opacity: 0;
-                }
-                &Rect {
-                    stroke: $colorWhite;
-                    stroke-width: 5px;
-                }
-            }
         }
     }
 }
