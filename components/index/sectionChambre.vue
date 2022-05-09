@@ -22,6 +22,7 @@
 
 <script>
 import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChambreParallax from './chambreParallax.vue';
 
 export default {
@@ -50,50 +51,47 @@ export default {
                     personnes: "1 - 4 personnes",
                     prix: "65€ - 101€ / nuit"
                 },
-            ]
+            ],
+            pinOn: false,
         };
     },
     mounted() {
-      this.animationTitle();
-      this.animationText();
+      // this.animationTitle();
+      // this.animationText();
+        gsap.registerPlugin(ScrollTrigger);
+        // responsive du js 
+        window.addEventListener('resize', () => {
+          console.log()
+          this.reloadSize();
+        });
+        if(innerWidth > 1024) {
+          this.pinScrolling();
+          this.pinOn = true;
+        }
     },
     methods: {
-        animationTitle: function() {
-            let element = document.querySelector(".chambreDetailTitre");
-            let callback = (entries) => {
-                if(entries[0].isIntersecting) {
-                    gsap.to(element, {
-                        transform: "translateX(0)",
-                        opacity: 1,
-                        ease: "power1.out",
-                        duration: 0.3,
-                        onComplete: observer.disconnect(),
-                    });
-                }
-            }
-            const observer = new IntersectionObserver(callback, {
-                threshold: 0.8,
-            });
-            observer.observe(element);
-        },
-        animationText: function() {
-            let element = document.querySelector(".chambreDetailText");
-            let callback = (entries) => {
-                if(entries[0].isIntersecting) {
-                    gsap.to(element, {
-                        transform: "translateX(0)",
-                        opacity: 1,
-                        ease: "power1.out",
-                        duration: 0.3,
-                        onComplete: observer.disconnect(),
-                    });
-                }
-            }
-            const observer = new IntersectionObserver(callback, {
-                threshold: 0.7,
-            });
-            observer.observe(element);
-        },
+      reloadSize: function() {
+        let width = document.querySelector("body").offsetWidth;
+        if(width > 1024 && this.pinOn === false) {
+          this.pinScrolling();
+          this.pinOn = true;
+        }
+        else if(width < 1024 && this.pinOn === true) {
+          this.pinOn = false;
+          location.reload();
+        } else {
+          return;
+        }
+      },
+      pinScrolling: function() {
+        ScrollTrigger.create({
+          markers: true,
+          trigger: ".chambre",
+          pin: ".chambreDetail",
+          start: "10px top",
+          end: "bottom bottom",
+        });
+      },
     },
     components: { ChambreParallax }
 }
@@ -113,7 +111,7 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
+$colorYellow: #cc7f2d;
 
 .chambre {
   z-index: 1;
@@ -128,16 +126,12 @@ $colorYellow: #c9853c;
     display: flex;
     flex-direction: column;
     width: 100%;
-    // border-top: solid 10px $colorBlue;
     border-bottom: solid 10px $colorBlue;
-
     &Titre {
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
       color: $colorWhite;
       margin: 40px 15px;
-      opacity: 0;
-      transform: translateX(12px);
     }
 
     &Text {
@@ -147,10 +141,34 @@ $colorYellow: #c9853c;
       margin: 0 10px 60px 10px;
       padding-left: 10px;
       border-left: solid 2px $colorWhite;
-      opacity: 0;
-      transform: translateX(12px);
     }
   }
 }
 
+@media all and (min-width: 1025px)  {
+  .chambre {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    background: $colorBeige;
+    border-top: solid 10px $colorWhite;
+    &Detail {
+      width: calc(40% - 10px);
+      text-align: center;
+      align-items: center;
+      border-bottom: none;
+      &Titre {
+        font-family: "Ballet Harmony", sans-serif;
+        font-size: 5rem;
+        color: $colorWhite;
+        margin: 80px 15px;
+      }
+
+      &Text {
+        font-size: 1.4rem;
+        max-width: 700px;
+        color: $colorBlue;
+      }
+    }
+  }
+}
 </style>

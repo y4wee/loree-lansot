@@ -139,7 +139,7 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
+$colorYellow: #c4721c;
 
 .info {
     z-index: 2;

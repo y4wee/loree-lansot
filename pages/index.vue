@@ -30,7 +30,7 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
+$colorYellow: #cc7f2d;
 
 .main {
   display: flex;

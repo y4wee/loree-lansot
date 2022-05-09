@@ -86,7 +86,8 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
+$colorYellow: #c4721c;
+
 .presentation {
   position: relative;
   display: flex;
@@ -155,7 +156,7 @@ $colorYellow: #c9853c;
 @media all and (min-width: 1025px) {
   .presentation {
     flex-direction: row;
-    border-bottom: solid 10px $colorWhite;
+    border-bottom: none;
   // section presentation
     &Self {
       width: 60%;

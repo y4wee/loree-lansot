@@ -26,8 +26,10 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
-
+$colorYellow: #c4721c;
+html {
+    scrollbar-width: none;
+}
 body {
     margin: 0;
 //   height: 100vh;
@@ -37,7 +39,7 @@ body {
     word-spacing: 4px;
     overflow-x: hidden;
     -ms-overflow-style: none;
-    scrollbar-width: none;
+    // scrollbar-width: none;
     background: $colorWhite;
 }
 body::-webkit-scrollbar {
