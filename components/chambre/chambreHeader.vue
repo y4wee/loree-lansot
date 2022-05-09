@@ -8,6 +8,7 @@
         <div class="headerLogo">
             <img :src="chambre[chambreIndex].logo" :alt="'titre de la chambre ' + chambre[chambreIndex].name">
         </div>
+        <div class="headerOverlay"></div>
     </div>
 </template>
 
@@ -79,6 +80,13 @@ $colorYellow: #c4721c;
     height: 100vh;
     width: 100%;
     user-select: none;
+    &Overlay {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: black, $alpha: 0.45);
+    }
     &Image {
         position: absolute;
         object-position: center;
