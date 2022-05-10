@@ -160,7 +160,7 @@ $colorYellow: #c4721c;
         cursor: pointer;
         pointer-events: all;
         &Barre {
-            background: $colorWhite;
+            background: $colorYellow;
             height: 3px;
             width: 100%;
             border-radius: 30px;
@@ -194,11 +194,6 @@ $colorYellow: #c4721c;
             stroke-width: 2px;
             overflow: visible;
         }
-    }
-}
-@media all and (min-width: 1025px) {
-    .navButtonBarre {
-        background: $colorYellow;
     }
 }
 </style>

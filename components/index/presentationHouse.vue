@@ -74,7 +74,7 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
+$colorYellow: #c4721c;
 
 .house {
     z-index: 1;
@@ -124,7 +124,7 @@ $colorYellow: #c9853c;
 @media all and (min-width: 1025px){
     .house {
         width: calc(40% - 10px);
-        border-left: solid 10px $colorWhite;
+        border-left: solid 10px $colorBlue;
         &Container {
             border: none;
         }

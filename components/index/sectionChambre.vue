@@ -109,7 +109,7 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #cc7f2d;
+$colorYellow: #c4721c;
 
 .chambre {
   z-index: 1;
@@ -118,7 +118,7 @@ $colorYellow: #cc7f2d;
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: $colorYellow;
+  background: $colorBeige;
   overflow-x: hidden;
   &Detail {
     display: flex;
@@ -147,8 +147,7 @@ $colorYellow: #cc7f2d;
   .chambre {
     flex-direction: row-reverse;
     align-items: flex-start;
-    background: $colorBeige;
-    border-top: solid 10px $colorWhite;
+    border-top: solid 10px $colorBlue;
     &Detail {
       width: calc(40% - 10px);
       text-align: center;

@@ -94,8 +94,8 @@ $colorYellow: #c4721c;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background: $colorMain;
-  border-top: solid 10px $colorWhite;
+  background: $colorWhite;
+  border-top: solid 10px $colorBlue;
   border-bottom: solid 10px $colorBlue;
 // section presentation
   &Self {
@@ -149,7 +149,7 @@ $colorYellow: #c4721c;
       padding: 0 10px;
       border-left: solid 2px $colorYellow;
       font-size: 1.4rem;
-      color: $colorTwo;
+      color: $colorBlue;
     }
   }
 }
@@ -206,7 +206,6 @@ $colorYellow: #c4721c;
         padding-left: 10px;
         border-left: solid 2px $colorYellow;
         font-size: 1.4rem;
-        color: $colorTwo;
       }
     }
   }
