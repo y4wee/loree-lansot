@@ -64,7 +64,7 @@ export default {
           // markers: true,
           trigger: ".presentation",
           pin: ".presentationSelf",
-          start: "10px top",
+          start: "top top",
           end: "bottom bottom",
         });
       },
@@ -95,14 +95,12 @@ $colorYellow: #c4721c;
   min-height: 100vh;
   width: 100%;
   background: $colorWhite;
-  border-top: solid 10px $colorBlue;
-  border-bottom: solid 10px $colorBlue;
 // section presentation
   &Self {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
+    max-height: 100vh;
     overflow-x: hidden;
     & h1 {
       margin: 40px 15px;
@@ -147,8 +145,7 @@ $colorYellow: #c4721c;
       align-items: center;
       margin: 40px 10px;
       padding: 0 10px;
-      border-left: solid 2px $colorYellow;
-      font-size: 1.4rem;
+      border-left: solid 2px $colorGreen;
       color: $colorBlue;
     }
   }
@@ -156,56 +153,14 @@ $colorYellow: #c4721c;
 @media all and (min-width: 1025px) {
   .presentation {
     flex-direction: row;
-    border-bottom: none;
   // section presentation
     &Self {
       width: 60%;
-      max-height: 100vh;
       align-items: center;
-      & h1 {
-        margin: 40px 15px;
-        font-family: "Ballet Harmony", sans-serif;
-        font-size: 5rem;
-        color: $colorYellow;
-        text-align: center;
-      }
-      // partie photo mask svg presentation
-      &Photo {
-        height: 200px;
-        width: 100%;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        & img {
-          position: absolute;
-          width: 100%;
-          max-width: 400px;
-          mask-image: url("~/assets/maskimage.svg");
-          mask-size: 200px;
-          mask-repeat: no-repeat;
-          mask-position: center;
-        }
-        & svg {
-          position: absolute;
-          width: 200px;
-          overflow: visible;
-        }
-        &Circle {
-          stroke: $colorTwo;
-          stroke-width: 5px;
-          fill: none;
-        }
-      }
-  // partie text presentation
+      // partie text presentation
       &Text {
         text-align: center;
         max-width: 700px;
-        margin: 40px 10px;
-        padding-left: 10px;
-        border-left: solid 2px $colorYellow;
-        font-size: 1.4rem;
       }
     }
   }

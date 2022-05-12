@@ -96,7 +96,6 @@ $colorYellow: #c4721c;
     max-width: 500px;
     box-shadow: inset 0 0 80px 100px $colorBlue;
     border-radius: 30px;
-    font-size: 1.1rem;
     color: $colorWhite;
     & h2 {
         font-family: 'Ballet Harmony', sans-serif;
@@ -115,52 +114,6 @@ $colorYellow: #c4721c;
 @media all and (min-width: 1025px) {
     .chambreParallax {
         width: 60%;
-        border-right: solid 10px $colorBlue;
-        &Container {
-            z-index: 1;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            width: 100%;
-            user-select: none;
-            &Image {
-                position: absolute;
-                object-position: center;
-                object-fit: cover;
-                height: 80%;
-                width: 100%;
-            }
-        }
-    }
-    .chambreDetail {
-        position: absolute;
-        top: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 30vh;
-        width: 90%;
-        max-width: 500px;
-        box-shadow: inset 0 0 80px 100px $colorBlue;
-        border-radius: 30px;
-        font-size: 1.1rem;
-        color: $colorWhite;
-        & h2 {
-            font-family: 'Ballet Harmony', sans-serif;
-            font-size: 4rem;
-            text-align: center;
-            color: $colorYellow;
-            margin: 0 0 20px 0;
-        }
-        &Link {
-            margin-top: 15px;
-            color: $colorWhite;
-            border-bottom: solid 2px $colorYellow;
-            cursor: pointer;
-        }
     }
 }
 

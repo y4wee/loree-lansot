@@ -90,7 +90,7 @@ $colorYellow: #c4721c;
         width: 100%;
         height: 75vh;
         overflow: hidden;
-        border-top: solid 10px $colorBlue;
+        border-top: solid 10px $colorWhite;
         &Image {
             position: absolute;
             object-fit: cover;
@@ -123,11 +123,7 @@ $colorYellow: #c4721c;
 }
 @media all and (min-width: 1025px){
     .house {
-        width: calc(40% - 10px);
-        border-left: solid 10px $colorBlue;
-        &Container {
-            border: none;
-        }
+        width: 40%;
     }
 }
 

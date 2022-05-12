@@ -149,7 +149,6 @@ $colorYellow: #c4721c;
     align-items: center;
     width: 100%;
     background: $colorBlue;
-    font-size: 1.2rem;
     border-top: solid 10px $colorWhite;
     &Leaf {
         position: absolute;
@@ -239,7 +238,6 @@ $colorYellow: #c4721c;
         &Liste {
             width: 90%;
             max-width: 600px;
-            font-size: 1.3rem;
             margin: 20px 0;
             &Each {
                 display: flex;
@@ -273,16 +271,11 @@ $colorYellow: #c4721c;
         }
         &Section {
             position: relative;
-            top: 24.5px;
-            justify-content: flex-end;
             flex-direction: row;
             margin: 70px 0 0;
-            transform: translateZ(1000px);
         }
         // section service icon plus text
         &Services {
-            position: absolute;
-            left: 0;
             align-items: flex-start;
             width: 100%;
             background: $colorBlue;
@@ -299,16 +292,11 @@ $colorYellow: #c4721c;
         }
         // section carte tarifs nuit par personne
         &Prix {
+            position: absolute;
+            right: 0;
             z-index: 3;
             width: 45%;
             margin: 0 25px;
-        }
-    }
-}
-@media all and (min-width: 1165px) {
-    .info {
-        &Section {
-            top: 38px;
         }
     }
 }

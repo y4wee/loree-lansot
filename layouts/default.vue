@@ -41,6 +41,7 @@ body {
     -ms-overflow-style: none;
     // scrollbar-width: none;
     background: $colorWhite;
+    font-size: 1.2rem;
 }
 body::-webkit-scrollbar {
   display: none;

@@ -90,6 +90,7 @@ $colorYellow: #c9853c;
         display: flex;
         justify-content: center;
         margin: 40px 0px 10px;
+        font-size: 1.1rem;
         & a {
             text-decoration: none;
             color: $colorGreen;

@@ -118,7 +118,7 @@ $colorYellow: #c4721c;
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background: $colorBeige;
+  background: $colorBlue;
   overflow-x: hidden;
   &Detail {
     display: flex;
@@ -128,17 +128,16 @@ $colorYellow: #c4721c;
     &Titre {
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
-      color: $colorWhite;
+      color: $colorYellow;
       margin: 40px 15px;
     }
 
     &Text {
-      font-size: 1.4rem;
       max-width: 700px;
-      color: $colorBlue;
+      color: $colorWhite;
       margin: 0 10px 60px 10px;
       padding-left: 10px;
-      border-left: solid 2px $colorWhite;
+      border-left: solid 2px $colorGreen;
     }
   }
 }
@@ -149,21 +148,15 @@ $colorYellow: #c4721c;
     align-items: flex-start;
     border-top: solid 10px $colorBlue;
     &Detail {
-      width: calc(40% - 10px);
+      width: 40%;
       text-align: center;
       align-items: center;
       border-bottom: none;
       &Titre {
-        font-family: "Ballet Harmony", sans-serif;
-        font-size: 5rem;
-        color: $colorWhite;
         margin: 80px 15px;
       }
-
       &Text {
-        font-size: 1.4rem;
         max-width: 700px;
-        color: $colorBlue;
       }
     }
   }
