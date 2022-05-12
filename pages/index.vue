@@ -3,7 +3,7 @@
     <SectionAccueil id="indexAccueil" />
     <SectionPresentation />
     <SectionChambre id="indexChambre" />
-    <SectionService id="indexService" />
+    <SectionDelice id="indexDelice" />
   </div>
 </template>
 
@@ -12,13 +12,13 @@ import { gsap } from 'gsap';
 import SectionAccueil from '../components/index/sectionAccueil.vue';
 import SectionPresentation from '~/components/index/sectionPresentation.vue';
 import SectionChambre from '~/components/index/sectionChambre.vue';
-import SectionService from '~/components/index/sectionService.vue';
+import SectionDelice from '~/components/index/sectionDelice.vue';
 
 export default {
     name: "IndexPage",
     mounted() {
     },
-    components: { SectionAccueil, SectionPresentation, SectionChambre, SectionService }
+    components: { SectionAccueil, SectionPresentation, SectionChambre, SectionDelice }
 }
 </script>
 

@@ -1,11 +1,11 @@
 <template>
-    <div class="service">
-        <h1 class="serviceTitle">Nos <br/> Services</h1>
-        <section class="serviceDejeuner">
+    <div class="delice">
+        <h1 class="deliceTitle">Nos Delices</h1>
+        <section class="deliceDejeuner">
             <h2>Nos petits <br /> dejeuners</h2>
         </section>
 
-        <section class="serviceRepas">
+        <section class="deliceRepas">
             <h2>Nos<br /> Plateaux repas</h2>
         </section>
     </div>
@@ -15,7 +15,7 @@
 import { gsap } from 'gsap';
 
 export default {
-    name: "Service",
+    name: "Delice",
     mounted() {
         
     },
@@ -36,10 +36,10 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c4721c;
 
-.service {
+.delice {
     display: flex;
     flex-direction: column;
-    // align-items: center;
+    align-items: center;
     width: 100%;
     overflow-x: hidden;
     background: $colorBeige;

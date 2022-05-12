@@ -88,8 +88,8 @@ export default {
                     hash: "#indexChambre"
                 },
                 {
-                    name: "Service",
-                    hash: "#indexService"
+                    name: "Délices",
+                    hash: "#indexDelice"
                 },
                 {
                     name: "Contact",

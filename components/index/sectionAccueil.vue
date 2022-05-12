@@ -7,7 +7,7 @@
             </div>
         </div>
         
-        <img src="~/assets/accueil3.jpg" alt="image accueil" class="accueilImg">
+        <img src="~/assets/accueilback.webp" alt="image accueil" class="accueilImg">
         <Logo 
             class="accueilLogo"
             :animation = logoAnimation
