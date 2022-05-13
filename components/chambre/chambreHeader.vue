@@ -175,7 +175,7 @@ $colorYellow: #c4721c;
 }
 @keyframes scaleBorderX {
     from {
-        transform: scaleX(0.85);
+        transform: scaleX(0.9);
     }
     to {
         transform: scaleX(1);
@@ -186,7 +186,7 @@ $colorYellow: #c4721c;
     .header {
         &Logo {
             &Text {
-                font-size: 5rem;
+                font-size: 4.5rem;
             }
             &Border {
                 flex-direction: row;
@@ -210,7 +210,7 @@ $colorYellow: #c4721c;
             }
         }
         &Arrow {
-            padding: 40px;
+            padding: 35px;
         }
     }
 }
@@ -219,8 +219,8 @@ $colorYellow: #c4721c;
         font-size: 5.5rem;
     }
     .headerArrow {
-        border-bottom: solid 3px $colorWhite;
-        padding: 45px;
+        border-right: solid 3px $colorYellow;
+        padding: 40px;
     }
 }
 

@@ -1,11 +1,5 @@
 <template>
     <div class="accueil">
-        <div class="accueilUtils">
-            <h1 class="accueilUtilsTitle">Chambres d ' Hôtes</h1>
-            <div class="accueilUtilsButton" @click="buttonScrollTo">
-                Réserver
-            </div>
-        </div>
         
         <img src="~/assets/accueilback.webp" alt="image accueil" class="accueilImg">
         <Logo 
@@ -13,12 +7,16 @@
             :animation = logoAnimation
             :className = logoClass
             :logoFill = logoFill
-            :logoStroke = logoStroke
+            :logoStroke = logoStroke 
         />
-        <div class="accueilPhone">
-            <font-awesome-icon :icon="['fa', 'phone']" class="accueilPhoneIcon" />
-            <a href="tel:0612186397">- 06.12.18.63.97</a>
+
+        <div class="accueilUtils">
+            <h1 class="accueilUtilsTitle">Chambres d ' Hôtes</h1>
+            <div class="accueilUtilsButton" @click="buttonScrollTo">
+                Réserver
+            </div>
         </div>
+
         <div class="accueilOverlay"></div>
     </div>
 </template>
@@ -122,26 +120,33 @@ $colorYellow: #c4721c;
     &Utils {
         z-index: 3;
         position: absolute;
-        bottom: 12%;
+        bottom: -200px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 360px;
+        width: 100%;
+        max-width: 360px;
+        // background: $colorBlue;
+        border: solid 10px $colorWhite;
+        border-radius: 50%;
+        overflow: hidden;
         &Title {
-            margin: 30px 0;
+            margin: 50px 0 15px;
             color: $colorWhite;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: normal;
         }
         &Button {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 200px;
+            width: 110%;
             height: 50px;
             border-radius: 30px;
-            background: $colorGreen;
+            background: $colorYellow;
             box-shadow: 0 4px 5px 0 rgba($color: black, $alpha: 0.7);
-            font-size: 1.5rem;
+            // font-size: 1.2rem;
             font-weight: bold;
             color: $colorBlue;
             cursor: pointer;
