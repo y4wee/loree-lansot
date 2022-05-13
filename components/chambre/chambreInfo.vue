@@ -1,12 +1,12 @@
 <template>
     <div class="info">
-        <lottie-player 
+        <!-- <lottie-player 
             class="infoLeaf"
             src="https://assets8.lottiefiles.com/packages/lf20_hyfprsvc.json"
             background="transparent"
             style="width: 300px; height: 300px;"
             autoplay>
-        </lottie-player>
+        </lottie-player> -->
         <div class="infoText">
             {{ chambre[chambreIndex].text }}
         </div>
@@ -159,7 +159,7 @@ $colorYellow: #c4721c;
         max-width: 700px;
         margin: 50px 10px;
         color: $colorWhite;
-        border-left: solid 2px $colorYellow;
+        border-left: solid 2px $colorGreen;
         padding-left: 10px;
     }
     // section regroupant service plus carte prix
@@ -181,7 +181,7 @@ $colorYellow: #c4721c;
             margin: 10px;
             &Icon {
                 font-size: 1.5rem;
-                color: $colorGreen;
+                color: $colorYellow;
             }
             &Text {
                 color: $colorWhite;
@@ -263,7 +263,7 @@ $colorYellow: #c4721c;
             margin: 70px 0 40px;
             width: 50%;
             border-left: none;
-            border-bottom: solid 2px $colorYellow;
+            border-bottom: solid 2px $colorGreen;
             padding-left: 0;
             padding-bottom: 50px;
             text-align: center;

@@ -39,17 +39,22 @@ export default {
                     name: "atelier",
                     images: 
                         [
-                            require("~/assets/atelier2.png"),
-                            require("~/assets/atelier3.png"),
-                            require("~/assets/atelier4.png"),
+                            require("~/assets/atelier2.jpg"),
+                            require("~/assets/atelier3.jpg"),
+                            require("~/assets/atelier4.jpg"),
+                            require("~/assets/atelier.jpg"),
+                            require("~/assets/atelier6.jpg"),
+                            require("~/assets/atelier7.jpg"),
                         ],
                 },
                 {
                     name: "mansarde",
                     images:
                         [
-                            require("~/assets/mansarde2.png"),
-                            require("~/assets/mansarde3.png"),
+                            require("~/assets/mansarde2.jpg"),
+                            require("~/assets/mansarde3.jpg"),
+                            require("~/assets/mansarde4.jpg"),
+                            require("~/assets/mansarde5.png"),
                         ],
                 },
                 {
@@ -58,7 +63,7 @@ export default {
                         [
                             require("~/assets/romance2.png"),
                             require("~/assets/romance3.png"),
-                            require("~/assets/romance4.png"),
+                            require("~/assets/romance4.jpg"),
                         ],
                 },
             ],
@@ -107,7 +112,7 @@ export default {
                 }
             }
             const observer = new IntersectionObserver(callback, {
-                threshold: 0.6,
+                threshold: 0.4,
             });
             observer.observe(element);
         },
@@ -150,6 +155,7 @@ $colorYellow: #c4721c;
         justify-content: flex-start;
         width: 100%;
         height: 80vh;
+        background: $colorBlue;
         & img {
             display: none;
             position: absolute;

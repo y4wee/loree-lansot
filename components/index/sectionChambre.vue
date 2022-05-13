@@ -33,21 +33,21 @@ export default {
                 {
                     id: "atelier",
                     name: "L atelier",
-                    image: require("~/assets/atelier.png"),
+                    image: require("~/assets/atelier5.jpg"),
                     personnes: "1 - 4 personnes",
                     prix: "70€ - 106€ / nuit"
                 },
                 {
                     id: "mansarde",
                     name: "La Mansarde",
-                    image: require("~/assets/mansarde.png"),
+                    image: require("~/assets/mansarde.jpg"),
                     personnes: "1 - 3 personnes",
                     prix: "60€ - 78€ / nuit"
                 },
                 {
                     id: "romance",
                     name: "La Romance",
-                    image: require("~/assets/romance.png"),
+                    image: require("~/assets/romance.webp"),
                     personnes: "1 - 4 personnes",
                     prix: "65€ - 101€ / nuit"
                 },
