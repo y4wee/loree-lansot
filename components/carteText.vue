@@ -50,7 +50,7 @@ $colorYellow: #c4721c;
     align-items: center;
     width: calc(100% - 60px);
     max-width: 700px;
-    min-height: 300px;
+    // min-height: 300px;
     margin: 20px 0 50px;
     padding: 20px;
     background: $colorBeige;

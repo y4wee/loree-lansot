@@ -1,19 +1,16 @@
 <template>
   <div class="presentation">
     <section class="presentationSelf">
+      <div class="presentationSelfOverlay"></div>
       <h1>Qui sommes nous</h1>
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
 
       </div>
-      <div class="presentationSelfText">
-        Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère,
-        que nous rénovons dans un style alliant modernité & ancient.<br/><br/>
-
-        Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
-        dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
-        cet endroit ce cadre si particulier !
-      </div>
+      <CarteText 
+      class="presentationSelfText"
+      :carte="carte"
+      />
     </section>
 
     <PresentationHouse />
@@ -25,12 +22,21 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PresentationHouse from './presentationHouse.vue';
+import CarteText from '../carteText.vue';
 
 export default {
     name: "SectionPresentation",
     data() {
         return {
             pinOn: false,
+            carte: {
+              text: ` Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère,
+                      que nous rénovons dans un style alliant modernité & ancient.
+
+                      Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
+                      dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
+                      cet endroit ce cadre si particulier !`,
+            }
         };
     },
     mounted() {
@@ -64,12 +70,12 @@ export default {
           // markers: true,
           trigger: ".presentation",
           pin: ".presentationSelf",
-          start: "top top",
+          start: "10px top",
           end: "bottom bottom",
         });
       },
     },
-    components: { PresentationHouse },
+    components: { PresentationHouse, CarteText },
 }
 
 </script>
@@ -95,15 +101,29 @@ $colorYellow: #c4721c;
   min-height: 100vh;
   width: 100%;
   background: $colorWhite;
+  border-top: solid 10px $colorWhite;
 // section presentation
   &Self {
+    z-index: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     width: 100%;
     max-height: 100vh;
     overflow-x: hidden;
+    &Overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      background: $colorBlue;
+    }
     & h1 {
-      margin: 40px 15px;
+      z-index: 2;
+      margin: 0 15px;
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
       color: $colorYellow;
@@ -111,42 +131,23 @@ $colorYellow: #c4721c;
     }
     // partie photo mask svg presentation
     &Photo {
-      height: 350px;
-      width: 100%;
-      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: center;
       align-items: center;
-
+      height: 30vh;
+      width: calc(100% - 20px);
+      max-width: 500px;
+      // box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+      overflow: hidden;
+      border: solid 5px $colorBlue;
       & img {
-        position: absolute;
-        width: 100%;
-        max-width: 400px;
-        mask-image: url("~/assets/maskimage.svg");
-        mask-size: 200px;
-        mask-repeat: no-repeat;
-        mask-position: center;
-      }
-      & svg {
-        position: absolute;
-        width: 200px;
-        overflow: visible;
-      }
-      &Circle {
-        stroke: $colorTwo;
-        stroke-width: 5px;
-        fill: none;
+        min-height: 100%;
       }
     }
 // partie text presentation
     &Text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 40px 10px;
-      padding: 0 10px;
-      border-left: solid 2px $colorGreen;
-      color: $colorBlue;
+      z-index: 2;
     }
   }
 }
@@ -158,9 +159,9 @@ $colorYellow: #c4721c;
       width: 60%;
       align-items: center;
       // partie text presentation
-      &Text {
-        text-align: center;
-        max-width: 700px;
+      &Photo {
+        align-self: flex-end;
+        margin: 0 10%;
       }
     }
   }
