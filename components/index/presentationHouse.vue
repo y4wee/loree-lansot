@@ -88,9 +88,9 @@ $colorYellow: #c4721c;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 75vh;
+        height: 60vh;
         overflow: hidden;
-        border-top: solid 10px $colorWhite;
+        border-bottom: solid 10px $colorWhite;
         &Image {
             position: absolute;
             object-fit: cover;
@@ -124,6 +124,9 @@ $colorYellow: #c4721c;
 @media all and (min-width: 1025px){
     .house {
         width: 40%;
+        &Container {
+            height: 70vh;
+        }
     }
 }
 
