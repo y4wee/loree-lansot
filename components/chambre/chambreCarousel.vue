@@ -171,21 +171,30 @@ $colorYellow: #c4721c;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 30px;
+        width: 60px;
         height: 60px;
         color: $colorGreen;
         font-size: 2rem;
         background: rgba($color: #000000, $alpha: 0.85);
+        border-radius: 50%;
         cursor: pointer;
         &Left {
-            left: 0;
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
+            left: -30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            // border-top-right-radius: 10px;
+            // border-bottom-right-radius: 10px;
         }
         &Right {
-            right: 0;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
+            right: -30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10px;
+            // border-top-left-radius: 10px;
+            // border-bottom-left-radius: 10px;
         }
     }
     &Dots {
@@ -232,15 +241,17 @@ $colorYellow: #c4721c;
             border-left: solid 10px $colorWhite;
         }
         &Button {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             &Left {
-                left: -35px;
-                border-radius: 10px;
+                justify-content: center;
+                left: -50px;
+                padding: 0;
             }
             &Right {
-                right: -35px;
-                border-radius: 10px;
+                justify-content: center;
+                right: -50px;
+                padding: 0;
             }
         }
         &Dots {

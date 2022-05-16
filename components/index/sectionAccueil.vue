@@ -39,6 +39,12 @@ export default {
     mounted() {
         gsap.registerPlugin(ScrollToPlugin);
         this.parallaxScroll();
+        console.log(this.widthInner);
+    },
+    computed: {
+        widthInner: function() {
+            return document.querySelector("body").offsetWidth
+        }
     },
     methods: {
         parallaxScroll: function() {
@@ -145,8 +151,7 @@ $colorYellow: #c4721c;
             height: 50px;
             border-radius: 30px;
             background: $colorYellow;
-            box-shadow: 0 4px 5px 0 rgba($color: black, $alpha: 0.7);
-            // font-size: 1.2rem;
+            // box-shadow: 0 4px 5px 0 rgba($color: black, $alpha: 0.7);
             font-weight: bold;
             color: $colorBlue;
             cursor: pointer;
