@@ -11,26 +11,10 @@
         </div>
         <!-- <h1 class="deliceTitle">Nos Delices</h1> -->
         <section class="deliceDejeuner">
-            <div class="deliceDejeunerCarte">
-                <div class="deliceDejeunerCarteText">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Sequi quod optio sit? Dolor ipsum minus hic. 
-                    Corporis laborum voluptate, possimus odit culpa, 
-                    ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
-                    Ex ipsa inventore in repudiandae optio neque ullam eius iure!
-                    Iste, magni est assumenda numquam recusandae doloremque laudantium.
-                </div>
-                <lottie-player 
-                    class="infoLeaf"
-                    src="https://assets6.lottiefiles.com/packages/lf20_hts2bhx2.json"
-                    background="transparent"
-                    style="width: 180px; height: 180px;"
-                    autoplay
-                    loop>
-                </lottie-player>
-                <div class="deliceDejeunerCarteBorder deliceDejeunerCarteBorderTop"></div>
-                <div class="deliceDejeunerCarteBorder deliceDejeunerCarteBorderBottom"></div>
-            </div>
+            <CarteText 
+            class="deliceDejeunerCarte"
+            :carte="carte"
+            />
             <MosaiqueDejeuner />
         </section>
 
@@ -43,13 +27,27 @@
 <script>
 import { gsap } from 'gsap';
 import MosaiqueDejeuner from './mosaiqueDejeuner.vue';
+import CarteText from '../carteText.vue';
 
 export default {
     name: "Delice",
+    data() {
+        return {
+            carte: {
+                text: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Sequi quod optio sit? Dolor ipsum minus hic. 
+                        Corporis laborum voluptate, possimus odit culpa, 
+                        ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
+                        Ex ipsa inventore in repudiandae optio neque ullam eius iure!
+                        Iste, magni est assumenda numquam recusandae doloremque laudantium.`,
+                icon: "https://assets6.lottiefiles.com/packages/lf20_hts2bhx2.json"
+            }
+        }
+    },
     mounted() {
     },
     methods: {},
-    components: { MosaiqueDejeuner }
+    components: { MosaiqueDejeuner, CarteText }
 }
 
 </script>
@@ -76,6 +74,7 @@ $colorYellow: #c4721c;
     background: $colorWhite;
     border-top: solid 10px $colorBlue;
     border-bottom: solid 10px $colorWhite;
+    user-select: none;
     &Overlay {
         position: absolute;
         top: 0;
@@ -93,7 +92,6 @@ $colorYellow: #c4721c;
         font-family: "Ballet Harmony", sans-serif;
         font-size: 5rem;
         text-align: center;
-        // margin: 40px 15px;
         &Text {
             position: relative;
             display: flex;
@@ -121,41 +119,6 @@ $colorYellow: #c4721c;
         display: flex;
         flex-direction: column;
         align-items: center;
-        &Carte {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: calc(100% - 60px);
-            max-width: 700px;
-            min-height: 300px;
-            margin: 20px 0 50px;
-            padding: 20px;
-            background: $colorBeige;
-            box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
-            text-align: center;
-            &Text {
-                color: $colorBlue;
-                margin: 20px 0;
-            }
-            &Border {
-                position: absolute;
-                width: 50%;
-                height: 50%;
-                &Top {
-                    top: 10px;
-                    left: 10px;
-                    border-top: solid 2px $colorBlue;
-                    border-left: solid 2px $colorBlue;
-                }
-                &Bottom {
-                    bottom: 10px;
-                    right: 10px;
-                    border-bottom: solid 2px $colorBlue;
-                    border-right: solid 2px $colorBlue;
-                }
-            }
-        }
     }
 }
 @media all and (min-width: 1025px) {
