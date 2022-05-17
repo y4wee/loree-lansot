@@ -90,7 +90,7 @@ $colorYellow: #c4721c;
         width: 100%;
         height: 60vh;
         overflow: hidden;
-        border-bottom: solid 10px $colorWhite;
+        border-top: solid 10px $colorWhite;
         &Image {
             position: absolute;
             object-fit: cover;
@@ -126,6 +126,8 @@ $colorYellow: #c4721c;
         width: 40%;
         &Container {
             height: 70vh;
+            border-top: none;
+            border-bottom: solid 10px $colorWhite;
         }
     }
 }

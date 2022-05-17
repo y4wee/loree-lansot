@@ -1,7 +1,7 @@
 <template>
     <div class="accueil">
-        
         <img src="~/assets/accueilback.webp" alt="image accueil" class="accueilImg">
+
         <Logo 
             class="accueilLogo"
             :animation = logoAnimation
@@ -12,9 +12,9 @@
 
         <div class="accueilUtils">
             <h1 class="accueilUtilsTitle">Chambres d ' Hôtes</h1>
-            <div class="accueilUtilsButton" @click="buttonScrollTo">
+            <div class="accueilUtilsButton">
                 <div class="accueilUtilsButtonBack"></div>
-                <div class="accueilUtilsButtonText">Reserver</div>
+                <div class="accueilUtilsButtonText" @click="buttonScrollTo">Reserver</div>
             </div>
         </div>
 

@@ -4,7 +4,6 @@
         <HalfTitle 
         :text="'Nos Delices'"
         />
-        <!-- <h1 class="deliceTitle">Nos Delices</h1> -->
         <section class="deliceDejeuner">
             <CarteText 
             class="deliceDejeunerCarte"
