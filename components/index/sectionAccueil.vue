@@ -13,7 +13,8 @@
         <div class="accueilUtils">
             <h1 class="accueilUtilsTitle">Chambres d ' Hôtes</h1>
             <div class="accueilUtilsButton" @click="buttonScrollTo">
-                Réserver
+                <div class="accueilUtilsButtonBack"></div>
+                <div class="accueilUtilsButtonText">Reserver</div>
             </div>
         </div>
 
@@ -126,17 +127,35 @@ $colorYellow: #c4721c;
     &Utils {
         z-index: 3;
         position: absolute;
-        bottom: -200px;
+        bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 360px;
-        width: 100%;
-        max-width: 360px;
-        // background: $colorBlue;
-        border: solid 10px $colorWhite;
-        border-radius: 50%;
-        overflow: hidden;
+        height: 200px;
+        width: calc(100% - 20px);
+        max-width: 350px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 45%;
+            border-top: solid 10px $colorWhite;
+            border-left: solid 10px $colorWhite;
+            box-shadow: -5px -5px 5px 0 rgba($color: #000000, $alpha: 0.7);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 45%;
+            border-bottom: solid 10px $colorWhite;
+            border-right: solid 10px $colorWhite;
+            box-shadow: 5px 5px 5px 0 rgba($color: #000000, $alpha: 0.7);
+        }
         &Title {
             margin: 50px 0 15px;
             color: $colorWhite;
@@ -144,17 +163,35 @@ $colorYellow: #c4721c;
             font-weight: normal;
         }
         &Button {
+            z-index: 4;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 110%;
+            width: 60%;
             height: 50px;
-            border-radius: 30px;
-            background: $colorYellow;
-            // box-shadow: 0 4px 5px 0 rgba($color: black, $alpha: 0.7);
-            font-weight: bold;
-            color: $colorBlue;
-            cursor: pointer;
+            &Text {
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                border: solid 2px $colorYellow;
+                color: $colorYellow;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+            }
+            &Back {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 100%;
+                height: 100%;
+                background: $colorBlue;
+                box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+            }
         }
     }
 
