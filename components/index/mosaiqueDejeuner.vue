@@ -81,7 +81,6 @@ $colorYellow: #c4721c;
     .mosaique {
         width: 75%;
         align-self: flex-end;
-        margin-right: 5%;
     }
 }
 

@@ -2,13 +2,15 @@
   <div class="presentation">
     <section class="presentationSelf">
       <div class="presentationSelfOverlay"></div>
-      <h1>Qui sommes nous</h1>
+      <HalfTitle 
+      :text="'Qui sommes nous'"
+      />
       <div class="presentationSelfPhoto">
         <img src="~/assets/profile.png" alt="photo hôtes jambert">
 
       </div>
       <CarteText 
-      class="presentationSelfText"
+      class="presentationSelfCarte"
       :carte="carte"
       />
     </section>
@@ -23,6 +25,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PresentationHouse from './presentationHouse.vue';
 import CarteText from '../carteText.vue';
+import HalfTitle from '../halfTitle.vue';
 
 export default {
     name: "SectionPresentation",
@@ -75,7 +78,7 @@ export default {
         });
       },
     },
-    components: { PresentationHouse, CarteText },
+    components: { PresentationHouse, CarteText, HalfTitle },
 }
 
 </script>
@@ -98,7 +101,6 @@ $colorYellow: #c4721c;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   width: 100%;
   background: $colorWhite;
   border-top: solid 10px $colorWhite;
@@ -109,9 +111,7 @@ $colorYellow: #c4721c;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     width: 100%;
-    max-height: 100vh;
     overflow-x: hidden;
     &Overlay {
       position: absolute;
@@ -136,7 +136,7 @@ $colorYellow: #c4721c;
       justify-content: center;
       align-items: center;
       height: 30vh;
-      width: calc(100% - 20px);
+      width: calc(100% - 30px);
       max-width: 500px;
       // box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
       overflow: hidden;
@@ -146,8 +146,9 @@ $colorYellow: #c4721c;
       }
     }
 // partie text presentation
-    &Text {
+    &Carte {
       z-index: 2;
+      margin: 50px 0;
     }
   }
 }
@@ -156,6 +157,7 @@ $colorYellow: #c4721c;
     flex-direction: row;
   // section presentation
     &Self {
+      max-height: 100vh;
       width: 60%;
       align-items: center;
       // partie text presentation

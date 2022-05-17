@@ -4,12 +4,10 @@
       <div class="chambreDetailTitre">
         Nos <br/> Chambres
       </div>
-      <div class="chambreDetailText">
-        Venez vous ressourcer tout au long de l'année, dans notre ancienne ferme
-        du XVII° siècle.
-        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
-        à votre disposition trois chambres d'hôtes spacieuses.
-      </div>
+      <CarteText 
+      class="chambreDetailCarte"
+      :carte="carteChambre"
+      />
     </div>
     
 
@@ -24,6 +22,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChambreParallax from './chambreParallax.vue';
+import CarteText from '../carteText.vue';
 
 export default {
     name: "SectionChambre",
@@ -52,6 +51,13 @@ export default {
                     prix: "65€ - 101€ / nuit"
                 },
             ],
+            carteChambre: {
+                text: ` Venez vous ressourcer tout au long de l'année, dans notre ancienne ferme
+                        du XVII° siècle.
+                        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
+                        à votre disposition trois chambres d'hôtes spacieuses.`,
+                icon: "https://assets9.lottiefiles.com/packages/lf20_onwiwmfr.json"
+            },
             pinOn: false,
         };
     },
@@ -91,7 +97,7 @@ export default {
         });
       },
     },
-    components: { ChambreParallax }
+    components: { ChambreParallax, CarteText }
 }
 
 </script>
@@ -123,21 +129,15 @@ $colorYellow: #c4721c;
   &Detail {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    border-bottom: solid 10px $colorBlue;
+    border-bottom: solid 50px $colorBlue;
     &Titre {
+      margin: 50px 15px;
+      text-align: center;
       font-family: "Ballet Harmony", sans-serif;
       font-size: 5rem;
       color: $colorYellow;
-      margin: 40px 15px;
-    }
-
-    &Text {
-      max-width: 700px;
-      color: $colorWhite;
-      margin: 0 10px 60px 10px;
-      padding-left: 10px;
-      border-left: solid 2px $colorGreen;
     }
   }
 }
@@ -152,12 +152,6 @@ $colorYellow: #c4721c;
       text-align: center;
       align-items: center;
       border-bottom: none;
-      &Titre {
-        margin: 80px 15px;
-      }
-      &Text {
-        max-width: 700px;
-      }
     }
   }
 }

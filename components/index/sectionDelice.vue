@@ -1,25 +1,28 @@
 <template>
     <div class="delice">
         <div class="deliceOverlay"></div>
-        <div class="deliceTitle">
-            <div class="deliceTitleText">
-                <div class="deliceTitleTextLeft">Nos Delices</div>
-            </div>
-            <div class="deliceTitleText">
-                <div class="deliceTitleTextRight">Nos Delices</div>
-            </div>
-        </div>
+        <HalfTitle 
+        :text="'Nos Delices'"
+        />
         <!-- <h1 class="deliceTitle">Nos Delices</h1> -->
         <section class="deliceDejeuner">
             <CarteText 
             class="deliceDejeunerCarte"
-            :carte="carte"
+            :carte="carteDejeuner"
             />
-            <MosaiqueDejeuner />
+            <MosaiqueDejeuner 
+            class="deliceDejeunerMosaique"
+            />
         </section>
 
         <section class="deliceRepas">
-            <h2>Nos<br /> Plateaux repas</h2>
+            <CarteText 
+            class="deliceRepasCarte"
+            :carte="carteRepas"
+            />
+            <div class="deliceRepasPhoto">
+                <img class="deliceRepasPhotoImage" src="~/assets/dejeuner/repas.jpg" alt="photo plateau repas">
+            </div>
         </section>
     </div>
 </template>
@@ -28,26 +31,36 @@
 import { gsap } from 'gsap';
 import MosaiqueDejeuner from './mosaiqueDejeuner.vue';
 import CarteText from '../carteText.vue';
+import HalfTitle from '../halfTitle.vue';
 
 export default {
     name: "Delice",
     data() {
         return {
-            carte: {
+            carteDejeuner: {
                 text: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Sequi quod optio sit? Dolor ipsum minus hic. 
                         Corporis laborum voluptate, possimus odit culpa, 
                         ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
                         Ex ipsa inventore in repudiandae optio neque ullam eius iure!
                         Iste, magni est assumenda numquam recusandae doloremque laudantium.`,
-                icon: "https://assets6.lottiefiles.com/packages/lf20_hts2bhx2.json"
-            }
+                icon: "https://assets3.lottiefiles.com/packages/lf20_gbypohim.json"
+            },
+            carteRepas: {
+                text: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Sequi quod optio sit? Dolor ipsum minus hic. 
+                        Corporis laborum voluptate, possimus odit culpa, 
+                        ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
+                        Ex ipsa inventore in repudiandae optio neque ullam eius iure!
+                        Iste, magni est assumenda numquam recusandae doloremque laudantium.`,
+                icon: "https://assets10.lottiefiles.com/packages/lf20_2cmperww.json"
+            },
         }
     },
     mounted() {
     },
     methods: {},
-    components: { MosaiqueDejeuner, CarteText }
+    components: { MosaiqueDejeuner, CarteText, HalfTitle }
 }
 
 </script>
@@ -69,6 +82,7 @@ $colorYellow: #c4721c;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     width: 100%;
     overflow-x: hidden;
     background: $colorWhite;
@@ -83,42 +97,47 @@ $colorYellow: #c4721c;
         width: 50%;
         background: $colorBlue;
     }
-    &Title {
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 300px;
-        font-family: "Ballet Harmony", sans-serif;
-        font-size: 5rem;
-        text-align: center;
-        &Text {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 50%;
-            height: 100%;
-            overflow: hidden;
-            &Left {
-                position: absolute;
-                right: 0;
-                transform: translateX(50%);
-                color: $colorYellow;
-            }
-            &Right {
-                position: absolute;
-                left: 0;
-                transform: translateX(-50%);
-                color: $colorBlue;
-            }
-        }
-    }
     &Dejeuner {
         z-index: 2;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        &Mosaique {
+            margin: 50px 0;
+        }
+    }
+    &Repas {
+        z-index: 2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 20px);
+            height: 300px;
+            margin: 50px 10px;
+            box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+            overflow: hidden;
+            &Image {
+                object-fit: cover;
+                width: 101%;
+                height: 101%;
+            }
+        }
+    }
+}
+@media all and (min-width: 750px) {
+    .delice {
+        &Repas {
+            &Photo {
+                height: auto;
+                max-height: 600px;
+            }
+        }
     }
 }
 @media all and (min-width: 1025px) {
@@ -126,7 +145,21 @@ $colorYellow: #c4721c;
         &Dejeuner {
             &Carte {
                 align-self: flex-start;
-                margin: 20px 5% 50px;
+                margin: 0 5%;
+            }
+            &Mosaique {
+                margin: 50px 5%;
+            }
+        }
+        &Repas {
+            &Carte {
+                align-self: flex-start;
+                margin: 0 5%;
+            }
+            &Photo {
+                align-self: flex-end;
+                width: 75%;
+                margin: 50px 5%;
             }
         }
     }

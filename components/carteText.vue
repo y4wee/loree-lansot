@@ -17,14 +17,11 @@
 </template>
 
 <script>
-import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "Carte",
     props: [ "carte" ],
     mounted() {
-        gsap.registerPlugin(ScrollTrigger);
     },
     methods: {
     },
@@ -50,8 +47,6 @@ $colorYellow: #c4721c;
     align-items: center;
     width: calc(100% - 60px);
     max-width: 700px;
-    // min-height: 300px;
-    margin: 20px 0 50px;
     padding: 20px;
     background: $colorBeige;
     box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
