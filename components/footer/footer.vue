@@ -44,17 +44,18 @@ $colorBlue: #131b1e;
 $colorGray: #d1cfcf;
 $colorBeige: #c0b193;
 $colorOrange: #e25827;
-$colorYellow: #c9853c;
+$colorYellow: #c4721c;
 
 .footer {
     display: flex;
     flex-direction: column;
     background: $colorBlue;
-    color: $colorWhite;
     & h2 {
         margin: 40px 15px;
         font-family: "Ballet Harmony", sans-serif;
         font-size: 5rem;
+        // color: $colorWhite;
+        color: $colorYellow;
     }
     &Contact {
         display: flex;
@@ -66,10 +67,12 @@ $colorYellow: #c9853c;
             &Icon {
                 margin-right: 10px;
                 font-size: 1.4em;
+                color: $colorYellow;
             }
             & a {
-                text-decoration: none;
-                color: $colorYellow;
+                text-decoration: underline $colorYellow;
+                // color: $colorYellow;
+                color: $colorWhite;
             }
         }
         &Email {
@@ -79,10 +82,12 @@ $colorYellow: #c9853c;
             &Icon {
                 margin-right: 10px;
                 font-size: 1.4em;
+                color: $colorYellow;
             }
             & a {
-                text-decoration: none;
-                color: $colorYellow;
+                text-decoration: underline $colorYellow;
+                // color: $colorYellow;
+                color: $colorWhite;
             }
         }
     }
@@ -91,6 +96,7 @@ $colorYellow: #c9853c;
         justify-content: center;
         margin: 40px 0px 10px;
         font-size: 1.1rem;
+        color: $colorWhite;
         & a {
             text-decoration: none;
             color: $colorGreen;

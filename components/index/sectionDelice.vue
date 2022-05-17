@@ -43,7 +43,7 @@ export default {
                         ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
                         Ex ipsa inventore in repudiandae optio neque ullam eius iure!
                         Iste, magni est assumenda numquam recusandae doloremque laudantium.`,
-                icon: "https://assets3.lottiefiles.com/packages/lf20_gbypohim.json"
+                lottie: "https://assets3.lottiefiles.com/packages/lf20_gbypohim.json"
             },
             carteRepas: {
                 text: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -52,7 +52,7 @@ export default {
                         ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
                         Ex ipsa inventore in repudiandae optio neque ullam eius iure!
                         Iste, magni est assumenda numquam recusandae doloremque laudantium.`,
-                icon: "https://assets10.lottiefiles.com/packages/lf20_2cmperww.json"
+                lottie: "https://assets10.lottiefiles.com/packages/lf20_2cmperww.json"
             },
         }
     },

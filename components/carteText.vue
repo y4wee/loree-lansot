@@ -3,9 +3,9 @@
         <div class="carteText">
             {{ carte.text }}
         </div>
-        <lottie-player v-if="carte.icon"
+        <lottie-player v-if="carte.lottie"
             class="infoLeaf"
-            :src="carte.icon"
+            :src="carte.lottie"
             background="transparent"
             style="width: 180px; height: 180px;"
             autoplay

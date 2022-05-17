@@ -56,7 +56,7 @@ export default {
                         du XVII° siècle.
                         Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
                         à votre disposition trois chambres d'hôtes spacieuses.`,
-                icon: "https://assets9.lottiefiles.com/packages/lf20_onwiwmfr.json"
+                lottie: "https://assets9.lottiefiles.com/packages/lf20_onwiwmfr.json"
             },
             pinOn: false,
         };
