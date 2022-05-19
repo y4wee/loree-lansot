@@ -134,26 +134,6 @@ $colorYellow: #c4721c;
         height: 200px;
         width: calc(100% - 20px);
         max-width: 350px;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 45%;
-            border-top: solid 10px $colorWhite;
-            border-left: solid 10px $colorWhite;
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50%;
-            height: 45%;
-            border-bottom: solid 10px $colorWhite;
-            border-right: solid 10px $colorWhite;
-        }
         &Title {
             margin: 50px 0 15px;
             color: $colorWhite;
