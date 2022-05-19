@@ -143,7 +143,6 @@ $colorYellow: #c4721c;
             height: 45%;
             border-top: solid 10px $colorWhite;
             border-left: solid 10px $colorWhite;
-            box-shadow: -5px -5px 5px 0 rgba($color: #000000, $alpha: 0.7);
         }
         &::after {
             content: "";
@@ -154,7 +153,6 @@ $colorYellow: #c4721c;
             height: 45%;
             border-bottom: solid 10px $colorWhite;
             border-right: solid 10px $colorWhite;
-            box-shadow: 5px 5px 5px 0 rgba($color: #000000, $alpha: 0.7);
         }
         &Title {
             margin: 50px 0 15px;
