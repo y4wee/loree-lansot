@@ -2,13 +2,11 @@
   <div class="presentation">
     <section class="presentationSelf">
       <div class="presentationSelfOverlay"></div>
+
       <HalfTitle 
       :text="'Qui sommes nous'"
       />
-      <div class="presentationSelfPhoto">
-        <img src="~/assets/profile.png" alt="photo hôtes jambert">
 
-      </div>
       <CarteText 
       class="presentationSelfCarte"
       :carte="carte"
@@ -39,6 +37,7 @@ export default {
                       Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
                       dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
                       cet endroit ce cadre si particulier !`,
+              lottie: "https://assets1.lottiefiles.com/packages/lf20_8fcmdyvo.json"
             }
         };
     },
@@ -113,7 +112,8 @@ $colorYellow: #c4721c;
     align-items: center;
     width: 100%;
     overflow-x: hidden;
-    &Overlay {
+    &::before {
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -129,26 +129,10 @@ $colorYellow: #c4721c;
       color: $colorYellow;
       text-align: center;
     }
-    // partie photo mask svg presentation
-    &Photo {
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30vh;
-      width: calc(100% - 30px);
-      max-width: 500px;
-      // box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
-      overflow: hidden;
-      border: solid 5px $colorBlue;
-      & img {
-        min-height: 100%;
-      }
-    }
 // partie text presentation
     &Carte {
       z-index: 2;
-      margin: 50px 0;
+      margin: 0 0 50px;
     }
   }
 }
