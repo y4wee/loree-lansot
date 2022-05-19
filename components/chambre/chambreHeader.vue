@@ -151,7 +151,7 @@ $colorYellow: #c4721c;
             &::after {
                 content: "";
                 position: absolute;
-                bottom: -5px;
+                bottom: -10px;
                 left: -5px;
                 width: 10px;
                 height: 10px;
@@ -172,7 +172,7 @@ $colorYellow: #c4721c;
             }
             &Down {
                 bottom: -160px;
-                left: -40px;
+                left: -45px;
                 transform: rotateZ(130deg);
             }
         }
@@ -203,7 +203,7 @@ $colorYellow: #c4721c;
             }
             &Down {
                 bottom: -195px;
-                left: -50px;
+                left: -55px;
                 transform: rotateZ(130deg);
             }
         }
