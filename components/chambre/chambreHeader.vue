@@ -87,6 +87,16 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c4721c;
 
+
+@keyframes fadeLottie {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
 .header {
     z-index: 1;
     position: relative;
@@ -154,6 +164,7 @@ $colorYellow: #c4721c;
             position: absolute;
             width: 180px;
             height: 180px;
+            animation: fadeLottie 1s 1s both ease-in-out;
             &Top {
                 top: -160px;
                 right: -40px;
