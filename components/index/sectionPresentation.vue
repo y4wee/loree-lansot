@@ -1,7 +1,6 @@
 <template>
   <div class="presentation">
     <section class="presentationSelf">
-      <div class="presentationSelfOverlay"></div>
 
       <HalfTitle 
       :text="'Qui sommes nous'"

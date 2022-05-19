@@ -6,11 +6,27 @@
         :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
         >
         <div class="headerLogo">
-            <div class="headerLogoBorder">
-                <div class="headerLogoSegment headerLogoBefore"></div>
-                <div class="headerLogoSegment headerLogoAfter"></div>
+            <div class="headerLogoText">
+
+                {{ chambre[chambreIndex].text }}
+                
+                <lottie-player
+                    class="headerLogoLottie headerLogoLottieTop"
+                    src="https://assets6.lottiefiles.com/packages/lf20_bbne9r3v.json"
+                    background="transparent"
+                    mode="bounce"
+                    autoplay
+                    loop>
+                </lottie-player>
+                <lottie-player
+                    class="headerLogoLottie headerLogoLottieDown"
+                    src="https://assets6.lottiefiles.com/packages/lf20_bbne9r3v.json"
+                    background="transparent"
+                    mode="bounce"
+                    autoplay
+                    loop>
+                </lottie-player>
             </div>
-            <div class="headerLogoText"> {{ chambre[chambreIndex].text }} </div>
         </div>
         <div class="headerOverlay"></div>
     </div>
@@ -80,6 +96,7 @@ $colorYellow: #c4721c;
     height: 100vh;
     width: 100%;
     user-select: none;
+    overflow: hidden;
     &Overlay {
         z-index: 2;
         position: absolute;
@@ -103,68 +120,51 @@ $colorYellow: #c4721c;
         height: 100%;
         width: 100%;
         &Text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             font-family: "Ballet Harmony", sans-serif;
             font-size: 4rem;
             color: $colorWhite;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                width: 10px;
+                height: 10px;
+                background: $colorGreen;
+                border-radius: 50%;
+                border: solid 2px $colorWhite;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: -5px;
+                width: 10px;
+                height: 10px;
+                background: $colorGreen;
+                border-radius: 50%;
+                border: solid 2px $colorWhite;
+            }
         }
-        &Border {
+        &Lottie {
             position: absolute;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 65%;
-            width: 100%;
-            transform-origin: center;
-            animation: scaleBorderY 1.2s both ease-in-out alternate infinite;
+            width: 180px;
+            height: 180px;
+            &Top {
+                top: -160px;
+                right: -40px;
+                transform: rotateZ(-50deg);
+            }
+            &Down {
+                bottom: -160px;
+                left: -40px;
+                transform: rotateZ(130deg);
+            }
         }
-        &Segment {
-            border: solid 1px $colorWhite;
-            height: 35%;
-            max-height: 200px;
-            width: 0%;
-        }
-        &Before {
-            transform-origin: bottom;
-            animation: scaleSegmentY 0.4s 0.35s both ease-in-out;
-        }
-        &After {
-            transform-origin: top;
-            animation: scaleSegmentY 0.4s 0.35s both ease-in-out;
-        }
-    }
-}
-
-@keyframes scaleSegmentY {
-    from {
-        transform: scaleY(0);
-    }
-    to {
-        transform: scaleY(1);
-    }
-}
-@keyframes scaleBorderY {
-    from {
-        transform: scaleY(0.85);
-    }
-    to {
-        transform: scaleY(1);
-    }
-}
-@keyframes scaleSegmentX {
-    from {
-        transform: scaleX(0);
-    }
-    to {
-        transform: scaleX(1);
-    }
-}
-@keyframes scaleBorderX {
-    from {
-        transform: scaleX(0.9);
-    }
-    to {
-        transform: scaleX(1);
     }
 }
 
@@ -174,26 +174,6 @@ $colorYellow: #c4721c;
             &Text {
                 font-size: 4.5rem;
             }
-            &Border {
-                flex-direction: row;
-                height: 100%;
-                width: 95%;
-                max-width: 1200px;
-                animation: scaleBorderX 1.2s both ease-in-out alternate infinite;
-            }
-            &Segment {
-                height: 0%;
-                width: 30%;
-                max-width: 350px;
-            }
-            &Before {
-                transform-origin: right;
-                animation: scaleSegmentX 0.4s 0.35s both ease-in-out;
-            }
-            &After {
-                transform-origin: left;
-                animation: scaleSegmentX 0.4s 0.35s both ease-in-out;
-            }
         }
     }
 }
@@ -201,6 +181,21 @@ $colorYellow: #c4721c;
     .headerLogoText {
         font-size: 5.5rem;
     }
+    .headerLogoLottie {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            &Top {
+                top: -195px;
+                right: -50px;
+                transform: rotateZ(-50deg);
+            }
+            &Down {
+                bottom: -195px;
+                left: -50px;
+                transform: rotateZ(130deg);
+            }
+        }
 }
 
 </style>

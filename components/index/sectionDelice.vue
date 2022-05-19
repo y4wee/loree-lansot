@@ -1,6 +1,5 @@
 <template>
     <div class="delice">
-        <div class="deliceOverlay"></div>
         <HalfTitle 
         :text="'Nos Delices'"
         />
@@ -88,7 +87,8 @@ $colorYellow: #c4721c;
     border-top: solid 10px $colorBlue;
     border-bottom: solid 10px $colorWhite;
     user-select: none;
-    &Overlay {
+    &::before {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
