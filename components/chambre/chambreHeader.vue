@@ -12,10 +12,6 @@
             </div>
             <div class="headerLogoText"> {{ chambre[chambreIndex].text }} </div>
         </div>
-        <div class="headerArrow">
-            <div class="headerArrowSegment headerArrowLeft"></div>
-            <div class="headerArrowSegment headerArrowRight"></div>
-        </div>
         <div class="headerOverlay"></div>
     </div>
 </template>
@@ -137,16 +133,6 @@ $colorYellow: #c4721c;
             animation: scaleSegmentY 0.4s 0.35s both ease-in-out;
         }
     }
-    &Arrow {
-        z-index: 5;
-        position: absolute;
-        bottom: 25px;
-        border-right: solid 3px $colorWhite;
-        border-bottom: solid 3px $colorYellow;
-        padding: 30px;
-        transform-origin: center;
-        transform: rotateZ(45deg);
-    }
 }
 
 @keyframes scaleSegmentY {
@@ -209,18 +195,11 @@ $colorYellow: #c4721c;
                 animation: scaleSegmentX 0.4s 0.35s both ease-in-out;
             }
         }
-        &Arrow {
-            padding: 35px;
-        }
     }
 }
 @media all and (min-width: 1025px) {
     .headerLogoText {
         font-size: 5.5rem;
-    }
-    .headerArrow {
-        border-right: solid 3px $colorYellow;
-        padding: 40px;
     }
 }
 

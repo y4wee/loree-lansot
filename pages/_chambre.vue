@@ -6,12 +6,15 @@
         <ChambreHeader 
         :chambreIndex="chambreIndex"
         />
-        <ChambreInfo
-        :chambreIndex="chambreIndex"
-        />
-        <ChambreCarousel 
-        :chambreIndex="chambreIndex"
-        />
+        <section class="chambreDetail">
+            <ChambreInfo
+            :chambreIndex="chambreIndex"
+            />
+            <ChambreCarousel 
+            :chambreIndex="chambreIndex"
+            />
+        </section>
+        
     </div>
 </template>
 
@@ -105,6 +108,13 @@ $colorYellow: #c4721c;
     align-items: center;
     background: $colorWhite;
     overflow-x: hidden;
+    &Detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        border-top: solid 10px $colorWhite;
+    }
 }
 .buttonBack {
     z-index: 10;
@@ -125,11 +135,12 @@ $colorYellow: #c4721c;
 }
 @media all and (min-width: 1025px) {
     .chambre {
-        border-bottom: none;
-    }
-    .buttonBack {
-        color: $colorYellow;
-        border: solid 2px $colorYellow;
+        &Detail {
+            flex-direction: row;
+            justify-content: space-between;
+            border-top: solid 10px $colorBlue;
+            border-bottom: solid 10px $colorWhite;
+        }
     }
 }
 

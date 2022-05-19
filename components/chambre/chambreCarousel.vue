@@ -136,12 +136,10 @@ $colorYellow: #c4721c;
     z-index: 1;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     width: 100%;
     opacity: 0;
-    border-top: solid 10px $colorWhite;
-    border-bottom: solid 10px $colorWhite;
     &Container {
         position: relative;
         width: 100%;
@@ -152,7 +150,6 @@ $colorYellow: #c4721c;
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
         width: 100%;
         height: 80vh;
         background: $colorBlue;
@@ -167,34 +164,29 @@ $colorYellow: #c4721c;
         }
     }
     &Button {
+        z-index: 2;
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 60px;
+        width: 50px;
         height: 60px;
         color: $colorGreen;
         font-size: 2rem;
-        background: rgba($color: #000000, $alpha: 0.85);
-        border-radius: 50%;
         cursor: pointer;
         &Left {
-            left: -30px;
+            bottom: 0;
+            left: 0;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            // border-top-right-radius: 10px;
-            // border-bottom-right-radius: 10px;
+            justify-content: center;
         }
         &Right {
-            right: -30px;
+            bottom: 0;
+            right: 0;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding-left: 10px;
-            // border-top-left-radius: 10px;
-            // border-bottom-left-radius: 10px;
+            justify-content: center;
         }
     }
     &Dots {
@@ -204,7 +196,7 @@ $colorYellow: #c4721c;
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 10vh;
+        height: 60px;
         background: rgba($color: #000000, $alpha: 0.85);
         &Each {
             width: 14px;
@@ -218,7 +210,7 @@ $colorYellow: #c4721c;
         }
         &Active {
             transform: scale(1.3);
-            background: $colorGreen;
+            background: $colorYellow;
         }
     }
 }
@@ -234,28 +226,11 @@ $colorYellow: #c4721c;
 }
 @media all and (min-width: 1025px) {
     .carousel {
-        background: rgba($color: #000000, $alpha: 0.85);
+        align-self: flex-end;
+        margin: 50px 10px 50px 0;
         &Images {
-            max-width: 950px;
-            border-right: solid 10px $colorWhite;
-            border-left: solid 10px $colorWhite;
-        }
-        &Button {
-            width: 80px;
-            height: 80px;
-            &Left {
-                justify-content: center;
-                left: -50px;
-                padding: 0;
-            }
-            &Right {
-                justify-content: center;
-                right: -50px;
-                padding: 0;
-            }
-        }
-        &Dots {
-            max-width: 950px;
+            height: calc(100vh - 100px);
+            box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
         }
     }
 }

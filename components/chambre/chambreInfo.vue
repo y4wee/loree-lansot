@@ -1,53 +1,67 @@
 <template>
     <div class="info">
-        <!-- <lottie-player 
-            class="infoLeaf"
-            src="https://assets8.lottiefiles.com/packages/lf20_hyfprsvc.json"
-            background="transparent"
-            style="width: 300px; height: 300px;"
-            autoplay>
-        </lottie-player> -->
-        <div class="infoText">
-            {{ chambre[chambreIndex].text }}
-        </div>
+        <div class="infoCarte">
 
-        <div class="infoSection">
-            <div class="infoServices">
-                <div v-for="(service, index) in chambre[chambreIndex].services" :key="index" class="infoServicesEach">
-                    <font-awesome-icon :icon="['fa', service.icon]" class="infoServicesEachIcon" />
-                    <span class="infoServicesEachText"> {{ service.text }} </span>
+            <div class="infoCarteDetail" >
+                <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'atelier'">
+                    Chambre style atelier,<br /> faite en bonne partie avec des matériaux chinés ou récupérés et
+                    pouvant accueillir jusqu'à <span class="infoCarteDetailTextColor">quatre personnes</span>. <br />
+                    Elle est spacieuse et en duplex, disposant de <span class="infoCarteDetailTextColor">deux couchages en 140</span>,
+                    <span class="infoCarteDetailTextColor">deux grandes douches</span>,
+                    deux lavabos et un <span class="infoCarteDetailTextColor">wc</span>. <br />
+                    Le <span class="infoCarteDetailTextColor">SPA</span> est à disposition uniquement pour cette chambre,
+                    de juillet à août (l'accès aux enfants de moins de 10 ans est interdit).
                 </div>
+                <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'mansarde'">
+                    Chambre très cozy, <br />
+                    elle se situe à l'étage et peut accueillir jusqu'à <span class="infoCarteDetailTextColor">trois personnes</span>. <br /> 
+                    disposant d'un <span class="infoCarteDetailTextColor">lit en 140</span>
+                    et une <span class="infoCarteDetailTextColor">méridienne en 90</span>,
+                    une belle <span class="infoCarteDetailTextColor">douche à l'italienne</span>,
+                    un lavabo et un <span class="infoCarteDetailTextColor">wc</span>.
+                </div>
+                <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'romance'">
+                    Chambre en rez de jardin,<br />
+                    chaleureuse et spacieuse, alliant modernité et ancien.<br />
+                    Elle peut accueillir jusqu'à <span class="infoCarteDetailTextColor">quatre personnes</span> 
+                    et dispose d'un <span class="infoCarteDetailTextColor">lit en 140</span>,
+                    un <span class="infoCarteDetailTextColor">convertible en 120</span>,
+                    une <span class="infoCarteDetailTextColor">grande douche à l'italienne</span>, 
+                    un lavabo et un <span class="infoCarteDetailTextColor">WC</span>.
+                </div>
+                <lottie-player class="infoCarteDetailBird"
+                    src="https://assets2.lottiefiles.com/packages/lf20_2n1cqhnt.json"
+                    background="transparent"
+                    style="width: 250px; height: 250px;"
+                    autoplay
+                    loop
+                    >
+                </lottie-player>
             </div>
 
-            <div class="infoPrix">
-                <div class="infoPrixHole"></div>
-                <div class="infoPrixFlower">
-                    <lottie-player
-                        src="https://assets1.lottiefiles.com/packages/lf20_bbne9r3v.json"
-                        background="transparent"
-                        mode="bounce"
-                        style="width: 180px; height: 180px;"
-                        autoplay
-                        loop
-                        >
-                    </lottie-player>
+            <div class="infoCartePrix">
+                <div class="infoCartePrixText">
+                    Decouvrez les tarifs de cette chambre avec le <span class="infoCartePrixTextColor">petit déjeuner inclus</span> :
                 </div>
-                <span class="infoPrixTitre">Nos Tarifs</span>
-                <p>(petit-déjeuner inclus)</p>
-                <div class="infoPrixListe">
-                    <div v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index" class="infoPrixListeEach" >
-                        <span class="infoPrixListeText"> {{ eachPrice.text }} </span>
-                        <span class="infoPrixListePrix"> {{ eachPrice.prix }} </span>
+                <div class="infoCartePrixListe">
+                    <div v-for="(eachPrice, index) in chambre[chambreIndex].prix" :key="index" class="infoCartePrixListeEach" >
+                        <span class="infoCartePrixListeText"> {{ eachPrice.text }} </span>
+                        <span class="infoCartePrixListeColor"> {{ eachPrice.prix }} </span>
                     </div>
                 </div>
-            </div>
+           </div>
+
+           <div class="infoCarteButton">
+                <div class="infoCarteButtonBack"></div>
+                <div class="infoCarteButtonText" @click="buttonScrollTo">Reserver</div>
+           </div>
+
         </div>
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
     name: "ChambreInfo",
@@ -58,8 +72,10 @@ export default {
             chambre: [
                 {
                     name: "atelier",
-                    text: ` Chambre style atelier, faite en bonne partie avec des matériaux chinés ou récupérés,
-                            elle est spacieuse et en duplex`,
+                    text: ` Chambre style atelier, faite en bonne partie avec des matériaux chinés ou récupérés et pouvant accueillir jusqu'à quatre personnes,
+                            elle est spacieuse et en duplex, elle dispose de deux couchages en 140, deux grandes douches,
+                            un wc et deux lavabos. Le SPA est à disposition uniquement pour cette chambre,
+                            de juillet à août (l'accès aux enfants de moins de 10 ans est interdit).`,
                     services: [ { icon: "user-group", text: "1 - 4 personnes" },
                                 { icon: "bed", text: "2 couchages en 140" },
                                 { icon: "shower", text: "2 douches italiennes" },
@@ -76,7 +92,9 @@ export default {
                 },
                 {
                     name: "mansarde",
-                    text: ` Chambre chaleureuse et très cozy se situant à l'étage. `,
+                    text: ` Elle se situe à l'étage, c'est une chambre très cozy,
+                            elle dispose d'un lit en 140, d'une méridienne en 90,
+                            elle a un wc, une belle douche et un lavabo.  `,
                     services: [ { icon: "user-group", text: "1 - 3 personnes" },
                                 { icon: "bed", text: "1 lit en 140 et 1 méridienne en 90" },
                                 { icon: "shower", text: "1 douche italienne" },
@@ -87,7 +105,9 @@ export default {
                 },
                 {
                     name: "romance",
-                    text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.`,
+                    text: ` Chambre en rez de jardin, chaleureuse et spacieuse, alliant modernité et ancien.
+                            Elle dispose d'un lit en 140 et d'un convertible en 120.
+                            Elle a une grande douche à l'italienne, d'un WC et d'un lavabo. `,
                     services: [ { icon: "user-group", text: "1 - 4 personnes" },
                                 { icon: "bed", text: "1 lit en 140 et 1 lit convertible en 120" },
                                 { icon: "shower", text: "1 douche italiennes" },
@@ -102,10 +122,12 @@ export default {
         }
     },
     mounted() {
-        this.animationPrix();
-        
+        // this.animationPrix();
     },
     methods: {
+        buttonScrollTo: function(e) {
+            gsap.to(window, {scrollTo: "#indexFooter", duration: 1, ease: "power3.inOut"})
+        },
         // animation quand la carte prix rentre dans le viewport
         animationPrix: function() {
             let element = document.querySelector(".infoPrix");
@@ -141,163 +163,160 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c4721c;
 
+@keyframes dotMove {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-5px);
+    }
+}
+
 .info {
-    z-index: 2;
+    z-index: 1;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background: $colorBlue;
-    border-top: solid 10px $colorWhite;
-    &Leaf {
+    border-bottom: solid 10px $colorBlue;
+    &::before {
+        content: "";
         position: absolute;
-        top: -220px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        background: $colorBlue;
     }
-    // section text description
-    &Text {
-        max-width: 700px;
-        margin: 50px 10px;
-        color: $colorWhite;
-        border-left: solid 2px $colorGreen;
-        padding-left: 10px;
-    }
-    // section regroupant service plus carte prix
-    &Section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-    // section service icon plus text
-    &Services {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        &Each {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-            &Icon {
-                font-size: 1.5rem;
-                color: $colorYellow;
-            }
-            &Text {
-                color: $colorWhite;
-                text-align: center;
-            }
-        }
-    }
-    // section carte tarifs nuit par personne
-    &Prix {
+    &Carte {
         position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 95%;
-        max-width: 660px;
-        margin: 150px 0 50px;
+        width: calc(100% - 60px);
+        // max-width: 600px;
+        margin: 50px 0;
+        padding: 20px;
         background: $colorBeige;
-        color: $colorBlue;
-        border-radius: 30px;
-        box-shadow: 0 5px 10px 0 black;
-        will-change: transform;
-        opacity: 0;
-        transform: translateX(20px);
-        // fleur lottie
-        &Flower {
+        box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+        overflow: hidden;
+        user-select: none;
+        &::before {
+            content: "";
             position: absolute;
-            right: -55px;
-            top: -147.5px;
-            transform: rotateZ(-20deg);
+            top: 10px;
+            left: 10px;
+            width: 50%;
+            height: 50%;
+            // max-width: 250px;
+            max-height: 250px;
+            border-top: solid 2px $colorBlue;
+            border-left: solid 2px $colorBlue;
         }
-        // trou fleur lottie
-        &Hole {
+        &::after {
+            content: "";
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: $colorGreen;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            border: solid 2px $colorWhite;
+            bottom: 10px;
+            right: 10px;
+            width: 50%;
+            height: 50%;
+            // max-width: 250px;
+            max-height: 250px;
+            border-bottom: solid 2px $colorBlue;
+            border-right: solid 2px $colorBlue;
         }
-        // titre carte prix
-        &Titre {
-            margin-top: 20px;
-            font-family: "Ballet Harmony", sans-serif;
-            font-size: 5rem;
-            color: $colorYellow;
-        }
-        & p {
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        // liste des prix en fonction du nombre de personne
-        &Liste {
-            width: 90%;
-            max-width: 600px;
-            margin: 20px 0;
-            &Each {
-                display: flex;
-                justify-content: space-between;
-                margin: 10px 0;
-                border-bottom: solid 2px $colorWhite;
+        &Detail {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            color: $colorBlue;
+            margin: 20px 0 200px;
+            &Text {
+                &Color {
+                    color: $colorYellow;
+                }
             }
-            &Prix {
+            &Bird {
+                position: absolute;
+                align-self: flex-end;
+                bottom: -200px;
+                right: -41px;
+            }
+        }
+        &Prix {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            &Text {
+                &Color {
+                    color: $colorYellow;
+                }
+            }
+            &Liste {
+                display: flex;
+                flex-direction: column;
+                margin: 20px 0;
+                &Each {
+                    position: relative;
+                    margin: 5px 0;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0.9rem;
+                        left: -10px;
+                        width: 5px;
+                        border: solid 1px $colorWhite;
+                        animation: dotMove 0.8s alternate infinite ease-in-out;
+                    }
+                }
+                &Color {
+                    color: $colorYellow;
+                }
+            }
+        }
+        &Button {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75%;
+            max-width: 300px;
+            height: 50px;
+            margin: 20px 0 30px;
+            &Text {
+                z-index: 5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                border: solid 2px $colorYellow;
                 color: $colorYellow;
+                font-weight: bold;
+                cursor: pointer;
+                box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+            }
+            &Back {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 100%;
+                height: 100%;
+                background: $colorBlue;
+                box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
             }
         }
     }
 }
 @media all and (min-width: 1025px) {
     .info {
-        background: none;
-        border-top: solid 10px $colorBlue;
-        // section text description
-        &Leaf {
-            top: -210px;
-        }
-        &Text {
-            margin: 70px 0 40px;
-            width: 50%;
-            border-left: none;
-            border-bottom: solid 2px $colorGreen;
-            padding-left: 0;
-            padding-bottom: 50px;
-            text-align: center;
-            color: $colorBlue;
-        }
-        &Section {
-            position: relative;
-            flex-direction: row;
-            margin: 70px 0 0;
-        }
-        // section service icon plus text
-        &Services {
-            align-items: flex-start;
-            width: 100%;
-            background: $colorBlue;
-            &Each {
-                flex-direction: row;
-                align-items: center;
-                margin: 15px;
-                width: 50%;
-                &Text {
-                    margin-left: 25px;
-                    text-align: left;
-                }
-            }
-        }
-        // section carte tarifs nuit par personne
-        &Prix {
-            position: absolute;
-            right: 0;
-            z-index: 3;
-            width: 45%;
-            margin: 0 25px;
-        }
+        max-width: 700px;
+        border-bottom: none;
+        padding-left: 50px;
     }
 }
 
