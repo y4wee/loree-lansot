@@ -171,7 +171,7 @@ $colorYellow: #c4721c;
         align-items: center;
         width: 50px;
         height: 60px;
-        color: $colorGreen;
+        color: $colorYellow;
         font-size: 2rem;
         cursor: pointer;
         &Left {
@@ -210,7 +210,7 @@ $colorYellow: #c4721c;
         }
         &Active {
             transform: scale(1.3);
-            background: $colorYellow;
+            background: $colorGreen;
         }
     }
 }

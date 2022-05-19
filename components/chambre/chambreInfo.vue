@@ -209,7 +209,6 @@ $colorYellow: #c4721c;
             left: 10px;
             width: 50%;
             height: 50%;
-            // max-width: 250px;
             max-height: 250px;
             border-top: solid 2px $colorBlue;
             border-left: solid 2px $colorBlue;
@@ -221,7 +220,6 @@ $colorYellow: #c4721c;
             right: 10px;
             width: 50%;
             height: 50%;
-            // max-width: 250px;
             max-height: 250px;
             border-bottom: solid 2px $colorBlue;
             border-right: solid 2px $colorBlue;
@@ -308,13 +306,19 @@ $colorYellow: #c4721c;
                 height: 100%;
                 background: $colorBlue;
                 box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+                transition: transform 0.2s ease-out;
             }
+            &:hover .infoCarteButtonBack {
+                transform: translate(-10px, -10px);
+            }
+            
         }
     }
 }
 @media all and (min-width: 1025px) {
     .info {
-        max-width: 700px;
+        min-height: 100vh;
+        max-width: 600px;
         border-bottom: none;
         padding-left: 50px;
     }
