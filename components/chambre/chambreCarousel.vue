@@ -1,7 +1,7 @@
 <template>
     <div class="carousel">
-        <div class="carouselImages">
-            <div class="carouselContainer">
+        <div class="carouselContainer">
+            <div class="carouselImages">
                 <img class="carouselImagesEach" v-for="(image, index) in chambre[chambreIndex].images"
                 :key="index" 
                 :src="image" 
@@ -13,14 +13,15 @@
             <div class="carouselButton carouselButtonRight" @click="changeSlide(1)">
                 <font-awesome-icon :icon="['fa', 'angle-right']" />
             </div>
+
+            <div class="carouselDots">
+                <div class="carouselDotsEach" v-for="(image, index) in chambre[chambreIndex].images" 
+                :key="index"
+                @click="selectSlide(index)"
+                ></div>
+            </div>
         </div>
 
-        <div class="carouselDots">
-            <div class="carouselDotsEach" v-for="(image, index) in chambre[chambreIndex].images" 
-            :key="index"
-            @click="selectSlide(index)"
-            ></div>
-        </div>
     </div>
 </template>
 
@@ -100,7 +101,7 @@ export default {
             dots[this.slideIndex].className += " carouselDotsActive";
         },
         animationCarousel: function() {
-            let element = document.querySelector(".carousel");
+            let element = document.querySelector(".carouselContainer");
             let callback = (entries) => {
                 if(entries[0].isIntersecting) {
                     gsap.to(element, {
@@ -132,6 +133,17 @@ $colorBeige: #c0b193;
 $colorOrange: #e25827;
 $colorYellow: #c4721c;
 
+@keyframes fadeImage {
+    from {
+        opacity: 0.2;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .carousel {
     z-index: 1;
     position: relative;
@@ -139,20 +151,22 @@ $colorYellow: #c4721c;
     align-items: flex-end;
     justify-content: center;
     width: 100%;
-    opacity: 0;
+    background: $colorBlue;
     &Container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    &Images {
         position: relative;
         display: flex;
         align-items: center;
         width: 100%;
         height: 80vh;
         background: $colorBlue;
+        overflow: hidden;
+        opacity: 0;
+    }
+    &Images {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
         & img {
             display: none;
             position: absolute;
@@ -214,21 +228,12 @@ $colorYellow: #c4721c;
         }
     }
 }
-@keyframes fadeImage {
-    from {
-        opacity: 0.2;
-        transform: scale(1.05);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 @media all and (min-width: 1025px) {
     .carousel {
         align-self: flex-end;
         margin: 50px 10px 50px 0;
-        &Images {
+        background: $colorWhite;
+        &Container {
             height: calc(100vh - 100px);
             box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
         }
