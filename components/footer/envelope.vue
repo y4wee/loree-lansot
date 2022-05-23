@@ -28,10 +28,10 @@
             </div>
 
             <div class="envelopeBottom">
-                <span class="envelopeBottomText">
+                <div class="envelopeBottomText">
                     Coded by
                     <a href="https://quentin-jt.net" target="_blank">Quentin.jt</a>
-                </span>
+                </div>
             </div>
 
             <div class="envelopeLeft"></div>
