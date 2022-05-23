@@ -90,7 +90,7 @@ $colorYellow: #c4721c;
         width: 100%;
         height: 60vh;
         overflow: hidden;
-        border-top: solid 10px $colorWhite;
+        border-top: solid 10px $colorBlue;
         &Image {
             position: absolute;
             object-fit: cover;

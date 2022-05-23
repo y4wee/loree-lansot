@@ -145,7 +145,7 @@ $colorYellow: #c4721c;
 }
 
 .carousel {
-    z-index: 1;
+    z-index: 5;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -178,7 +178,7 @@ $colorYellow: #c4721c;
         }
     }
     &Button {
-        z-index: 2;
+        z-index: 6;
         position: absolute;
         display: flex;
         justify-content: center;

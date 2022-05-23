@@ -1,7 +1,8 @@
 <template>
     <div class="footer">
-        <h2>Contactez <br/> Nous</h2>
-        <div class="footerContact">
+        <!-- <h2>Contactez Nous</h2> -->
+
+        <!-- <div class="footerContact">
             <div class="footerContactPhone">
                 <font-awesome-icon :icon="['fa', 'phone']" class="footerContactPhoneIcon" />
                 <div class="footerContactPhoneNumber">
@@ -13,24 +14,28 @@
                 <font-awesome-icon :icon="['fa', 'envelope']" class="footerContactEmailIcon" />
                 <a href="mailto:sophie.jambert@gmail.com">sophie.jambert@gmail.com</a>
             </div>
-        </div>
+        </div> -->
+
+        <Envelope />
+<!-- 
         <div class="footerDev">
             Coded by&nbsp;
             <a href="https://quentin-jt.net" target="_blank">Quentin.jt</a>
-        </div>
-        <div class="footerBack"></div>
+        </div> -->
+        <!-- <div class="footerBack"></div> -->
     </div>
 </template>
 
 <script>
 import { gsap } from 'gsap';
+import Envelope from './envelope.vue';
 
 export default {
     name: "Footer",
     mounted() {
     },
-    methods: {
-    },
+    methods: {},
+    components: { Envelope }
 }
 
 </script>
@@ -51,10 +56,10 @@ $colorYellow: #c4721c;
     flex-direction: column;
     background: $colorBlue;
     & h2 {
-        margin: 40px 15px;
+        text-align: center;
+        margin: 20px 0 0;
         font-family: "Ballet Harmony", sans-serif;
-        font-size: 5rem;
-        // color: $colorWhite;
+        font-size: 4rem;
         color: $colorYellow;
     }
     &Contact {
@@ -71,7 +76,6 @@ $colorYellow: #c4721c;
             }
             & a {
                 text-decoration: underline $colorYellow;
-                // color: $colorYellow;
                 color: $colorWhite;
             }
         }
@@ -107,7 +111,7 @@ $colorYellow: #c4721c;
     .footer {
         align-items: center;
         & h2 {
-            text-align: center;
+            font-size: 5rem;
         }
         &Contact {
             flex-direction: row;
