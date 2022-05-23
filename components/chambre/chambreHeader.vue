@@ -14,7 +14,6 @@
                     class="headerLogoLottie headerLogoLottieTop"
                     src="https://assets6.lottiefiles.com/packages/lf20_bbne9r3v.json"
                     background="transparent"
-                    mode="bounce"
                     autoplay
                     loop>
                 </lottie-player>
@@ -22,7 +21,6 @@
                     class="headerLogoLottie headerLogoLottieDown"
                     src="https://assets6.lottiefiles.com/packages/lf20_bbne9r3v.json"
                     background="transparent"
-                    mode="bounce"
                     autoplay
                     loop>
                 </lottie-player>
