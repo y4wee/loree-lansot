@@ -221,9 +221,12 @@ $colorYellow: #c4721c;
         background: #e0dfe0;
         clip-path: polygon(50% 0, 100% 100%, 0 100%);
         &Text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: $colorBlue;
             font-size: 0.8rem;
-            margin: 10px;
+            margin: 10px 0;
             & a {
                 text-decoration: none;
                 color: $colorGreen;
