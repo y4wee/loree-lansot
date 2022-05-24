@@ -5,7 +5,8 @@
                 <img class="carouselImagesEach" v-for="(image, index) in chambre[chambreIndex].images"
                 :key="index" 
                 :src="image" 
-                :alt=" 'image du carousel ' + chambre[chambreIndex].name">
+                :alt=" 'image du carousel ' + chambre[chambreIndex].name"
+                sizes="80vh">
             </div>
             <div class="carouselButton carouselButtonLeft" @click="changeSlide(-1)">
                 <font-awesome-icon :icon="['fa', 'angle-left']" />
