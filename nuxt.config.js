@@ -33,27 +33,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    'nuxt-compress',
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontawesome'
   ],
   googleFonts: {
     families: {
-      Roboto: true,
-      'Josefin+Sans': true,
-      Lato: [100, 300],
-      Ultra: true,
-      Bevan: true,
-      Lobster: true,
-      Shrikhand: true,
-      Pattaya: true,
-      'Bree Serif': true,
-      'Fugaz One': true,
-      Lalezar: true,
-      'Lilita One': true,
       'Noto Serif JP': true,
-      'Oleo Script': true,
-      'Paytone One': true,
-      'Secular One': true,
     }
   },
   fontawesome: {
@@ -65,6 +51,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    [
+      'nuxt-compress',
+      {
+        gzip: {
+          threshold: 8192,
+        },
+        brotli: {
+          threshold: 8192,
+        },
+      },
+    ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

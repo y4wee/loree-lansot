@@ -64,7 +64,6 @@ export default {
         animationReveal: function() {
             let element = document.querySelector(".envelopeContainer");
             let callback = (entries) => {
-                console.log(entries)
                 if(entries[0].isIntersecting) {
                     let tl = gsap.timeline();
                     tl.to(".envelopeTop1", { rotateX: "90deg", duration: 0.25, ease: "power1.in" })
@@ -316,7 +315,7 @@ $colorYellow: #c4721c;
     }
 }
 
-@media all and (min-width: 500px) {
+@media all and (min-width: 450px) {
     .envelopeTopLogo {
         transform: scale(0.6);
     }
