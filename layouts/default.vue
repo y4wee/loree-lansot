@@ -45,8 +45,9 @@ body::-webkit-scrollbar {
 }
 @font-face {
     font-family: "Ballet Harmony";
-    src: local("Ballet Harmony"),
-     url(~assets/BalletHarmony.ttf) format("truetype");
+    src:    local("Ballet Harmony"),
+            url(~assets/fonts/BalletHarmony.ttf) format("truetype");
+    font-display: swap;
 }
 
 </style>

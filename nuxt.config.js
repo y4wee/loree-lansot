@@ -40,7 +40,14 @@ export default {
   googleFonts: {
     families: {
       'Noto Serif JP': true,
-    }
+    },
+    subsets: ['latin'],
+    display: 'swap',
+    prefetch: false,
+    preconnect: false,
+    preload: false,
+    download: true,
+    base64: false,
   },
   fontawesome: {
     icons:{
