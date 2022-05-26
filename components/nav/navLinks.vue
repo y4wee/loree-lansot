@@ -153,7 +153,7 @@ $colorYellow: #c4721c;
     &Text {
         margin: 2.2vh 0;
         color: $colorYellow;
-        font-family: 'Paytone One', sans-serif;
+        font-weight: bold;
         font-size: 1.4rem;
         cursor: pointer;
         opacity: 0;
