@@ -1,6 +1,12 @@
 <template>
     <div class="accueil">
-        <img src="~/assets/accueilback.webp" alt="image accueil" class="accueilImg">
+        <img 
+        srcset="~/assets/accueil/accueilSmall.webp 600w,
+                ~/assets/accueil/accueilMedium.webp 1024w,
+                ~/assets/accueil/accueilLarge.webp 1920w"
+        sizes="100vw"
+        alt="image accueil" 
+        class="accueilImg">
 
         <Logo 
             class="accueilLogo"
@@ -11,7 +17,7 @@
         />
 
         <div class="accueilUtils">
-            <h1 class="accueilUtilsTitle">Chambres d ' Hôtes</h1>
+            <h1 class="accueilUtilsTitle">Chambres d'hôtes</h1>
             <div class="accueilUtilsButton">
                 <div class="accueilUtilsButtonBack"></div>
                 <div class="accueilUtilsButtonText" @click="buttonScrollTo">Reserver</div>
