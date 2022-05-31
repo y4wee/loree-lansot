@@ -30,8 +30,21 @@ export default {
     data() {
         return {
             showButton: true,
-            chambre: ["atelier", "mansarde", "romance"],
+            chambre: [ "atelier", "mansarde", "romance" ],
+            title: [ "L'Atelier", "La Mansarde", "La Romance" ]
         };
+    },
+    head() {
+        return {
+            title: this.title[this.chambreIndex],
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: 'Home page description'
+                }
+            ]
+        }
     },
     mounted() {
         gsap.registerPlugin(ScrollTrigger);

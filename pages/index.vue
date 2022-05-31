@@ -15,6 +15,18 @@ import SectionDelice from '~/components/index/sectionDelice.vue';
 
 export default {
     name: "IndexPage",
+    head() {
+      return {
+        title: "L'Orée de Lansot",
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'Home page description'
+          }
+        ]
+      }
+    },
     mounted() {
     },
     components: { SectionAccueil, SectionPresentation, SectionChambre, SectionDelice }
