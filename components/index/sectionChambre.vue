@@ -12,7 +12,7 @@
     
 
     <ChambreParallax
-    :chambres = chambres
+    :chambres="chambres"
     />
 
   </div>
@@ -32,21 +32,21 @@ export default {
                 {
                     id: "atelier",
                     name: "L atelier",
-                    image: require("~/assets/atelier5.jpg"),
+                    image: require("~/assets/atelier/atelier1.jpg"),
                     personnes: "1 - 4 personnes",
                     prix: "70€ - 106€ / nuit"
                 },
                 {
                     id: "mansarde",
-                    name: "La Mansarde",
-                    image: require("~/assets/mansarde.jpg"),
+                    name: "Mansarde",
+                    image: require("~/assets/mansarde/mansarde1.jpg"),
                     personnes: "1 - 3 personnes",
                     prix: "60€ - 78€ / nuit"
                 },
                 {
                     id: "romance",
-                    name: "La Romance",
-                    image: require("~/assets/romance.webp"),
+                    name: "Romance",
+                    image: require("~/assets/romance/romance1.jpg"),
                     personnes: "1 - 4 personnes",
                     prix: "65€ - 101€ / nuit"
                 },
@@ -89,7 +89,6 @@ export default {
       },
       pinScrolling: function() {
         ScrollTrigger.create({
-          // markers: true,
           trigger: ".chambre",
           pin: ".chambreDetail",
           start: "10px top",
