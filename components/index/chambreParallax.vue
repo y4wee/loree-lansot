@@ -4,7 +4,7 @@
         v-for="chambre in chambres" 
         :key="chambre.image"
         >
-            <img :src="chambre.image" alt="photo maison l'orée de lansot" class="chambreParallaxContainerImage">
+            <img :src="chambre.image" :alt="'photo de la chambre ' + chambre.id" class="chambreParallaxContainerImage">
             <div class="chambreDetail">
                 <h2> {{ chambre.name }} </h2>
                 <div class="chambreDetailPersonnes">{{ chambre.personnes }}</div>
