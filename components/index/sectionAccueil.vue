@@ -5,7 +5,7 @@
                 ~/assets/accueil/accueilMedium.webp 1024w,
                 ~/assets/accueil/accueilLarge.webp 1920w"
         sizes="100vw"
-        alt="image accueil" 
+        alt="image exterieur maison orée de lansot" 
         class="accueilImg">
 
         <Logo 
@@ -13,7 +13,7 @@
             :animation = logoAnimation
             :className = logoClass
             :logoFill = logoFill
-            :logoStroke = logoStroke 
+            :logoStroke = logoStroke
         />
 
         <div class="accueilUtils">
@@ -46,12 +46,6 @@ export default {
     mounted() {
         gsap.registerPlugin(ScrollToPlugin);
         this.parallaxScroll();
-        console.log(this.widthInner);
-    },
-    computed: {
-        widthInner: function() {
-            return document.querySelector("body").offsetWidth
-        }
     },
     methods: {
         parallaxScroll: function() {
