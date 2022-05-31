@@ -19,14 +19,13 @@
             :carte="carteRepas"
             />
             <div class="deliceRepasPhoto">
-                <img class="deliceRepasPhotoImage" src="~/assets/dejeuner/repas.jpg" alt="photo plateau repas">
+                <img class="deliceRepasPhotoImage" src="~/assets/dejeuner/repas.jpg" alt="photo plateau repas de l'orée de lansot">
             </div>
         </section>
     </div>
 </template>
 
 <script>
-import { gsap } from 'gsap';
 import MosaiqueDejeuner from './mosaiqueDejeuner.vue';
 import CarteText from '../carteText.vue';
 import HalfTitle from '../halfTitle.vue';

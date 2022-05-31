@@ -74,8 +74,6 @@ export default {
     mounted() {
         gsap.registerPlugin(ScrollTrigger);
         this.showSlide(this.slideIndex);
-        this.animationCarousel();
-
     },
     methods: {
         changeSlide: function(n) {
@@ -100,23 +98,6 @@ export default {
             }
             slides[this.slideIndex].style.display = "block";
             dots[this.slideIndex].className += " carouselDotsActive";
-        },
-        animationCarousel: function() {
-            let element = document.querySelector(".carouselContainer");
-            let callback = (entries) => {
-                if(entries[0].isIntersecting) {
-                    gsap.to(element, {
-                        opacity: 1,
-                        ease: "power1.out",
-                        duration: 0.8,
-                        onComplete: observer.disconnect(),
-                    });
-                }
-            }
-            const observer = new IntersectionObserver(callback, {
-                threshold: 0.4,
-            });
-            observer.observe(element);
         },
     },
 }
@@ -161,7 +142,6 @@ $colorYellow: #c4721c;
         height: 80vh;
         background: $colorBlue;
         overflow: hidden;
-        opacity: 0;
     }
     &Images {
         position: relative;

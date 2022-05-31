@@ -3,7 +3,7 @@
         <img
         class="headerImage"
         :src="chambre[chambreIndex].image" 
-        :alt="'photo de la chambre qui a pour nom ' + chambre[chambreIndex].name"
+        :alt="'photo de la chambre ' + chambre[chambreIndex].name"
         >
         <div class="headerLogo">
             <div class="headerLogoText">
@@ -40,17 +40,17 @@ export default {
             chambre: [
                 {
                     name: "atelier",
-                    image: require("~/assets/atelier5.jpg"),
+                    image: require("~/assets/atelier/atelier1.jpg"),
                     text: "Latelier",
                 },
                 {
                     name: "mansarde",
-                    image: require("~/assets/mansarde.jpg"),
+                    image: require("~/assets/mansarde/mansarde1.jpg"),
                     text: "Mansarde",
                 },
                 {
                     name: "romance",
-                    image: require("~/assets/romance.webp"),
+                    image: require("~/assets/romance/romance1.jpg"),
                     text: "Romance",
                 },
             ],

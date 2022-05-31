@@ -122,28 +122,28 @@ export default {
         }
     },
     mounted() {
-        // this.animationPrix();
+        this.animationCarte();
     },
     methods: {
         buttonScrollTo: function(e) {
             gsap.to(window, {scrollTo: "#indexFooter", duration: 1, ease: "power3.inOut"})
         },
         // animation quand la carte prix rentre dans le viewport
-        animationPrix: function() {
-            let element = document.querySelector(".infoPrix");
+        animationCarte: function() {
+            let element = document.querySelector(".infoCarte");
             let callback = (entries) => {
                 if(entries[0].isIntersecting) {
                     gsap.to(element, {
-                        transform: "translateX(0)",
+                        transform: "translateY(0)",
                         opacity: 1,
                         ease: "power1.out",
-                        duration: 0.3,
+                        duration: 0.5,
                         onComplete: observer.disconnect(),
                     });
                 }
             }
             const observer = new IntersectionObserver(callback, {
-                threshold: 0.7,
+                threshold: 0.5,
             });
             observer.observe(element);
         },
@@ -195,13 +195,14 @@ $colorYellow: #c4721c;
         flex-direction: column;
         align-items: center;
         width: calc(100% - 60px);
-        // max-width: 600px;
         margin: 50px 0;
         padding: 20px;
         background: $colorBeige;
         box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
         overflow: hidden;
         user-select: none;
+        opacity: 0;
+        transform: translateY(100px);
         &::before {
             content: "";
             position: absolute;
