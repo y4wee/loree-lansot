@@ -28,11 +28,11 @@ export default {
     data() {
         return {
             images: [
-                { url: require("~/assets/house1.jpg"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house4.jpg"), class: "maskRight", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house2.jpg"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" },
-                { url: require("~/assets/house3.jpg"), class: "maskRight", xTo: "2%", width: "80%", height: "95%" },
-                { url: require("~/assets/house5.jpg"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" }
+                { url: require("~/assets/house/house1.jpg"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house/house2.jpg"), class: "maskRight", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house/house3.jpg"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" },
+                { url: require("~/assets/house/house4.jpg"), class: "maskRight", xTo: "2%", width: "80%", height: "95%" },
+                { url: require("~/assets/house/house5.jpg"), class: "maskLeft", xTo: "18%", width: "80%", height: "95%" }
             ],
         };
     },

@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import { gsap } from 'gsap';
 import SectionAccueil from '../components/index/sectionAccueil.vue';
 import SectionPresentation from '~/components/index/sectionPresentation.vue';
 import SectionChambre from '~/components/index/sectionChambre.vue';

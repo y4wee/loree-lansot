@@ -68,7 +68,6 @@ export default {
       },
       pinScrolling: function() {
         ScrollTrigger.create({
-          // markers: true,
           trigger: ".presentation",
           pin: ".presentationSelf",
           start: "10px top",
