@@ -5,7 +5,7 @@
                 ~/assets/accueil/accueilMedium.webp 1024w,
                 ~/assets/accueil/accueilLarge.webp 1920w"
         sizes="100vw"
-        alt="image exterieur maison orée de lansot" 
+        alt="image exterieur de la maison de l'orée de lansot"
         class="accueilImg">
 
         <Logo 
