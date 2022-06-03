@@ -14,7 +14,7 @@ export default {
       { src: 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     ],
   },
 

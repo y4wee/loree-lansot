@@ -22,7 +22,9 @@ export default {
           {
             hid: 'description',
             name: 'description',
-            content: 'Home page description'
+            content: `Les chambres d'hôte de l'Orée de lansot, 
+                      situées à Noaillan dans le sud-ouest de la France et proche de Bordeaux, 
+                      vous accueillent tout au long de l'année dans une ambiance calme et chaleureuse. `
           }
         ]
       }
