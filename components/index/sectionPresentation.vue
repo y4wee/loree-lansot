@@ -44,7 +44,6 @@ export default {
         gsap.registerPlugin(ScrollTrigger);
         // responsive du js 
         window.addEventListener('resize', () => {
-          console.log()
           this.reloadSize();
         });
         if(innerWidth > 1024) {
