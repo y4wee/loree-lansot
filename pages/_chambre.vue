@@ -31,7 +31,12 @@ export default {
         return {
             showButton: true,
             chambre: [ "atelier", "mansarde", "romance" ],
-            title: [ "L'Atelier", "La Mansarde", "La Romance" ]
+            title: [ "L'Atelier", "La Mansarde", "La Romance" ],
+            description: [
+                ``,
+                ``,
+                ``
+            ]
         };
     },
     head() {
@@ -41,7 +46,7 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Home page description'
+                    content: ''
                 }
             ]
         }

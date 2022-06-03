@@ -180,6 +180,7 @@ $colorYellow: #c4721c;
     align-items: center;
     width: 100%;
     border-bottom: solid 10px $colorBlue;
+    overflow: hidden;
     &::before {
         content: "";
         position: absolute;
