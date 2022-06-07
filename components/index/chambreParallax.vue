@@ -9,8 +9,12 @@
                 <h2> {{ chambre.name }} </h2>
                 <div class="chambreDetailPersonnes">{{ chambre.personnes }}</div>
                 <div class="chambreDetailPrix">{{ chambre.prix }}</div>
-                <div :data-hash="'/' + chambre.id" class="chambreDetailLink" @click="linkTo">
+                <!-- <div :data-hash="'/' + chambre.id" class="chambreDetailLink" @click="linkTo">
                     Plus de détails..
+                </div> -->
+                <div class="chambreUtilsButton">
+                    <div class="chambreUtilsButtonBack"></div>
+                    <div class="chambreUtilsButtonText" :data-hash="'/' + chambre.id"  @click="linkTo">Détails...</div>
                 </div>
             </div>
         </div>
@@ -94,7 +98,8 @@ $colorYellow: #c4721c;
     min-height: 30vh;
     width: 90%;
     max-width: 500px;
-    box-shadow: inset 0 0 80px 100px $colorBlue;
+    box-shadow: inset 0 0 85px 85px $colorBlue;
+    // background: rgba($color: $colorBlue, $alpha: 0.8);
     border-radius: 30px;
     color: $colorWhite;
     & h2 {
@@ -104,11 +109,42 @@ $colorYellow: #c4721c;
         color: $colorYellow;
         margin: 0 0 20px 0;
     }
-    &Link {
-        margin-top: 15px;
-        color: $colorWhite;
-        border-bottom: solid 2px $colorYellow;
-        cursor: pointer;
+}
+.chambreUtils {
+    &Button {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 50px;
+        margin: 15px 0;
+        &Text {
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: solid 2px $colorYellow;
+            color: $colorYellow;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+        }
+        &Back {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100%;
+            height: 100%;
+            background: $colorBlue;
+            box-shadow: 2px 2px 5px 0 rgba($color: #000000, $alpha: 0.7);
+            transition: transform 0.2s ease-out;
+        }
+        &:hover .chambreUtilsButtonBack {
+            transform: translate(-10px, -10px);
+        }
     }
 }
 @media all and (min-width: 1025px) {

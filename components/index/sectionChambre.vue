@@ -34,28 +34,28 @@ export default {
                     name: "L atelier",
                     image: require("~/assets/atelier/atelier1.jpg"),
                     personnes: "1 - 4 personnes",
-                    prix: "70€ - 106€ / nuit"
+                    prix: "80€ - 120€ / nuit"
                 },
                 {
                     id: "mansarde",
                     name: "Mansarde",
                     image: require("~/assets/mansarde/mansarde1.jpg"),
-                    personnes: "1 - 3 personnes",
-                    prix: "60€ - 78€ / nuit"
+                    personnes: "1 - 2 personnes",
+                    prix: "65€ / nuit"
                 },
                 {
                     id: "romance",
                     name: "Romance",
                     image: require("~/assets/romance/romance1.jpg"),
-                    personnes: "1 - 4 personnes",
-                    prix: "65€ - 101€ / nuit"
+                    personnes: "1 - 2 personnes",
+                    prix: "70€ / nuit"
                 },
             ],
             carteChambre: {
                 text: ` Venez vous ressourcer tout au long de l'année dans un environnement calme et serein,
                         Nous vous accueillons & mettons à votre disposition trois chambres d'hôtes spacieuses et chaleureuses.
-                        En raison du covid, nous avons mis en place des horaires d'arrivée et de départ. 
-                        En cas d'annulation les arrhes ne seront pas remboursées mais valables pour une durée d'un an. `,
+                        En raison du covid, nous avons mis en place des horaires d'arrivée et de départ, n'hésitez pas à nous contacter 
+                        pour obtenir plus d'informations.`,
                 lottie: "https://assets9.lottiefiles.com/packages/lf20_onwiwmfr.json"
             },
             pinOn: false,
