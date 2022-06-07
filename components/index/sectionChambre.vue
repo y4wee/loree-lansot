@@ -52,10 +52,10 @@ export default {
                 },
             ],
             carteChambre: {
-                text: ` Venez vous ressourcer tout au long de l'année, dans notre ancienne ferme
-                        du XVII° siècle.
-                        Dans ce lieu agréablement calme de Gironde, nous vous accueillons & mettons
-                        à votre disposition trois chambres d'hôtes spacieuses.`,
+                text: ` Venez vous ressourcer tout au long de l'année dans un environnement calme et serein,
+                        Nous vous accueillons & mettons à votre disposition trois chambres d'hôtes spacieuses et chaleureuses.
+                        En raison du covid, nous avons mis en place des horaires d'arrivée et de départ. 
+                        En cas d'annulation les arrhes ne seront pas remboursées mais valables pour une durée d'un an. `,
                 lottie: "https://assets9.lottiefiles.com/packages/lf20_onwiwmfr.json"
             },
             pinOn: false,

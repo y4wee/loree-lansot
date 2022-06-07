@@ -7,14 +7,14 @@
                     Chambre style atelier,<br /> faite en bonne partie avec des matériaux chinés ou récupérés et
                     pouvant accueillir jusqu'à <span class="infoCarteDetailTextColor">quatre personnes</span>. <br />
                     Elle est spacieuse et en duplex, disposant de <span class="infoCarteDetailTextColor">deux couchages en 140</span>,
-                    <span class="infoCarteDetailTextColor">deux grandes douches</span>,
+                    <span class="infoCarteDetailTextColor">deux grandes douches</span> à l'italienne,
                     deux lavabos et un <span class="infoCarteDetailTextColor">wc</span>. <br />
-                    Le <span class="infoCarteDetailTextColor">SPA</span> est à disposition uniquement pour cette chambre,
-                    de juillet à août (l'accès aux enfants de moins de 10 ans est interdit).
+                    <!-- Le <span class="infoCarteDetailTextColor">SPA</span> est à disposition uniquement pour cette chambre,
+                    de juillet à août (l'accès aux enfants de moins de 10 ans est interdit). -->
                 </div>
                 <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'mansarde'">
                     Chambre très cozy, <br />
-                    elle se situe à l'étage et peut accueillir jusqu'à <span class="infoCarteDetailTextColor">trois personnes</span>. <br /> 
+                    elle se situe à l'étage et peut accueillir jusqu'à <span class="infoCarteDetailTextColor">deux personnes</span>. <br /> 
                     disposant d'un <span class="infoCarteDetailTextColor">lit en 140</span>
                     et une <span class="infoCarteDetailTextColor">méridienne en 90</span>,
                     une belle <span class="infoCarteDetailTextColor">douche à l'italienne</span>,
@@ -23,7 +23,7 @@
                 <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'romance'">
                     Chambre en rez de jardin,<br />
                     chaleureuse et spacieuse, alliant modernité et ancien.<br />
-                    Elle peut accueillir jusqu'à <span class="infoCarteDetailTextColor">quatre personnes</span> 
+                    Elle peut accueillir jusqu'à <span class="infoCarteDetailTextColor">deux personnes</span> 
                     et dispose d'un <span class="infoCarteDetailTextColor">lit en 140</span>,
                     un <span class="infoCarteDetailTextColor">convertible en 120</span>,
                     une <span class="infoCarteDetailTextColor">grande douche à l'italienne</span>, 
@@ -49,6 +49,11 @@
                         <span class="infoCartePrixListeColor"> {{ eachPrice.prix }} </span>
                     </div>
                 </div>
+           </div>
+
+           <div class="infoCarteArrhes">
+               En cas d'annulation les arrhes ne seront pas remboursées mais valables pour une durée d'un an. <br />
+               Le tarif pour un enfant partageant la chambre des parents est de 18€.
            </div>
 
            <div class="infoCarteButton">
@@ -84,11 +89,11 @@ export default {
                                     icon: "hot-tub-person", 
                                     text: "SPA uniquement pour cette chambre, de juillet à août. (l'accès aux enfants de moins de 10 ans est interdit)" 
                                 }],
-                    prix: [ { text: "1 ou 2 personnes", prix: "70€" },
-                            { text: "3 adultes", prix: "88€" },
-                            { text: "4 adultes", prix: "106€" },
-                            { text: "2 adultes et 1 enfant", prix: "85€" },
-                            { text: "2 adultes et 2 enfant", prix: "100€" } ]
+                    prix: [ { text: "1 ou 2 personnes", prix: "80€" },
+                            { text: "3 adultes", prix: "100€" },
+                            { text: "4 adultes", prix: "120€" },
+                            { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
+                            { text: "Arrhes", prix: "40%" } ]
                 },
                 {
                     name: "mansarde",
@@ -99,9 +104,9 @@ export default {
                                 { icon: "bed", text: "1 lit en 140 et 1 méridienne en 90" },
                                 { icon: "shower", text: "1 douche italienne" },
                                 { icon: "toilet", text: "1 wc" }],
-                    prix: [ { text: "1 ou 2 personnes", prix: "60€" },
-                            { text: "3 adultes", prix: "78€" },
-                            { text: "2 adultes et 1 enfant", prix: "75€" } ]
+                    prix: [ { text: "1 ou 2 personnes", prix: "65€" },
+                            { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
+                            { text: "Arrhes", prix: "40%" }]
                 },
                 {
                     name: "romance",
@@ -112,11 +117,9 @@ export default {
                                 { icon: "bed", text: "1 lit en 140 et 1 lit convertible en 120" },
                                 { icon: "shower", text: "1 douche italiennes" },
                                 { icon: "toilet", text: "1 wc" }],
-                    prix: [ { text: "1 ou 2 personnes", prix: "65€" },
-                            { text: "3 adultes", prix: "83€" },
-                            { text: "4 adultes", prix: "101€" },
-                            { text: "2 adultes et 1 enfant", prix: "80€" },
-                            { text: "2 adultes et 2 enfant", prix: "95€" } ]
+                    prix: [ { text: "1 ou 2 personnes", prix: "70€" },
+                            { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
+                            { text: "Arrhes", prix: "40%" }]
                 },
             ],
         }

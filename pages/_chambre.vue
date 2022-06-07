@@ -32,11 +32,6 @@ export default {
             showButton: true,
             chambre: [ "atelier", "mansarde", "romance" ],
             title: [ "L'Atelier", "La Mansarde", "La Romance" ],
-            description: [
-                ``,
-                ``,
-                ``
-            ]
         };
     },
     head() {
@@ -46,7 +41,8 @@ export default {
                 {
                     hid: 'description',
                     name: 'description',
-                    content: ''
+                    content: `Venez vous reposer tous au long de l'année dans cette magnifique chambre de l'Orée de Lansot, 
+                            chambre d'hôte situé en Gironde, dans le Sauternes, à 45minutes de Bordeaux`
                 }
             ]
         }
