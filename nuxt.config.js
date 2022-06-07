@@ -57,6 +57,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     [
+      '@nuxtjs/robots',
       '@nuxtjs/sitemap',
       'nuxt-compress',
       {
@@ -80,6 +81,9 @@ export default {
       '/mansarde',
       '/romance',
     ]
+  },
+  robots: {
+    Sitemap: `https://loree-lansot.vercel.app/sitemap.xml`
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
