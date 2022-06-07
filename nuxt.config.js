@@ -15,8 +15,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-      { rel: 'apple-touch-icon', type: 'image/svg+xml', href: '/favicon.svg' },
-      { rel: 'shortcut icon', type: 'image/svg+xml', href: '/favicon.svg' }
+      { rel: 'apple-touch-icon', href: '/favicon.svg' },
+      { rel: 'shortcut icon', href: '/favicon.svg' }
     ],
   },
 
