@@ -2,20 +2,23 @@
     <div class="footer">
 
         <Envelope />
-        
+        <div class="footerCopyright">
+            ©{{ date }}
+        </div>
     </div>
 </template>
 
 <script>
-import { gsap } from 'gsap';
 import Envelope from './envelope.vue';
 
 export default {
     name: "Footer",
-    mounted() {
-    },
-    methods: {},
-    components: { Envelope }
+    components: { Envelope },
+    computed: {
+        date: function() {
+            return new Date().getFullYear()
+        }
+    }
 }
 
 </script>
@@ -34,7 +37,12 @@ $colorYellow: #c4721c;
 .footer {
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     background: $colorBlue;
+    &Copyright {
+        color: $colorWhite;
+    }
 }
 
 </style>
