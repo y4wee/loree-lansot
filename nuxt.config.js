@@ -57,6 +57,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     [
+      '@nuxtjs/sitemap',
       'nuxt-compress',
       {
         gzip: {
@@ -68,6 +69,18 @@ export default {
       },
     ],
   ],
+  sitemap: {
+    path: '/sitemap.xml', // L'emplacement de votre fichier sitemap.
+    hostname: "https://loree-lansot.vercel.app/", // L'adresse de votre site, que vous pouvez placer comme ici dans une variable d'environnement.
+    cacheTime: 1000 * 60 * 15, // La durée avant que le sitemap soit regénéré. Ici 15mn.
+    gzip: true,
+    generate: false, // Génère une version statique du sitemap quand activé. À utiliser avec nuxt generate.
+    routes: [
+      '/atelier',
+      '/mansarde',
+      '/romance',
+    ]
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

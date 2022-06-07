@@ -44,12 +44,9 @@ export default {
                 lottie: "https://assets3.lottiefiles.com/packages/lf20_gbypohim.json"
             },
             carteRepas: {
-                text: ` Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Sequi quod optio sit? Dolor ipsum minus hic. 
-                        Corporis laborum voluptate, possimus odit culpa, 
-                        ut temporibus earum ratione hic ipsam sed porro amet quaerat! 
-                        Ex ipsa inventore in repudiandae optio neque ullam eius iure!
-                        Iste, magni est assumenda numquam recusandae doloremque laudantium.`,
+                text: ` Pour la table table d'hôtes, nous proposons un plateau repas à 15 euros par personne, 
+                        celui-ci se compose d'une salade verte, œuf poché, jambon, pâté, 
+                        fromage et un verre de vin. (merci de nous le préciser lors de votre réservation).`,
                 lottie: "https://assets10.lottiefiles.com/packages/lf20_2cmperww.json"
             },
         }
