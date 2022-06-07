@@ -30,13 +30,17 @@ export default {
         return {
             pinOn: false,
             carte: {
-              text: ` Voila une vingtaine d'années que nous sommes tombés amoureux de cette longère,
+              text: ` Bienvenue à l'Orée de Lansot, chambres d'hôtes situées à coté du sauternes, à 45 minutes de Bordeaux,
+                      à 1 heure de la dune du Pyla et d'Arcachon. Châteaux médiévaux, Cathédrale de Bazas, Collégiale d'Uzeste, cité médiévale de St Macaire, 
+                      ou bien Ste Croix du Mont et ses huitres fossilisées.
+                      
+                      Nous sommes Sophie et Pascal et avons le plaisir de vous accueillir toute l'année en Gironde dans notre ancienne ferme du XVIII° siècle.
+                      Voila maintenant une vingtaine d'années que nous sommes tombés amoureux de cette longère,
                       que nous rénovons dans un style alliant modernité & ancient.
 
                       Notre attrait dans l'utilisation de materiaux récupérés & d'objets, chinés,
                       dont nous détournons l'utilisation afin de leur offrir une seconde vie, offre à
-                      cet endroit ce cadre si particulier !`,
-              lottie: "https://assets1.lottiefiles.com/packages/lf20_8fcmdyvo.json"
+                      cet endroit ce cadre si particulier.`,
             }
         };
     },

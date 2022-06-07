@@ -101,7 +101,7 @@ $colorYellow: #c4721c;
             position: absolute;
             z-index: 2;
             &ImageFront {
-                fill: rgba($color: black, $alpha: 0.85);
+                fill: rgba($color: $colorBlue, $alpha: 0.85);
             }
             &Mask {
                 opacity: 0;
