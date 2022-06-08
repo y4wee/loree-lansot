@@ -54,7 +54,8 @@ export default {
             carteChambre: {
                 text: ` Venez vous ressourcer tout au long de l'année dans un environnement calme et serein,
                         Nous vous accueillons & mettons à votre disposition trois chambres d'hôtes spacieuses et chaleureuses.
-                        En raison du covid, nous avons mis en place des horaires d'arrivée et de départ, n'hésitez pas à nous contacter 
+                        En raison du covid, nous avons mis en place des horaires d'arrivée et de départ, l'heure d'arrivée 
+                        se fait à partir de 17 h et le départ maximum 11 h. N'hésitez pas à nous contacter 
                         pour obtenir plus d'informations.`,
                 lottie: "https://assets9.lottiefiles.com/packages/lf20_onwiwmfr.json"
             },
