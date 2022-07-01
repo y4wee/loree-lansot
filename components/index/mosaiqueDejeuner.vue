@@ -15,12 +15,9 @@ export default {
     data() {
         return {
             images: [
-                { url: require("~/assets/dejeuner/dejeuner.jpg"), class: "imageWidth1", alt: "18%" },
-                { url: require("~/assets/dejeuner/petitdej.jpg"), class: "imageWidth2", alt: "2%" },
-                { url: require("~/assets/dejeuner/gateau.jpg"), class: "imageWidth3", alt: "18%" },
-                { url: require("~/assets/dejeuner/choco.jpg"), class: "imageWidth3", alt: "2%" },
-                { url: require("~/assets/dejeuner/brioche.webp"), class: "imageWidth1", alt: "18%" },
-                { url: require("~/assets/dejeuner/napolitain.webp"), class: "imageWidth2", alt: "18%" }
+                { url: require("~/assets/dejeuner/dejeuner2.jpg"), class: "imageWidth2", alt: "photo petit dejeuner madeleine" },
+                { url: require("~/assets/dejeuner/dejeuner3.jpg"), class: "imageWidth1", alt: "photo petit dejeuner pain au lait" },
+                { url: require("~/assets/dejeuner/dejeuner4.jpg"), class: "imageWidth3", alt: "photo table de petit dejeuner" },
             ],
         };
     },
