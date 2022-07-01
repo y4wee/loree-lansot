@@ -40,17 +40,17 @@ export default {
             chambre: [
                 {
                     name: "atelier",
-                    image: require("~/assets/atelier/atelier1.jpg"),
+                    image: require("~/assets/atelier/atelier-main.jpg"),
                     text: "Latelier",
                 },
                 {
                     name: "mansarde",
-                    image: require("~/assets/mansarde/mansarde1.jpg"),
+                    image: require("~/assets/mansarde/mansarde-main.jpg"),
                     text: "Mansarde",
                 },
                 {
                     name: "romance",
-                    image: require("~/assets/romance/romance1.jpg"),
+                    image: require("~/assets/romance/romance-main.jpg"),
                     text: "Romance",
                 },
             ],
