@@ -4,13 +4,11 @@
 
             <div class="infoCarteDetail" >
                 <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'atelier'">
-                    Chambre style atelier,<br /> faite en bonne partie avec des matériaux chinés ou récupérés et
+                    Chambre <span class="infoCarteDetailTextColor">modulable</span> style atelier,<br /> faite en bonne partie avec des matériaux chinés ou récupérés et
                     pouvant accueillir jusqu'à <span class="infoCarteDetailTextColor">quatre personnes</span>. <br />
                     Elle est spacieuse et en duplex, disposant de <span class="infoCarteDetailTextColor">deux couchages en 140</span>,
                     <span class="infoCarteDetailTextColor">deux grandes douches</span> à l'italienne,
-                    deux lavabos et un <span class="infoCarteDetailTextColor">wc</span>. <br />
-                    <!-- Le <span class="infoCarteDetailTextColor">SPA</span> est à disposition uniquement pour cette chambre,
-                    de juillet à août (l'accès aux enfants de moins de 10 ans est interdit). -->
+                    deux lavabos et un <span class="infoCarteDetailTextColor">wc</span>.
                 </div>
                 <div class="infoCarteDetailText" v-if="chambre[chambreIndex].name === 'mansarde'">
                     Chambre très cozy, <br />
@@ -53,7 +51,7 @@
 
            <div class="infoCarteArrhes">
                En cas d'annulation les arrhes ne seront pas remboursées mais valables pour une durée d'un an. <br />
-               Le tarif pour un enfant partageant la chambre des parents est de 18€.
+               Le tarif pour un enfant partageant la chambre des parents est de 20€.
            </div>
 
            <div class="infoCarteButton">
@@ -79,19 +77,15 @@ export default {
                     name: "atelier",
                     text: ` Chambre style atelier, faite en bonne partie avec des matériaux chinés ou récupérés et pouvant accueillir jusqu'à quatre personnes,
                             elle est spacieuse et en duplex, elle dispose de deux couchages en 140, deux grandes douches,
-                            un wc et deux lavabos. Le SPA est à disposition uniquement pour cette chambre,
-                            de juillet à août (l'accès aux enfants de moins de 10 ans est interdit).`,
+                            un wc et deux lavabos.`,
                     services: [ { icon: "user-group", text: "1 - 4 personnes" },
                                 { icon: "bed", text: "2 couchages en 140" },
                                 { icon: "shower", text: "2 douches italiennes" },
-                                { icon: "toilet", text: "1 wc" },
-                                { 
-                                    icon: "hot-tub-person", 
-                                    text: "SPA uniquement pour cette chambre, de juillet à août. (l'accès aux enfants de moins de 10 ans est interdit)" 
-                                }],
-                    prix: [ { text: "1 ou 2 personnes", prix: "80€" },
-                            { text: "3 adultes", prix: "100€" },
-                            { text: "4 adultes", prix: "120€" },
+                                { icon: "toilet", text: "1 wc" },],
+                    prix: [ { text: "un lit", prix: "70€" },
+                            { text: "deux lits", prix: "80€" },
+                            { text: "3 personnes", prix: "+20€" },
+                            { text: "4 personnes", prix: "+40€" },
                             { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
                             { text: "Arrhes", prix: "40%" } ]
                 },
@@ -104,7 +98,7 @@ export default {
                                 { icon: "bed", text: "1 lit en 140 et 1 méridienne en 90" },
                                 { icon: "shower", text: "1 douche italienne" },
                                 { icon: "toilet", text: "1 wc" }],
-                    prix: [ { text: "1 ou 2 personnes", prix: "65€" },
+                    prix: [ { text: "1 ou 2 personnes", prix: "70€" },
                             { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
                             { text: "Arrhes", prix: "40%" }]
                 },
@@ -117,7 +111,7 @@ export default {
                                 { icon: "bed", text: "1 lit en 140 et 1 lit convertible en 120" },
                                 { icon: "shower", text: "1 douche italiennes" },
                                 { icon: "toilet", text: "1 wc" }],
-                    prix: [ { text: "1 ou 2 personnes", prix: "70€" },
+                    prix: [ { text: "1 ou 2 personnes", prix: "75€" },
                             { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
                             { text: "Arrhes", prix: "40%" }]
                 },

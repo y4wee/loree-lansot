@@ -34,21 +34,21 @@ export default {
                     name: "L atelier",
                     image: require("~/assets/atelier/atelier-main.jpg"),
                     personnes: "1 - 4 personnes",
-                    prix: "80€ - 120€ / nuit"
+                    prix: "70€ - 120€ / nuit"
                 },
                 {
                     id: "mansarde",
                     name: "Mansarde",
                     image: require("~/assets/mansarde/mansarde-main.jpg"),
                     personnes: "1 - 2 personnes",
-                    prix: "65€ / nuit"
+                    prix: "70€ / nuit"
                 },
                 {
                     id: "romance",
                     name: "Romance",
                     image: require("~/assets/romance/romance-main.jpg"),
                     personnes: "1 - 2 personnes",
-                    prix: "70€ / nuit"
+                    prix: "75€ / nuit"
                 },
             ],
             carteChambre: {
