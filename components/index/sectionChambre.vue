@@ -34,7 +34,7 @@ export default {
                     name: "L atelier",
                     image: require("~/assets/atelier/atelier-main.jpg"),
                     personnes: "1 - 4 personnes",
-                    prix: "70€ - 120€ / nuit"
+                    prix: "À partir de 80€ / nuit"
                 },
                 {
                     id: "mansarde",
