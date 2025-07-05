@@ -36,7 +36,7 @@ export default {
         lottie: "https://assets3.lottiefiles.com/packages/lf20_gbypohim.json",
       },
       carteRepas: {
-        text: ` Pour la table table d'hôtes, nous proposons un plateau repas à 15 euros par personne, 
+        text: ` Pour la table table d'hôtes, nous proposons un plateau repas à 16 euros par personne, 
                         celui-ci se compose d'une salade verte, œuf poché, jambon, pâté, 
                         fromage et un verre de vin. (merci de nous le préciser lors de votre réservation).`,
         lottie: "https://assets10.lottiefiles.com/packages/lf20_2cmperww.json",

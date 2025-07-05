@@ -82,11 +82,11 @@ export default {
                                 { icon: "bed", text: "2 couchages en 140" },
                                 { icon: "shower", text: "2 douches italiennes" },
                                 { icon: "toilet", text: "1 wc" },],
-                    prix: [ { text: "un lit", prix: "70€" },
-                            { text: "deux lits", prix: "80€" },
+                    prix: [ { text: "un lit", prix: "80€" },
+                            { text: "deux lits", prix: "100€" },
                             { text: "3 personnes", prix: "+20€" },
                             { text: "4 personnes", prix: "+40€" },
-                            { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
+                            { text: "taxe de sejour par adulte", prix: "1.50€/jour" },
                             { text: "Arrhes", prix: "40%" } ]
                 },
                 {
@@ -99,7 +99,7 @@ export default {
                                 { icon: "shower", text: "1 douche italienne" },
                                 { icon: "toilet", text: "1 wc" }],
                     prix: [ { text: "1 ou 2 personnes", prix: "70€" },
-                            { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
+                            { text: "taxe de sejour par adulte", prix: "1.50€/jour" },
                             { text: "Arrhes", prix: "40%" }]
                 },
                 {
@@ -112,7 +112,7 @@ export default {
                                 { icon: "shower", text: "1 douche italiennes" },
                                 { icon: "toilet", text: "1 wc" }],
                     prix: [ { text: "1 ou 2 personnes", prix: "75€" },
-                            { text: "taxe de sejour par adulte", prix: "0.50€/jour" },
+                            { text: "taxe de sejour par adulte", prix: "1.50€/jour" },
                             { text: "Arrhes", prix: "40%" }]
                 },
             ],
